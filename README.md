@@ -2,4 +2,4 @@
 
 my first hexo blog and custom theme
 
-xiaobocai
+xiaobocai inferno0303 github
