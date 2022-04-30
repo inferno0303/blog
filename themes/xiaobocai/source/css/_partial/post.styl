@@ -1,10 +1,8 @@
-.post {
-  margin: 1em auto;
-  padding: 30px 50px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 0 2px #ddd;
-  font-size: 1rem;
+.post-wrapper {
+  margin: 1.5em auto 2.5em auto;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #eaeaea;
+
   img {
     max-width: 85%;
     display: block;
@@ -12,23 +10,22 @@
     border: 1px solid #ccc;
     box-shadow: 0 0 5px #bbb;
   }
-}
-
-.posts  {
-  .post:first-child {
-    margin-top: 0;
-  }
 
   .post-title {
-    font-size: 1.8em;
-
+    // h1 元素
+    // margin-bottom: 0;
     .post-title-link {
-      color: #368CCB;
+      font-size: 1.3em;
+      color: #000;
       text-decoration: none;
     }
   }
 
   .post-content {
+    font-size: 0.9em;
+    color: #515050;
+    // background-color: rgb(244, 244, 244);
+    padding: 20px;
     a {
       color: #368CCB;
       text-decoration: none;
@@ -38,6 +35,7 @@
   .post-meta {
     color: #BABABA;
     font-size: 0.8rem;
-    text-align: right;
+    margin-bottom: 10px;
   }
+
 }

@@ -1,12 +1,45 @@
 <!DOCTYPE html>
-<html>
-<%- partial('_partial/head') %>
+<html lang="zh">
 
-  <body>
-    <%- partial('_partial/header') %>
-      <main class="main">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= config.title %>
+    </title>
+    <%- css('css/style.css') %>
+</head>
+
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <div class="blog-title">
+                <a href="<%- url_for() %>" class="logo">
+                    <%= config.title %>
+                </a>
+            </div>
+            <nav class="navbar">
+                <div class="menu">
+                    <% for (name in theme.menu) { %>
+                        <div class="menu-item">
+                            <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link">
+                                <%= name %>
+                            </a>
+                        </div>
+                        <% } %>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main">
         <%- body %>
-      </main>
-  </body>
+    </div>
+
+    <div class="footer">
+
+    </div>
+</body>
 
 </html>
