@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 小菠菜的自留地
-subtitle: '又一个Hexo博客'
+title: "小菠菜的自留地"
+subtitle: '一个理想主义者的挣扎'
 description: ''
 keywords:
 author: inferno33
@@ -13,8 +13,8 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
-permalink: :title/
+url: https://inferno0303.github.io/
+permalink: :year/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks

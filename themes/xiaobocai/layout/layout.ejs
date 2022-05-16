@@ -8,38 +8,42 @@
     <title>
         <%= config.title %>
     </title>
-    <%- css('css/style2.css') %>
+    <%- css('css/style.css') %>
 </head>
 
 <body>
-    <header class="header">
-        <div class="wrapper">
-            <div class="blog-title">
-                <a href="<%- url_for() %>" class="logo">
-                    <%= config.title %>
-                </a>
-            </div>
-            <nav class="navbar">
-                <div class="menu">
-                    <% for (name in theme.menu) { %>
-                        <div class="menu-item">
-                            <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link">
-                                <%= name %>
-                            </a>
-                        </div>
-                    <% } %>
+<!--header-->
+<header class="header">
+    <div class="blog-title">
+        <a href="<%- url_for() %>" class="blog-title-link">
+            <%= config.title %>
+        </a>
+    </div>
+    <nav class="navbar">
+        <div class="menu">
+            <% for (name in theme.menu) { %>
+                <div class="menu-item">
+                    <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link">
+                        <%= name %>
+                    </a>
                 </div>
-            </nav>
+            <% } %>
         </div>
-    </header>
+    </nav>
+</header>
 
-    <div class="main">
-        <%- body %>
-    </div>
+<div class="main">
+    <%- body %>
+</div>
 
-    <div class="footer">
-        footer
-    </div>
+<div class="footer">
+    <p>
+        © Copyright 2022 小菠菜
+    </p>
+    <p>
+        Power By <a href="https://hexo.io/" style="text-decoration: none">Hexo</a>
+    </p>
+</div>
 </body>
 
 </html>

@@ -1,4 +1,7 @@
 menu:
-  Home: /
-  Archives: /archives
-  Github: https://github.com/yangxu770409504
+  首页: /
+  归档: /archives
+  标签: /tags
+  作品集: /works
+  关于我: about
+  Github: https://github.com/inferno0303
