@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        小菠菜的自留地
+    </title>
+    <!-- css入口 -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="./js/index.js"></script> -->
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+<!--header-->
+<header class="header">
+    <div class="blog-title">
+        <a href="/" class="blog-title-link">
+            小菠菜的自留地
+        </a>
+    </div>
+    <nav class="navbar">
+        <div class="menu">
+            
+                <div class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        首页
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a href="/archives" class="menu-item-link">
+                        归档
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a href="/tags" class="menu-item-link">
+                        标签
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a href="/works" class="menu-item-link">
+                        作品集
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a href="/about" class="menu-item-link">
+                        关于我
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/inferno0303" class="menu-item-link">
+                        Github
+                    </a>
+                </div>
+            
+        </div>
+    </nav>
+</header>
+
+<div class="main">
+    <article class="post-wrapper">
+  <div class="post-title">
+    <h1 class="title">《码农翻身》读书笔记</h1>
+  </div>
+  <div class="post-meta">
+    <span class="post-time">2022-06-10</span>
+  </div>
+  <div class="post-content"><h1 id="Java帝国"><a href="#Java帝国" class="headerlink" title="Java帝国"></a>Java帝国</h1><h2 id="Class-Loader"><a href="#Class-Loader" class="headerlink" title="Class Loader"></a>Class Loader</h2><p>Class Loader分层级</p>
+<ul>
+<li>Bootstrap ClassLoader：native代码实现，主要是加载核心库，jre&#x2F;lib&#x2F;*.jar，jre&#x2F;lib&#x2F;classes&#x2F;</li>
+<li>Extension ClassLoader：ext类加载，jre&#x2F;lib&#x2F;ext&#x2F;*.jar，jre&#x2F;lib&#x2F;ext&#x2F;classes&#x2F;，环境变量</li>
+<li>App ClassLoader：主要用于加载用户目录下的类文件，以及环境变量java.class.path对应目录下的类文件。该加载器也是java程序默认的加载器</li>
+<li>自定义加载器：<strong>继承ClassLoader类实现自己的加载器</strong>，自定义类的加载路径、处理策略等。我们经常使用的组件和框架大多都有自己自定义的类加载器，例如：tomcat、spring等。</li>
+</ul>
+<h2 id="垃圾回收GC"><a href="#垃圾回收GC" class="headerlink" title="垃圾回收GC"></a>垃圾回收GC</h2><ul>
+<li>可达性分析</li>
+<li>GC_Roots为起点的直接引用对象</li>
+</ul>
+<h2 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h2><h3 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h3><p>最早是<strong>对象序列化、反序列化</strong>，与IO相关，把对象丢到硬盘里，速度太慢</p>
+<h3 id="关系型数据库和JDBC"><a href="#关系型数据库和JDBC" class="headerlink" title="关系型数据库和JDBC"></a>关系型数据库和JDBC</h3><p>出现了<strong>关系型数据库</strong>、与SQL相关，表格的行和列 -&gt; 对象的属性</p>
+<p>为了实现ORM（Object-Relation Mapping），映射，就需要<strong>JDBC（Java Database Connectivity）</strong></p>
+<h3 id="EJB标准，面向对象风格"><a href="#EJB标准，面向对象风格" class="headerlink" title="EJB标准，面向对象风格"></a>EJB标准，面向对象风格</h3><p>JDBC的劣势在初期很明显，是一个非常「低级」的接口，<strong>EJB标准，面向对象风格编程，操作对象持久化</strong>，但表面简洁，背后比较复杂，重量级。</p>
+<h3 id="轻量级ORM框架，声明式"><a href="#轻量级ORM框架，声明式" class="headerlink" title="轻量级ORM框架，声明式"></a>轻量级ORM框架，声明式</h3><p>轻量级的O&#x2F;R Mapping框架：Hibernate。<strong>声明式将Java属性映射</strong>到数据库表，不用操心Connection、SQL细节。</p>
+<p>iBatis的O&#x2F;R Mapping出现，MyBatis。</p>
+<p>EJB 3.0副产品：JPA（Java Persistence API），是一个标准，不是实现层，标准整合了ORM工具领域。</p>
+<h2 id="JDBC的诞生"><a href="#JDBC的诞生" class="headerlink" title="JDBC的诞生"></a>JDBC的诞生</h2><h3 id="为什么需要中间层"><a href="#为什么需要中间层" class="headerlink" title="为什么需要中间层"></a>为什么需要中间层</h3><p>与数据库MySQL之间定义一个应用层协议，发什么请求，给什么响应，定义消息的格式和次序。<br>例如：如何做认证、授权、数据加密、数据包分组，SQL的格式，ResultSet的结果集是什么，返回的结果集太大，需要缓冲。</p>
+<h3 id="统一接口，面向接口编程"><a href="#统一接口，面向接口编程" class="headerlink" title="统一接口，面向接口编程"></a>统一接口，面向接口编程</h3><p>需要制定一个接口interface，<strong>声明Connection、Statement、ResultSet</strong>，这个抽象的接口，用于连接MySQL、Oracle、DB2（IBM的关系型数据库），各家负责实现这个接口interface，接入Java生态。</p>
+<p>但是，不同版本的MySQL，需要import不同的<code>MySQLConnectionJDBCImpl</code>类，类名是不一样的，虽然它们但都是实现同一个JDBC interface的实现。</p>
+<p>用户希望<strong>完全屏蔽具体实现过程，只需要传递参数</strong>，就可以让工厂类自动选择用哪个实现了，并且返回一个连接对象实例，这个工厂类叫做Driver。</p>
+<h3 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Driver</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title function_">getConnection</span><span class="params">(String dbType, Properties info)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">&quot;mysql&quot;</span>.equals(dbType)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MysqlConnectionImpl</span>(info)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">&quot;oracle&quot;</span>.equals(dbType)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MysqlConnectionImpl</span>(info)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">&quot;db2&quot;</span>.equals(dbType)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MysqlConnectionImpl</span>(info)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;unsupported db type = &quot;</span> + dbType);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过Driver这个类，就可以把Connection的具体实现屏蔽了，dbType是一个字符串，info是hashMap，传入认证信息。返回一个连接对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// info 已经定义了host、port、database、username、password等信息</span></span><br><span class="line"><span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> Driver.getConnection(<span class="string">&quot;mysql&quot;</span>, info)</span><br></pre></td></tr></table></figure>
+
+<h3 id="反射是什么"><a href="#反射是什么" class="headerlink" title="反射是什么"></a>反射是什么</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过ClassLoader加载类</span></span><br><span class="line"><span class="type">Class</span> <span class="variable">clz</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;com.chenshuyi.reflect.Apple&quot;</span>);</span><br><span class="line"><span class="comment">// 找到某一个方法</span></span><br><span class="line"><span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> clz.getMethod(<span class="string">&quot;setPrice&quot;</span>, <span class="type">int</span>.class);</span><br><span class="line"><span class="comment">// 获取这个类的构造方法</span></span><br><span class="line"><span class="type">Constructor</span> <span class="variable">constructor</span> <span class="operator">=</span> clz.getConstructor();</span><br><span class="line"><span class="comment">// 通过构造方法新建一个实例对象</span></span><br><span class="line"><span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> constructor.newInstance();</span><br><span class="line"><span class="comment">// method.invoke的方式，传入实例对象（第一个参数），以及参数</span></span><br><span class="line">method.invoke(object, <span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据驱动下的JDBC"><a href="#数据驱动下的JDBC" class="headerlink" title="数据驱动下的JDBC"></a>数据驱动下的JDBC</h3><p><strong>（实际上就是配置文件中指定了DBConnectImpl）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Driver</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Connect <span class="title function_">getCOnnection</span><span class="params">(String dbType, Properties info)</span> &#123;</span><br><span class="line">        <span class="comment">// 通过dbType来获取类路径，简单工厂方法</span></span><br><span class="line">        Class&lt;?&gt; clz = getCOnnectionImplClass(dbType);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 获取构造函数</span></span><br><span class="line">            Constructor&lt;?&gt; c = clz.getConstructor(Properties.class);</span><br><span class="line">            <span class="comment">// 创建一个实例并返回</span></span><br><span class="line">            <span class="keyword">return</span> (Connection) c.newInstance(info);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Class&lt;?&gt; getConnectionImplClass(String dbType) &#123;</span><br><span class="line">        <span class="comment">// ...读取配置文件，根据参数决定返回哪个类，给反射用来实例化</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="工厂方法（JDBC标准）"><a href="#工厂方法（JDBC标准）" class="headerlink" title="工厂方法（JDBC标准）"></a>工厂方法（JDBC标准）</h3><p>Driver也变成了接口，通过反射的方式创建Driver实例，通过DriverManager类创建Driver实例，还可以向registerDrivers中添加Driver的类路径。</p>
+<p>不仅实现了Connection的获取，还可以动态注册各种Driver的实现。</p>
+<h2 id="分布式事务管理器"><a href="#分布式事务管理器" class="headerlink" title="分布式事务管理器"></a>分布式事务管理器</h2><h3 id="两阶段提交"><a href="#两阶段提交" class="headerlink" title="两阶段提交"></a>两阶段提交</h3><p>设置一个全局事务管理器，用网络通信，协同两个数据库的提交动作。但是由于网络问题，这样的方式存在很大的漏洞。</p>
+<h3 id="JTA（Java-Transaction-API）"><a href="#JTA（Java-Transaction-API）" class="headerlink" title="JTA（Java Transaction API）"></a>JTA（Java Transaction API）</h3><p>只是做了复杂的封装，为了支持分布式事务，两阶段提交，开销很大。分布式事务伴随着大量节点的通信交换，协调者要确定其他节点是否完成，加上网络带来的超时，导致JTA性能地下，在分布式、高并发的场景中举步维艰。</p>
+<h3 id="最终一致性"><a href="#最终一致性" class="headerlink" title="最终一致性"></a>最终一致性</h3><p>利用消息队列来实现「最终一致性」。</p>
+<p>自行维护一个「事务表」，做完的标记DONE，定时程序会将其他数据库要同步的记录，放到消息队列里。</p>
+<p>这有点像bin log下的MySQL slave与master节点同步，利用了「最终一致性」的原则。</p>
+<p>「幂等性」：无论操作多少次还是一样的结果，提高了冗余性，鲁棒性。</p>
+<h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><p>C lang、Perl要以CGI的方式输出HTML，本质上是字符串拼接而已。</p>
+<p>JSP运行在Tomcat容器中，Tomcat可以在上下文中找到session等HttpServlet范围的变量，可以通过标签嵌入Java代码。</p>
+<h3 id="标签库JSTL（JSP-Standard-Tag-Library）"><a href="#标签库JSTL（JSP-Standard-Tag-Library）" class="headerlink" title="标签库JSTL（JSP Standard Tag Library）"></a>标签库JSTL（JSP Standard Tag Library）</h3><p>例如条件渲染语句、循环语句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">&quot;$&#123;session.username ==&#x27;admin&#x27;&#125;&quot;</span>&gt;</span><br><span class="line">    欢迎你，管理员</span><br><span class="line">&lt;/c:<span class="keyword">if</span>&gt;</span><br><span class="line">&lt;c:forEach items=<span class="string">&quot;$&#123;names&#125;&quot;</span> <span class="keyword">var</span>=<span class="string">&quot;name&quot;</span>&gt;</span><br><span class="line">    $&#123;name&#125; &lt;br/&gt;</span><br><span class="line">&lt;/c:forEach&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h3><p>Freemaker Velocity等模板引擎，不仅可以用于MVC中的View，还可以定义邮件模板等。语法差不多，可能更简洁，与运行环境无关了，不需要Tomcat传递上下文变量。</p>
+<h3 id="JavaScript前端实现MVC"><a href="#JavaScript前端实现MVC" class="headerlink" title="JavaScript前端实现MVC"></a>JavaScript前端实现MVC</h3><p>前端模板，可以将JSON信息拼接成HTML。基于AJAX技术，异步发出HTTP请求，基于AJAX，发展出了很多JS框架，例如jQuery。</p>
+<h2 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h2><h3 id="发布订阅模型"><a href="#发布订阅模型" class="headerlink" title="发布订阅模型"></a>发布订阅模型</h3><p>为了解决不同MQ中间件兼容问题，制定了实现模型。</p>
+<p><strong>发布-订阅模型</strong>，实际上是从<strong>生产者-消费者模型</strong>再次抽象而来。</p>
+<p>需要实现Session、Producer、Consumer、Destination。</p>
+<p>消息的发布者通过配置的方式管理对象，可以是Queue或者Topic。</p>
+<p>消息的消费者通过配置的方式，可以是消费者Consumer，也可以是订阅者Subscriber。</p>
+<h3 id="JMS（Java-Message-Services）"><a href="#JMS（Java-Message-Services）" class="headerlink" title="JMS（Java Message Services）"></a>JMS（Java Message Services）</h3><p>JMS规范是Sun公司的领导下，各大厂家密切参与制定的规范，用于消息队列的实现规范。</p>
+<h2 id="Java动态代理（在运行时修改类）"><a href="#Java动态代理（在运行时修改类）" class="headerlink" title="Java动态代理（在运行时修改类）"></a>Java动态代理（在运行时修改类）</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3></div>
+</article>
+</div>
+
+<div class="footer">
+    <p>
+        © Copyright 2022 小菠菜
+    </p>
+    <p>
+        Power By <a target="_blank" rel="noopener" href="https://hexo.io/" style="text-decoration: none">Hexo</a>
+    </p>
+</div>
+</body>
+
+</html>

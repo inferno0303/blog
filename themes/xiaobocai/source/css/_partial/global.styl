@@ -1,0 +1,82 @@
+/* 公共样式 */
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+:root {
+  --max-width: 800px;
+}
+
+body {
+
+}
+
+
+/*header*/
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  border-bottom: dashed 1px #BABABA;
+
+  .blog-title {
+    font-size: 1.8rem;
+    padding: 0.5rem 0;
+    .blog-title-link {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  .menu {
+    .menu-item {
+      display: inline-block;
+      padding: 0.5rem 0.5rem 0.5rem 0;
+      font-weight: bold;
+
+      .menu-item-link {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+}
+
+
+/*content style start*/
+.main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 5px;
+
+}
+
+/*content style end*/
+
+/*footer style start*/
+
+.footer {
+  //display: flex;
+  //flex-wrap: wrap;
+  //align-items: center;
+  //justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 15px auto;
+  padding: 0.75rem 1.5rem;
+  border-top: dashed 1px #BABABA;
+
+  p {
+    font-size: 0.8rem;
+    text-align: right;
+  }
+}

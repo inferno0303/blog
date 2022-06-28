@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        小菠菜的自留地
+    </title>
+    <!-- css入口 -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="./js/index.js"></script> -->
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+<!--header-->
+<header class="header">
+    <div class="blog-title">
+        <a href="/" class="blog-title-link">
+            小菠菜的自留地
+        </a>
+    </div>
+    <nav class="navbar">
+        <div class="menu">
+            
+                <div class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        首页
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a href="/archives" class="menu-item-link">
+                        归档
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a href="/tags" class="menu-item-link">
+                        标签
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a href="/works" class="menu-item-link">
+                        作品集
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a href="/about" class="menu-item-link">
+                        关于我
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/inferno0303" class="menu-item-link">
+                        Github
+                    </a>
+                </div>
+            
+        </div>
+    </nav>
+</header>
+
+<div class="main">
+    <article class="post-wrapper">
+  <div class="post-title">
+    <h1 class="title">重新学习Java（六）：Java字符串</h1>
+  </div>
+  <div class="post-meta">
+    <span class="post-time">2022-05-06</span>
+  </div>
+  <div class="post-content"><h1 id="Java-String类"><a href="#Java-String类" class="headerlink" title="Java String类"></a>Java String类</h1><p>创建字符串最简单的方法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;Hello world&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>在代码中遇到字符串常量时，这里的值是<code>Hello world</code>，编译器会自动使用该值创建一个String对象。<br>与其他对象一样，可以使用关键字和构造方法来创建String对象。</p>
+<p>用构造函数创建字符串：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;Hello world&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>String创建的字符串会存储在公共池中，而new创建的字符串对象在堆上：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;hello&quot;</span>; <span class="comment">// String 直接创建，引用&quot;hello&quot;这个公共池中的常量</span></span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;hello&quot;</span>; <span class="comment">// String</span></span><br><span class="line"><span class="type">String</span> <span class="variable">s3</span> <span class="operator">=</span> s1; <span class="comment">// 相同引用</span></span><br><span class="line"><span class="type">String</span> <span class="variable">s4</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">s5</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>);</span><br></pre></td></tr></table></figure>
+</div>
+</article>
+</div>
+
+<div class="footer">
+    <p>
+        © Copyright 2022 小菠菜
+    </p>
+    <p>
+        Power By <a target="_blank" rel="noopener" href="https://hexo.io/" style="text-decoration: none">Hexo</a>
+    </p>
+</div>
+</body>
+
+</html>

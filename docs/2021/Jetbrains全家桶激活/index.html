@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        小菠菜的自留地
+    </title>
+    <!-- css入口 -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="./js/index.js"></script> -->
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+<!--header-->
+<header class="header">
+    <div class="blog-title">
+        <a href="/" class="blog-title-link">
+            小菠菜的自留地
+        </a>
+    </div>
+    <nav class="navbar">
+        <div class="menu">
+            
+                <div class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        首页
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a href="/archives" class="menu-item-link">
+                        归档
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a href="/tags" class="menu-item-link">
+                        标签
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a href="/works" class="menu-item-link">
+                        作品集
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a href="/about" class="menu-item-link">
+                        关于我
+                    </a>
+                </div>
+            
+                <div class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/inferno0303" class="menu-item-link">
+                        Github
+                    </a>
+                </div>
+            
+        </div>
+    </nav>
+</header>
+
+<div class="main">
+    <article class="post-wrapper">
+  <div class="post-title">
+    <h1 class="title">ja-netfilter激活Jetbrains全家桶</h1>
+  </div>
+  <div class="post-meta">
+    <span class="post-time">2021-05-29</span>
+  </div>
+  <div class="post-content"><blockquote>
+<p>本文不涉及任何盗版资源的传播，不存储任何非法资源，请各位用户支持正版</p>
+</blockquote>
+<h2 id="1-下载ja-netfilter"><a href="#1-下载ja-netfilter" class="headerlink" title="(1) 下载ja-netfilter"></a>(1) 下载ja-netfilter</h2><p>github仓库：<a target="_blank" rel="noopener" href="https://github.com/ja-netfilter/ja-netfilter">https://github.com/ja-netfilter/ja-netfilter</a></p>
+<p><strong>更新：github被下架了，请去gitee下载：<a target="_blank" rel="noopener" href="https://gitee.com/ja-netfilter/ja-netfilter">https://gitee.com/ja-netfilter/ja-netfilter</a></strong></p>
+<p>解压放到你喜欢的目录里，比如用户目录根目录<code>C:/Users/myname/ja-netfilter/</code></p>
+<h2 id="2-编辑idea的vmoptions配置"><a href="#2-编辑idea的vmoptions配置" class="headerlink" title="(2) 编辑idea的vmoptions配置"></a>(2) 编辑idea的vmoptions配置</h2><p>vmoptions配置文件在目标软件安装目录的&#x2F;bin目录下，例如webstorm的vmoptions文件名为：<br><code>webstorm64.exe.vmoptions</code></p>
+<p>在文本最后一行加上：<br><code>-javaagent:C:\Users\myname\ja-netfilter\ja-netfilter.jar</code></p>
+<h2 id="3-编辑ja-netfilter配置"><a href="#3-编辑ja-netfilter配置" class="headerlink" title="(3) 编辑ja-netfilter配置"></a>(3) 编辑ja-netfilter配置</h2><p>ja-netfilter需要读取文本配置文件，才能按规则拦截http请求，默认情况下ja-netfilter.jar会读取同目录下的<code>config</code>文件夹，这里给出一个能用的拦截规则。</p>
+<p>编辑dns.conf：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[DNS]</span><br><span class="line">EQUAL,jetbrains.com</span><br></pre></td></tr></table></figure>
+
+<p>编辑url.conf：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[URL]</span><br><span class="line">PREFIX,https://account.jetbrains.com/lservice/rpc/validateKey.action</span><br></pre></td></tr></table></figure>
+
+<p>更多规则配置参考ja-netfilter的文档：<a target="_blank" rel="noopener" href="https://github.com/ja-netfilter/ja-netfilter#config-file-format">https://github.com/ja-netfilter/ja-netfilter#config-file-format</a></p>
+<h2 id="4-略"><a href="#4-略" class="headerlink" title="(4) 略"></a>(4) 略</h2><p>懂得都懂</p>
+</div>
+</article>
+</div>
+
+<div class="footer">
+    <p>
+        © Copyright 2022 小菠菜
+    </p>
+    <p>
+        Power By <a target="_blank" rel="noopener" href="https://hexo.io/" style="text-decoration: none">Hexo</a>
+    </p>
+</div>
+</body>
+
+</html>

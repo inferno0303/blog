@@ -1,6 +1,6 @@
 ---
-title: 重新学习Java（一）基础语法
-date: 2022-05-30
+title: 重新学习Java（一）：基础语法
+date: 2022-05-01
 tags: note
 ---
 
