@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        小菠菜的自留地
+        小菠菜的笔记
     </title>
+    <!-- 网站图标-->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
     <!-- css入口 -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -22,7 +24,7 @@
 <header class="header">
     <div class="blog-title">
         <a href="/" class="blog-title-link">
-            小菠菜的自留地
+            小菠菜的笔记
         </a>
     </div>
     <nav class="navbar">
@@ -30,37 +32,19 @@
             
                 <div class="menu-item">
                     <a href="/" class="menu-item-link">
-                        首页
+                        博客首页
                     </a>
                 </div>
             
                 <div class="menu-item">
                     <a href="/archives" class="menu-item-link">
-                        归档
-                    </a>
-                </div>
-            
-                <div class="menu-item">
-                    <a href="/tags" class="menu-item-link">
-                        标签
-                    </a>
-                </div>
-            
-                <div class="menu-item">
-                    <a href="/works" class="menu-item-link">
-                        作品集
-                    </a>
-                </div>
-            
-                <div class="menu-item">
-                    <a href="/about" class="menu-item-link">
-                        关于我
+                        文章列表
                     </a>
                 </div>
             
                 <div class="menu-item">
                     <a target="_blank" rel="noopener" href="https://github.com/inferno0303" class="menu-item-link">
-                        Github
+                        GitHub
                     </a>
                 </div>
             
@@ -69,46 +53,92 @@
 </header>
 
 <div class="main">
-    <section class="archive">
+    <!--文章归档-->
+<section class="archive">
     <ul class="post-archive">
         
             <li class="post-item">
+                <span class="post-date">2022-05-03</span>
+                <a class="post-title" href="/2022/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+                    重新学习Java（三）：基本数据类型
+                </a>
+            </li>
+        
+            <li class="post-item">
                 <span class="post-date">2022-05-02</span>
-                <a class="post-title" href="/2022/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E7%B1%BB/"
-                >重新学习Java（二）：类</a
-                >
+                <a class="post-title" href="/2022/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E7%B1%BB/">
+                    重新学习Java（二）：类
+                </a>
             </li>
         
             <li class="post-item">
                 <span class="post-date">2022-05-01</span>
-                <a class="post-title" href="/2022/macOS%E8%A6%81%E5%AE%89%E8%A3%85%E7%9A%84%E8%BD%AF%E4%BB%B6/"
-                >macOS要安装的软件</a
-                >
+                <a class="post-title" href="/2022/macOS%E8%A6%81%E5%AE%89%E8%A3%85%E7%9A%84%E8%BD%AF%E4%BB%B6/">
+                    macOS要安装的软件
+                </a>
             </li>
         
             <li class="post-item">
                 <span class="post-date">2022-05-01</span>
-                <a class="post-title" href="/2022/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"
-                >重新学习Java（一）：基础语法</a
-                >
+                <a class="post-title" href="/2022/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+                    重新学习Java（一）：基础语法
+                </a>
             </li>
         
             <li class="post-item">
                 <span class="post-date">2022-04-30</span>
-                <a class="post-title" href="/2022/ZooKeeper%E4%B8%8E%E5%85%B6%E4%BB%96%E4%BA%A7%E5%93%81%E7%9A%84%E5%AF%B9%E6%AF%94/"
-                >ZooKeeper与其他产品的对比</a
-                >
+                <a class="post-title" href="/2022/ZooKeeper%E4%B8%8E%E5%85%B6%E4%BB%96%E4%BA%A7%E5%93%81%E7%9A%84%E5%AF%B9%E6%AF%94/">
+                    ZooKeeper与其他产品的对比
+                </a>
             </li>
         
             <li class="post-item">
                 <span class="post-date">2022-04-26</span>
-                <a class="post-title" href="/2022/hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98/"
-                >hexo博客自定义主题</a
-                >
+                <a class="post-title" href="/2022/hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98/">
+                    hexo博客自定义主题
+                </a>
             </li>
         
     </ul>
 </section>
+<!--分页-->
+<!--分页选择器-->
+
+<nav class="page-nav">
+    <a class="extend prev" rel="prev" href="/archives/2022/">上一页</a><a class="page-number" href="/archives/2022/">1</a><span class="page-number current">2</span>
+</nav>
+<style>
+    .page-nav {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .page-number {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-decoration: none;
+        color: blue;
+    }
+    .current {
+        color: black;
+    }
+    .prev {
+        text-decoration: none;
+        color: blue;
+    }
+    .next {
+        text-decoration: none;
+        color: blue;
+    }
+</style>
+<style>
+    .post-archive {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+</style>
 
 </div>
 

@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        小菠菜的自留地
+        小菠菜的笔记
     </title>
+    <!-- 网站图标-->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
     <!-- css入口 -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -22,7 +24,7 @@
 <header class="header">
     <div class="blog-title">
         <a href="/" class="blog-title-link">
-            小菠菜的自留地
+            小菠菜的笔记
         </a>
     </div>
     <nav class="navbar">
@@ -30,37 +32,19 @@
             
                 <div class="menu-item">
                     <a href="/" class="menu-item-link">
-                        首页
+                        博客首页
                     </a>
                 </div>
             
                 <div class="menu-item">
                     <a href="/archives" class="menu-item-link">
-                        归档
-                    </a>
-                </div>
-            
-                <div class="menu-item">
-                    <a href="/tags" class="menu-item-link">
-                        标签
-                    </a>
-                </div>
-            
-                <div class="menu-item">
-                    <a href="/works" class="menu-item-link">
-                        作品集
-                    </a>
-                </div>
-            
-                <div class="menu-item">
-                    <a href="/about" class="menu-item-link">
-                        关于我
+                        文章列表
                     </a>
                 </div>
             
                 <div class="menu-item">
                     <a target="_blank" rel="noopener" href="https://github.com/inferno0303" class="menu-item-link">
-                        Github
+                        GitHub
                     </a>
                 </div>
             
@@ -69,18 +53,57 @@
 </header>
 
 <div class="main">
-    <section class="archive">
+    <!--文章归档-->
+<section class="archive">
     <ul class="post-archive">
         
             <li class="post-item">
                 <span class="post-date">2020-10-15</span>
-                <a class="post-title" href="/2020/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E8%AE%BE%E6%83%B3/"
-                >微服务网关设想</a
-                >
+                <a class="post-title" href="/2020/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E8%AE%BE%E6%83%B3/">
+                    微服务网关设想
+                </a>
             </li>
         
     </ul>
 </section>
+<!--分页-->
+<!--分页选择器-->
+
+<nav class="page-nav">
+    <span class="page-number current">1</span>
+</nav>
+<style>
+    .page-nav {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .page-number {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-decoration: none;
+        color: blue;
+    }
+    .current {
+        color: black;
+    }
+    .prev {
+        text-decoration: none;
+        color: blue;
+    }
+    .next {
+        text-decoration: none;
+        color: blue;
+    }
+</style>
+<style>
+    .post-archive {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+</style>
 
 </div>
 

@@ -84,9 +84,8 @@
   padding-left: 0.8em;
 }
 .post-wrapper code {
-  background: #eee;
-  text-shadow: 0 1px #fff;
-  padding: 0 0.3em;
+  padding: 0 0.5em;
+  background-color: rgba(174,220,174,0.25);
 }
 .post-wrapper blockquote {
   background-color: rgba(174,220,174,0.25);
@@ -94,6 +93,7 @@
   margin: 1rem 0;
   border-left: 0.35rem solid #5cb85c;
   border-radius: 0.5rem;
+  text-shadow: 0 1px #fff;
   color: #6c6c6c;
   font-size: 0.9rem;
 }

@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: "小菠菜的自留地"
-subtitle: '一个理想主义者的挣扎'
+title: '小菠菜的笔记'
+subtitle: 'good good study, day day up!'
 description: ''
 keywords:
 author: inferno33
@@ -22,7 +22,7 @@ pretty_urls:
 
 # Directory
 source_dir: source
-public_dir: public
+public_dir: docs # 为了匹配github page的docs目录而更改
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
@@ -62,7 +62,7 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 20
   order_by: -date
 
 # Category & Tag

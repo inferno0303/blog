@@ -1,12 +1,21 @@
+<!--文章归档-->
 <section class="archive">
     <ul class="post-archive">
         <% page.posts.each(function (post) { %>
             <li class="post-item">
                 <span class="post-date"><%= date(post.date, "YYYY-MM-DD") %></span>
-                <a class="post-title" href="<%- url_for(post.path) %>"
-                ><%= post.title %></a
-                >
+                <a class="post-title" href="<%- url_for(post.path) %>">
+                    <%= post.title %>
+                </a>
             </li>
         <% }) %>
     </ul>
 </section>
+<!--分页-->
+<%- partial('paginator.ejs') %>
+<style>
+    .post-archive {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+</style>

@@ -1,0 +1,34 @@
+<!--分页选择器-->
+<% if (page.total > 1)%>
+<nav class="page-nav">
+    <%- paginator({
+        "prev_text": "上一页",
+        "next_text": "下一页"
+    })%>
+</nav>
+<style>
+    .page-nav {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .page-number {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-decoration: none;
+        color: blue;
+    }
+    .current {
+        color: black;
+    }
+    .prev {
+        text-decoration: none;
+        color: blue;
+    }
+    .next {
+        text-decoration: none;
+        color: blue;
+    }
+</style>

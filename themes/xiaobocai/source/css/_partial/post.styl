@@ -36,22 +36,27 @@
       box-shadow: 0 0.5em 0.8em #d2d2d2;
       overflow: auto;
 
+      // 序号
       .gutter {
         padding-right 0.8em;
         border-right: 1px dashed #c8c8c8;
       }
 
+      // 代码区
       .code {
         padding-left: 0.8em;
       }
     }
 
+    //  影响`code`的样式
     code {
-      background: #eee;
-      text-shadow: 0 1px #fff;
-      padding: 0 0.3em;
+      //background: #eee;
+      //text-shadow: 0 1px #fff;
+      padding: 0 0.5em;
+      background-color: rgba(174,220,174,0.25)
     }
 
+    //  引用的样式
     blockquote {
       background-color: rgba(174, 220, 174, 0.25);
       padding: 0.8rem;
@@ -59,6 +64,7 @@
       border-left: 0.35rem solid #5cb85c;
       border-radius: 0.5rem;
       //transition: color 0.2s ease-in-out;
+      text-shadow: 0 1px #fff;
       color: #6c6c6c;
       font-size: 0.9rem;
     }
