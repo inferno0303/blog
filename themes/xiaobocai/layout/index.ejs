@@ -1,22 +1,54 @@
 <!-- 首页模板 -->
-<section class="posts">
+<section class="homepage-posts-wrapper">
+    <% let year %> 
     <% page.posts.each(post => { %>
-        <article class="post-wrapper">
-            <h1 class="post-title">
-                <a class="post-title-link" href="<%- url_for(post.path) %>">
+        <!-- 显示年份 -->
+        <% if (date(post.date, "YYYY") !== year) { %>
+            <% year = date(post.date, "YYYY") %> 
+            <div class="homepage-post-year"><%- year %>年</div>
+        <% } %> 
+        <!-- 每条文章 -->
+        <article class="homepage-post">
+            <time class="homepage-post-time">
+                <%- date(post.date, "YYYY-MM" ) %>
+            </time>
+            <div class="homepage-post-title">
+                <a class="homepage-post-link" href="<%- url_for(post.path) %>">
                     <%= post.title %>
                 </a>
-            </h1>
-            <div class="post-meta">
-                <span class="post-time">
-                    <%- date(post.date, "YYYY-MM-DD" ) %>
-                </span>
-            </div>
-            <div class="post-excerpt">
-                <%- post.excerpt %>
             </div>
         </article>
     <% }) %>
 </section>
 <!--分页-->
-<%- partial('paginator.ejs') %>
+<%- include('./include/paginator.ejs') %>
+
+<style>
+    .homepage-posts-wrapper {
+        padding: 1rem 0;
+    }
+    .homepage-post-year {
+        padding: 1rem 0 1rem 0;
+        color: #4c4948;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .homepage-post {
+        padding: 0.25rem 0;
+        /* border-bottom: dashed 1px #BABABA; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        font-size: 0.9rem;
+        color: #4c4948;
+    }
+    .homepage-post-title {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 1.5rem;
+    }
+    .homepage-post-link {
+        text-decoration: none;
+        color: #4c4948;
+    }
+</style>

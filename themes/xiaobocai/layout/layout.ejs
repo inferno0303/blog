@@ -1,55 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= config.title %>
-    </title>
-    <!-- 网站图标-->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-    <!-- css入口 -->
-    <%- css('css/style.css') %>
-    <!-- <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="./js/index.js"></script> -->
-</head>
+<html lang="zh-CN">
+<%- include('./include/head') %>
 
 <body>
-<!--header-->
-<header class="header">
-    <div class="blog-title">
-        <a href="<%- url_for() %>" class="blog-title-link">
-            <%= config.title %>
-        </a>
+    <%- include('./include/header') %>
+    <div class="main">
+        <%- body %>
     </div>
-    <nav class="navbar">
-        <div class="menu">
-            <% for (name in theme.menu) { %>
-                <div class="menu-item">
-                    <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link">
-                        <%= name %>
-                    </a>
-                </div>
-            <% } %>
-        </div>
-    </nav>
-</header>
-
-<div class="main">
-    <%- body %>
-</div>
-
-<div class="footer">
-    <p>
-        © Copyright 2022 小菠菜
-    </p>
-    <p>
-        Power By <a href="https://hexo.io/" style="text-decoration: none">Hexo</a>
-    </p>
-</div>
+    <%- include('./include/footer') %>
 </body>
 
 </html>

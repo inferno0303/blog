@@ -1,0 +1,10 @@
+<div>
+    <% site.tags.forEach((tag) => { %>
+        <div>
+            <a class="tag" href="<%= url_for(tag.path) %>">
+                <%= tag.name %>
+            </a>
+        </div>
+    <% }) %>
+    <% console.log(list_tags()) %> 
+</div>
