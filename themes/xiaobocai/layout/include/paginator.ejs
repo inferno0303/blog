@@ -2,26 +2,34 @@
 <% if (page.total > 1)%>
 <nav class="page-nav">
     <%- paginator({
-        "prev_text": "<<<",
-        "next_text": ">>>"
+        "prev_text": "上一页",
+        "next_text": "下一页",
+        "prev_next": false
     })%>
 </nav>
 <style>
     .page-nav {
-        padding: 1rem 1.5rem;
+        padding: 1.5rem;
         display: flex;
         align-items: baseline;
         justify-content: flex-end;
         font-size: 0.85rem;
     }
     .page-number {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        min-width: 2rem;
+        min-height: 2rem;
+        border-radius: 0.2rem;
+        border: solid 1px var(--deep-blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-decoration: none;
-        color: #000;
+        color: var(--deep-blue);
+        margin: 0 0.4rem;
     }
     .current {
-        color: #aaa;
+        color: #fff;
+        background-color: var(--deep-blue);
     }
     .prev {
         text-decoration: none;

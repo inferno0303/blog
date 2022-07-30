@@ -25,6 +25,12 @@
             <div class="menu">
                 
                     <div class="menu-item">
+                        <a href="/" class="menu-item-link">
+                            首页
+                        </a>
+                    </div>
+                    
+                    <div class="menu-item">
                         <a href="/archives" class="menu-item-link">
                             归档
                         </a>
@@ -38,7 +44,7 @@
                     
                     <div class="menu-item">
                         <a target="_blank" rel="noopener" href="https://github.com/inferno0303" class="menu-item-link">
-                            GitHub
+                            关于
                         </a>
                     </div>
                     
@@ -49,20 +55,20 @@
     <div class="main">
         <article class="post-wrapper">
   <div class="post-title">
-    <h1 class="h1-title">银河麒麟V4安装Docker</h1>
+    <h1 class="h1-title">
+      银河麒麟V4安装Docker
+    </h1>
   </div>
   <div class="post-meta">
     <span class="post-tags">
-      标签：
       
-        <span class="tag">
-          note 
-        </span>
-       
+        <a href="/tags/note">#note</a>
+        
     </span>
-    <span class="post-time">发布日期：2020-09-30</span>
+    <span class="post-time">2020-09-30</span>
   </div>
-  <div class="post-content"><p><strong>（适用于银河麒麟4.0.2社区版操作系统）</strong></p>
+  <div class="post-content">
+    <p><strong>（适用于银河麒麟4.0.2社区版操作系统）</strong></p>
 <h4 id="0、下载deb包"><a href="#0、下载deb包" class="headerlink" title="0、下载deb包"></a>0、下载deb包</h4><p>银河麒麟v4操作系统，基于ubuntu1604LTS，下载对应版本的deb包可直接安装。<br>直接在这个网站搜寻ubuntu仓库的deb包，输入包名即可。（需要科学上网）<br><code>https://pkgs.org</code></p>
 <h4 id="1、在干净的银河麒麟操作系统中，安装必须的组件lrzsz、htop："><a href="#1、在干净的银河麒麟操作系统中，安装必须的组件lrzsz、htop：" class="headerlink" title="1、在干净的银河麒麟操作系统中，安装必须的组件lrzsz、htop："></a>1、在干净的银河麒麟操作系统中，安装必须的组件lrzsz、htop：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i lrzsz_0.12.21-10_build0.16.04.1_amd64.deb</span><br><span class="line">sudo dpkg -i htop_2.0.1-1_amd64.deb</span><br></pre></td></tr></table></figure>
 
@@ -71,15 +77,13 @@
 <h4 id="3、设置国内的docker-registry地址："><a href="#3、设置国内的docker-registry地址：" class="headerlink" title="3、设置国内的docker registry地址："></a>3、设置国内的docker registry地址：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /etc/docker</span><br><span class="line">sudo vim /etc/docker/daemon.json</span><br><span class="line">输入以下内容并保存：</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [</span><br><span class="line">    &quot;https://hub-mirror.c.163.com&quot;,</span><br><span class="line">    &quot;https://mirror.baidubce.com&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line">最后重启docker服务：</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
 
 <h4 id="4、运行hello-world镜像，测试安装是否成功："><a href="#4、运行hello-world镜像，测试安装是否成功：" class="headerlink" title="4、运行hello-world镜像，测试安装是否成功："></a>4、运行hello-world镜像，测试安装是否成功：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br><span class="line">阿里云镜像加速器：</span><br><span class="line"></span><br><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://ylfo3bxn.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
-</div>
+
+  </div>
 </article>
     </div>
     <div class="footer">
     <p>
-        © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="text-decoration: none">inferno0303</a>
-    </p>
-    <p>
-        Power By <a target="_blank" rel="noopener" href="https://hexo.io/" style="text-decoration: none">Hexo</a>
+        © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="color: #ccc;">inferno0303</a>
     </p>
 </div>
 </body>

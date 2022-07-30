@@ -25,6 +25,12 @@
             <div class="menu">
                 
                     <div class="menu-item">
+                        <a href="/" class="menu-item-link">
+                            首页
+                        </a>
+                    </div>
+                    
+                    <div class="menu-item">
                         <a href="/archives" class="menu-item-link">
                             归档
                         </a>
@@ -38,7 +44,7 @@
                     
                     <div class="menu-item">
                         <a target="_blank" rel="noopener" href="https://github.com/inferno0303" class="menu-item-link">
-                            GitHub
+                            关于
                         </a>
                     </div>
                     
@@ -49,20 +55,20 @@
     <div class="main">
         <article class="post-wrapper">
   <div class="post-title">
-    <h1 class="h1-title">Java多线程（一）</h1>
+    <h1 class="h1-title">
+      Java多线程（一）
+    </h1>
   </div>
   <div class="post-meta">
     <span class="post-tags">
-      标签：
       
-        <span class="tag">
-          note 
-        </span>
-       
+        <a href="/tags/note">#note</a>
+        
     </span>
-    <span class="post-time">发布日期：2022-05-16</span>
+    <span class="post-time">2022-05-16</span>
   </div>
-  <div class="post-content"><h1 id="Java多线程"><a href="#Java多线程" class="headerlink" title="Java多线程"></a>Java多线程</h1><h2 id="1、进程和线程的联系"><a href="#1、进程和线程的联系" class="headerlink" title="1、进程和线程的联系"></a>1、进程和线程的联系</h2><h3 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h3><p>串行：初期计算机只能串行执行任务，并且需要长时间等待用户输入</p>
+  <div class="post-content">
+    <h1 id="Java多线程"><a href="#Java多线程" class="headerlink" title="Java多线程"></a>Java多线程</h1><h2 id="1、进程和线程的联系"><a href="#1、进程和线程的联系" class="headerlink" title="1、进程和线程的联系"></a>1、进程和线程的联系</h2><h3 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h3><p>串行：初期计算机只能串行执行任务，并且需要长时间等待用户输入</p>
 <p>批处理：预先将用户的指令集中成清单，批量串行处理用户指令，仍然无法并发执行</p>
 <p>进程：进程独占内存空间，保存各自运行状态，相互间不干扰且可以互相切换，为并发处理任务提供了可能</p>
 <p>线程：共享进程的内存资源，相互间切换更快速，支持更细粒度的任务控制，使进程内的子任务得以并发执行</p>
@@ -183,15 +189,13 @@
 </ul>
 <p>要经常检查中断标志位</p>
 <h2 id="10、yield暗示可以让出当前线程的CPU资源"><a href="#10、yield暗示可以让出当前线程的CPU资源" class="headerlink" title="10、yield暗示可以让出当前线程的CPU资源"></a>10、yield暗示可以让出当前线程的CPU资源</h2><p>不会对锁造成影响，调度器可能会忽略，不一定每次都一样</p>
-</div>
+
+  </div>
 </article>
     </div>
     <div class="footer">
     <p>
-        © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="text-decoration: none">inferno0303</a>
-    </p>
-    <p>
-        Power By <a target="_blank" rel="noopener" href="https://hexo.io/" style="text-decoration: none">Hexo</a>
+        © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="color: #ccc;">inferno0303</a>
     </p>
 </div>
 </body>

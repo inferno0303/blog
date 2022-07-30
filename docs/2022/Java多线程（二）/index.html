@@ -25,6 +25,12 @@
             <div class="menu">
                 
                     <div class="menu-item">
+                        <a href="/" class="menu-item-link">
+                            首页
+                        </a>
+                    </div>
+                    
+                    <div class="menu-item">
                         <a href="/archives" class="menu-item-link">
                             归档
                         </a>
@@ -38,7 +44,7 @@
                     
                     <div class="menu-item">
                         <a target="_blank" rel="noopener" href="https://github.com/inferno0303" class="menu-item-link">
-                            GitHub
+                            关于
                         </a>
                     </div>
                     
@@ -49,20 +55,20 @@
     <div class="main">
         <article class="post-wrapper">
   <div class="post-title">
-    <h1 class="h1-title">Java多线程（二）</h1>
+    <h1 class="h1-title">
+      Java多线程（二）
+    </h1>
   </div>
   <div class="post-meta">
     <span class="post-tags">
-      标签：
       
-        <span class="tag">
-          note 
-        </span>
-       
+        <a href="/tags/note">#note</a>
+        
     </span>
-    <span class="post-time">发布日期：2022-05-17</span>
+    <span class="post-time">2022-05-17</span>
   </div>
-  <div class="post-content"><h1 id="Java多线程与并发"><a href="#Java多线程与并发" class="headerlink" title="Java多线程与并发"></a>Java多线程与并发</h1><h2 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h2><p><strong>线程安全问题的原因</strong></p>
+  <div class="post-content">
+    <h1 id="Java多线程与并发"><a href="#Java多线程与并发" class="headerlink" title="Java多线程与并发"></a>Java多线程与并发</h1><h2 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h2><p><strong>线程安全问题的原因</strong></p>
 <ul>
 <li>存在共享数据（临界资源）</li>
 <li>存在多条线程共同操作这些共享数据</li>
@@ -129,15 +135,13 @@
 <li>ReentrantLock可以灵活的实现多路通知</li>
 <li>sync操作的是对象头的Mark Word，lock调用的是Unsafe类的park方法</li>
 </ul>
-</div>
+
+  </div>
 </article>
     </div>
     <div class="footer">
     <p>
-        © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="text-decoration: none">inferno0303</a>
-    </p>
-    <p>
-        Power By <a target="_blank" rel="noopener" href="https://hexo.io/" style="text-decoration: none">Hexo</a>
+        © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="color: #ccc;">inferno0303</a>
     </p>
 </div>
 </body>

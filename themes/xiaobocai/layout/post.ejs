@@ -1,17 +1,18 @@
 <article class="post-wrapper">
   <div class="post-title">
-    <h1 class="h1-title"><%= page.title %></h1>
+    <h1 class="h1-title">
+      <%= page.title %>
+    </h1>
   </div>
   <div class="post-meta">
     <span class="post-tags">
-      标签：
-      <% page.tags.each(tag => { %>
-        <span class="tag">
-          <%- tag.name %> 
-        </span>
-      <% }) %> 
+      <% page.tags.each(tag=> { %>
+        <a href="<%- url_for("/tags/" + tag.name) %>">#<%- tag.name %></a>
+        <% }) %>
     </span>
-    <span class="post-time">发布日期：<%- date(page.date, "YYYY-MM-DD") %></span>
+    <span class="post-time"><%- date(page.date, "YYYY-MM-DD" ) %></span>
   </div>
-  <div class="post-content"><%- page.content %></div>
+  <div class="post-content">
+    <%- page.content %>
+  </div>
 </article>

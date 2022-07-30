@@ -1,5 +1,5 @@
 ---
-title: Java的内存模型JMM）
+title: Java的内存模型JMM
 date: 2022-05-16
 tags: note
 ---

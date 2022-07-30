@@ -1,29 +1,28 @@
 <div class="tags-wrapper">
     <h1 class="tags-page-title">标签</h1>
-    <ul class="tags">
-        <% site.tags.forEach((tag) => { %>
-            <li class="tag-item">
-                <a class="tag-link" href="<%= url_for(tag.path) %>">
-                    #<%= tag.name %>
-                </a>
-            </li>
-        <% }) %>
-    </ul>
+    <% site.tags.forEach((tag) => { %>
+        <div class="tag-item">
+            <a class="tag-link" href="<%= url_for(tag.path) %>">
+                # <%= tag.name %>
+            </a>
+        </div>
+    <% }) %>
     
     <% console.log(list_tags()) %> 
 </div>
 <style>
     .tags-wrapper {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding: 1rem 2.5rem;
     }
     .tags-page-title {
-        color: #041725;
-        padding-left: 2.5rem;
+        color: var(--deep-blue);
         font-size: 1.5rem;
     }
     .tag-link {
         text-decoration: none;
         color: #041725;
+    }
+    .tag-link:hover {
+        color: var(--link-hover);
     }
 </style>

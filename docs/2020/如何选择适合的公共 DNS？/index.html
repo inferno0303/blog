@@ -25,6 +25,12 @@
             <div class="menu">
                 
                     <div class="menu-item">
+                        <a href="/" class="menu-item-link">
+                            首页
+                        </a>
+                    </div>
+                    
+                    <div class="menu-item">
                         <a href="/archives" class="menu-item-link">
                             归档
                         </a>
@@ -38,7 +44,7 @@
                     
                     <div class="menu-item">
                         <a target="_blank" rel="noopener" href="https://github.com/inferno0303" class="menu-item-link">
-                            GitHub
+                            关于
                         </a>
                     </div>
                     
@@ -49,20 +55,20 @@
     <div class="main">
         <article class="post-wrapper">
   <div class="post-title">
-    <h1 class="h1-title">如何选择适合的公共 DNS？</h1>
+    <h1 class="h1-title">
+      如何选择适合的公共 DNS？
+    </h1>
   </div>
   <div class="post-meta">
     <span class="post-tags">
-      标签：
       
-        <span class="tag">
-          note 
-        </span>
-       
+        <a href="/tags/note">#note</a>
+        
     </span>
-    <span class="post-time">发布日期：2020-12-01</span>
+    <span class="post-time">2020-12-01</span>
   </div>
-  <div class="post-content"><p>DNS 是互联网的基石之一，之前我在博客的 DNS 标签下写了不少关于权威 DNS 的文章，这次写一篇关于递归 DNS（也就是公共 DNS）的文章，从公共 DNS 的必要性、利弊来讲一讲选择公共 DNS 需要关注的事情，以及列举一些当前主流的公共 DNS。</p>
+  <div class="post-content">
+    <p>DNS 是互联网的基石之一，之前我在博客的 DNS 标签下写了不少关于权威 DNS 的文章，这次写一篇关于递归 DNS（也就是公共 DNS）的文章，从公共 DNS 的必要性、利弊来讲一讲选择公共 DNS 需要关注的事情，以及列举一些当前主流的公共 DNS。</p>
 <p>时隔一年的更新：一年过去，这篇文章俨然成为了最受搜索引擎欢迎的公共 DNS 测评文章。诚惶诚恐，更新了部分 DNS 的介绍，以及增加了几段科普。<br>时隔两年的更新：采集、抄袭我的文章有什么用呢？我的这篇文章搜索引擎权重高是因为我频繁更新、坚持原创、不落窠臼。你们再怎么采集，你们的搜索引擎权重真的能超过我么？<br>2020 年更新：新增「是否支持 TCP 查询」；阿里公共 DNS 已支持 DoH&#x2F;DoT；腾讯 Public DNS+ 开始公测 DoH、DoT</p>
 <h2 id="是否需要公共-DNS"><a href="#是否需要公共-DNS" class="headerlink" title="是否需要公共 DNS"></a>是否需要公共 DNS</h2><p>在选择公共 DNS 之前，你需要考虑一个问题：你是否真的需要公共 DNS 么？</p>
 <p>无论我们是 PPPoE 拨号上网，还是 DHCP 连接光猫上网，互联网服务提供商（ISP）都会下发两个 DNS 给你。为了方便介绍，在下文中我称这两个 DNS 为 ISP DNS。<br>在 DNS 的解析过程中，用户向递归 DNS 发起请求，递归 DNS 向权威 DNS 请求解析结果，可以说递归 DNS 起到一种转发的作用。运营商的 ISP DNS 就是递归 DNS；同时一些个人或互联网服务提供商也会架设自己的递归 DNS 开放给所有人使用，称为公共 DNS。</p>
@@ -123,15 +129,13 @@
 <blockquote>
 <p>本文著作权归作者 Sukka 所有。本文采用 CC BY-NC-SA 4.0 许可协议，商业转载请联系作者获得授权，非商业转载请注明出处。<br>作者：Sukka<br>来源：如何选择适合的公共 DNS？ [2020] | Sukka’s Blog<br>链接：<a target="_blank" rel="noopener" href="https://blog.skk.moe/post/which-public-dns-to-use/">https://blog.skk.moe/post/which-public-dns-to-use/</a></p>
 </blockquote>
-</div>
+
+  </div>
 </article>
     </div>
     <div class="footer">
     <p>
-        © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="text-decoration: none">inferno0303</a>
-    </p>
-    <p>
-        Power By <a target="_blank" rel="noopener" href="https://hexo.io/" style="text-decoration: none">Hexo</a>
+        © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="color: #ccc;">inferno0303</a>
     </p>
 </div>
 </body>

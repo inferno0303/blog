@@ -21,21 +21,22 @@
     .post-meta {
       display: flex;
       align-items: baseline;
-      justify-content flex-end;
+      justify-content center;
+      font-size: 0.8rem;
+      color: #aaa;
+      padding-bottom: 1rem;
+      border-bottom: solid 1px #eee;
 
       // 文章标签
       .post-tags {
-        font-size: 0.8rem;
-        font-style: italic;
-        color: #aaa;
-        padding-right: 1.5rem;
+        padding-right: 1rem;
+        a {
+          color: #aaa;
+        }
       }
 
       // 文章发布时间
       .post-time {
-        font-size: 0.8rem;
-        font-style: italic;
-        color: #aaa;
       }
     }
 
@@ -45,7 +46,7 @@
     .post-content {
       line-height: 1.6;
       h1, h2 {
-        color: #003366;
+        color: var(--deep-blue);
       }
 
       figure {
@@ -58,7 +59,7 @@
 
       a:hover {
         text-decoration: underline;
-        color #c80000
+        color: var(--link-hover)
       }
     }
 

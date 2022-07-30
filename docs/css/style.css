@@ -1,5 +1,7 @@
 :root {
   --max-content-width: 900px;
+  --deep-blue: #192231;
+  --link-hover: #c80000;
 }
 body {
   margin: 0;
@@ -11,7 +13,7 @@ body {
 .header {
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
-  background-color: #041725;
+  background-color: var(--deep-blue);
   box-shadow: 0 10px 10px #ccc;
 }
 .header .header-wrapper {
@@ -30,7 +32,7 @@ body {
 }
 .header .blog-title .blog-title-link {
   text-decoration: none;
-  color: #e3eaf4;
+  color: #fff;
 }
 .header .menu .menu-item {
   display: inline-block;
@@ -40,17 +42,18 @@ body {
 }
 .header .menu .menu-item .menu-item-link {
   text-decoration: none;
-  color: #e3eaf4;
+  color: #fff;
 }
 .footer {
   max-width: var(--max-content-width);
-  margin: 1rem auto;
-  border-top: dashed 1px #bababa;
+  margin: 0 auto;
+  padding: 1rem 0;
+  border-top: solid 1px #eee;
 }
 .footer p {
-  color: #4c4948;
-  font-size: 0.7rem;
-  text-align: right;
+  color: #ccc;
+  font-size: 0.8rem;
+  text-align: center;
 }
 .post-wrapper {
   padding-left: 2rem;
@@ -66,17 +69,16 @@ body {
 .post-wrapper .post-meta {
   display: flex;
   align-items: baseline;
-  justify-content: flex-end;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  padding-bottom: 1rem;
+  border-bottom: solid 1px #eee;
 }
 .post-wrapper .post-meta .post-tags {
-  font-size: 0.8rem;
-  font-style: italic;
-  color: #aaa;
-  padding-right: 1.5rem;
+  padding-right: 1rem;
 }
-.post-wrapper .post-meta .post-time {
-  font-size: 0.8rem;
-  font-style: italic;
+.post-wrapper .post-meta .post-tags a {
   color: #aaa;
 }
 .post-wrapper .post-content {
@@ -84,7 +86,7 @@ body {
 }
 .post-wrapper .post-content h1,
 .post-wrapper .post-content h2 {
-  color: #036;
+  color: var(--deep-blue);
 }
 .post-wrapper .post-content figure {
   margin: 0 1.5em;
@@ -94,7 +96,7 @@ body {
 }
 .post-wrapper .post-content a:hover {
   text-decoration: underline;
-  color: #c80000;
+  color: var(--link-hover);
 }
 .post-wrapper .highlight {
   background-color: #f5f5f5;

@@ -1,15 +1,21 @@
-<!--文章归档-->
 <section class="archive-wrapper">
-    <h1 class="archive-page-title">归档（<%- site.posts.length %>篇）</h1>
+    <% if(is_archive()) { %>
+        <h1 class="archive-page-title">归档（<%- site.posts.length %>篇）</h1>
+    <% } %>
+
+    <% if(is_tag()) { %>
+        <h1 class="archive-page-title">#<%- page.tag %></h1>
+    <% } %>
+    
     <ul class="archive-posts">
         <% page.posts.each(function (post) { %>
-            <li class="post-item">
+            <li class="post-item">  
                 <span class="post-time"><%= date(post.date, "YYYY-MM-DD") %></span>
-                <div class="post-title">
+                <span class="post-title">
                     <a class="post-title-link" href="<%- url_for(post.path) %>">
                         <%= post.title %>
                     </a>
-                </div>
+                </span>
             </li>
         <% }) %>
     </ul>
@@ -21,29 +27,36 @@
 <!-- 样式 -->
 <style>
     .archive-wrapper{
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding: 1rem 2.5rem;
     }
-    .archive-wrapper .archive-page-title {
-        color: #041725;
-        padding-left: 2.5rem;
+    .archive-page-title {
+        color: var(--deep-blue);
+        font-size: 1.5rem;
     }
-    .archive-wrapper .post-item {
+    .archive-posts {
+        padding: 0;
+    }
+    .post-item {
         padding: 0.25rem 0;
         /* border-bottom: dashed 1px #BABABA; */
         display: flex;
         justify-content: flex-start;
         align-items: baseline;
         font-size: 0.9rem;
-        color: #4c4948;
     }
-    .archive-wrapper .post-item .post-title {
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-left: 1.5rem;
+    .post-time {
+        color: var(--deep-blue);
+        min-width: 6rem;
     }
-    .archive-wrapper .post-item .post-title .post-title-link {
-        text-decoration: none;
-        color: #4c4948;
+    .post-title {
+        padding-left: 1.5rem;
     }
+    .post-title-link {
+        text-decoration: none;  
+        color: var(--deep-blue);
+    }
+    .post-title-link:hover {
+        text-decoration: underline;
+        color: var(--link-hover);
+      }
 </style>
