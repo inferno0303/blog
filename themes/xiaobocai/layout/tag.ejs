@@ -1,6 +1,8 @@
 <!--文章归档-->
 <section class="archive-wrapper">
-    <h1 class="archive-page-title">归档（<%- site.posts.length %>篇）</h1>
+    <h1 class="tag-label">
+        #<%- page.tag %>
+    </h1>
     <ul class="archive-posts">
         <% page.posts.each(function (post) { %>
             <li class="post-item">
@@ -24,7 +26,7 @@
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
     }
-    .archive-wrapper .archive-page-title {
+    .archive-wrapper .tag-label {
         color: #041725;
         padding-left: 2.5rem;
     }

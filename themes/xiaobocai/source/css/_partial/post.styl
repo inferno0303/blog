@@ -1,7 +1,15 @@
 .post-wrapper {
-
   padding-left: 2rem;
   padding-right: 2rem;
+
+    // 文章标题
+    .post-title {
+    }
+
+    // 文章一级标题
+    .h1-title {
+      text-align: center;
+    }
 
     // 文章标题链接
     .post-title-link {
@@ -9,15 +17,36 @@
       color: #000;
     }
 
-    // 文章发布时间
-    .post-time {
-      font-size: 0.8rem;
-      color: #aaa;
+    // 文章信息
+    .post-meta {
+      display: flex;
+      align-items: baseline;
+      justify-content flex-end;
+
+      // 文章标签
+      .post-tags {
+        font-size: 0.8rem;
+        font-style: italic;
+        color: #aaa;
+        padding-right: 1.5rem;
+      }
+
+      // 文章发布时间
+      .post-time {
+        font-size: 0.8rem;
+        font-style: italic;
+        color: #aaa;
+      }
     }
+
+    
 
     // 文章正文
     .post-content {
       line-height: 1.6;
+      h1, h2 {
+        color: #003366;
+      }
 
       figure {
         margin: 0 1.5em;

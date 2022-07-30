@@ -25,8 +25,20 @@
             <div class="menu">
                 
                     <div class="menu-item">
+                        <a href="/archives" class="menu-item-link">
+                            归档
+                        </a>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <a href="/tags" class="menu-item-link">
+                            标签
+                        </a>
+                    </div>
+                    
+                    <div class="menu-item">
                         <a target="_blank" rel="noopener" href="https://github.com/inferno0303" class="menu-item-link">
-                            关于
+                            GitHub
                         </a>
                     </div>
                     
@@ -37,10 +49,18 @@
     <div class="main">
         <article class="post-wrapper">
   <div class="post-title">
-    <h1 class="title">废话文学之关键技术章节</h1>
+    <h1 class="h1-title">废话文学之关键技术章节</h1>
   </div>
   <div class="post-meta">
-    <span class="post-time">2020-03-10</span>
+    <span class="post-tags">
+      标签：
+      
+        <span class="tag">
+          note 
+        </span>
+       
+    </span>
+    <span class="post-time">发布日期：2020-03-10</span>
   </div>
   <div class="post-content"><h2 id="废话文学之关键技术章节"><a href="#废话文学之关键技术章节" class="headerlink" title="废话文学之关键技术章节"></a>废话文学之关键技术章节</h2><h4 id="基于DiffServ模型的报文QoS技术"><a href="#基于DiffServ模型的报文QoS技术" class="headerlink" title="基于DiffServ模型的报文QoS技术"></a>基于DiffServ模型的报文QoS技术</h4><p>在实际应用中，上层软件与下层硬件设备不仅会交换控制指令和状态信息等小尺寸报文，还可能会传输连续大尺寸的报文流，比如通信频段侦察设备的实时侦察监听、事后分析时从设备存储模块中下载中频采样数据等，不同类型的报文承载的业务属性不同，所属业务的优先级也不同。这里可以分为三种情况：部分业务对实时性要求较高，对传输延迟较敏感，但可容忍一定范围内丢包，例如图像、音频的实时侦听，这种类型的业务不需要做丢包重传；部分业务对实时性要求较低，对传输延迟不敏感，但不能容忍丢包的情况，例如事后分析时从设备存储模块中下载中频采样数据，这种类型的业务需要做丢包重传；部分业务对实时性要求一般，但不能容忍丢包的情况，例如控制指令和状态信息回传。<br>在以往采用的软硬件“直连式数据传输”方式中，存在不易察觉的系统设计缺陷，即没有考虑到在持续大尺寸报文流和小尺寸报文并发传输的过程中，小尺寸报文流的传输带宽和处理资源有可能被挤占，引发小尺寸报文的丢包以及到达延迟增加，降低系统可靠性。<br>介于原有数据传输方式的弊端，该系统提出了一种新的解决方式：基于DiffServ模型的报文QoS技术。DiffServ（Differentiated Service，区分服务）模型由RFC2475定义，在区分服务中，根据服务要求对不同业务的数据进行分类，对报文按类进行优先级标记，然后有差别地提供服务。该系统会将流入的数据报文在INPUT（输入）阶段对其进行优先级标定，不同优先级的数据报文将会进入到由Core层维护的PerProcess（预处理）队列中，Process线程将根据预设的处理顺序，优先处理对延迟要求较高的数据报文。报文优先级5个不同的挡位的标记，分别对应延迟敏感、延迟丢包敏感、丢包敏感、事后数据传输、实时控制指令。通过区分报文优先级和处理策略，合理调度不同业务所占用的资源，提高控制报文的传输可靠性，降低延迟敏感类报文的到达时延。</p>
 <h4 id="基于Token-Bucket算法的报文速率控制技术"><a href="#基于Token-Bucket算法的报文速率控制技术" class="headerlink" title="基于Token Bucket算法的报文速率控制技术"></a>基于Token Bucket算法的报文速率控制技术</h4><p>在软件系统的设计中，对外部输入进行有效性校验是十分重要的。在实际应用中，上层软件可能存在如下情况：同时向同一设备发送控制指令和请求当前状态，较常见的是在软件初始化时，软件的执行逻辑被编写为发送控制指令后，立即请求设备状态。站在硬件设备的视角，这样的操作是同步且阻塞的，无法在设备上同时执行两条命令。为了避免该情况，分发服务需要控制在单位时间内传送给同一设备的报文速率。<br>Token Bucket（令牌桶）算法是成熟的流量控制技术，该算法需要维护一个栈（Stack），以及预设一个QPS参数，在单位时间内系统会按恒定1&#x2F;QPS时间间隔入栈一个token（令牌），每当处理一个请求时，就会消耗栈中的一个令牌，若栈中令牌数量消耗为0，则等待1&#x2F;QPS的时间，使下一个令牌生成后再处理该请求。可见，在令牌桶流控算法中，流量的最大值为令牌桶容量，即栈的最大容量；流量的收敛值为令牌生成速率，即1&#x2F;QPS。<br>该系统在Core层维护的PerDispatch（预分发）链阶段执行消耗令牌的操作，将数据报文打上token标记，获得token的数据报文将会被Dispatcher（分发器）线程立即发送，因速率过大没有获得token的数据报文将会被分发器线程拒绝分发，直到该数据报文获得token。采用Token Bucket算法的报文速率控制技术后，在该服务的OUTPUT（输出）端，报文的输出速率收敛于1&#x2F;QPS，同时QPS是可调的，支持针对不同设备的性能设置不同的QPS值。采用流控算法后，不仅能保证报文的有序到达，还可避免上层软件重复请求造成的硬件负担加重，甚至可避免因为控制指令拥塞导致的硬件宕机的情况，提高了系统的鲁棒性。</p>
@@ -50,7 +70,7 @@
     </div>
     <div class="footer">
     <p>
-        © Copyright 2022 小菠菜
+        © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="text-decoration: none">inferno0303</a>
     </p>
     <p>
         Power By <a target="_blank" rel="noopener" href="https://hexo.io/" style="text-decoration: none">Hexo</a>

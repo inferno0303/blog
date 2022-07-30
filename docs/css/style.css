@@ -11,7 +11,7 @@ body {
 .header {
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
-  background-color: #252529;
+  background-color: #041725;
   box-shadow: 0 10px 10px #ccc;
 }
 .header .header-wrapper {
@@ -30,7 +30,7 @@ body {
 }
 .header .blog-title .blog-title-link {
   text-decoration: none;
-  color: #fff;
+  color: #e3eaf4;
 }
 .header .menu .menu-item {
   display: inline-block;
@@ -40,32 +40,51 @@ body {
 }
 .header .menu .menu-item .menu-item-link {
   text-decoration: none;
-  color: #fff;
+  color: #e3eaf4;
 }
 .footer {
-  max-width: var(--max-width);
-  margin: 15px auto;
-  padding: 0.75rem 1.5rem;
+  max-width: var(--max-content-width);
+  margin: 1rem auto;
   border-top: dashed 1px #bababa;
 }
 .footer p {
-  font-size: 0.8rem;
+  color: #4c4948;
+  font-size: 0.7rem;
   text-align: right;
 }
 .post-wrapper {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+.post-wrapper .h1-title {
+  text-align: center;
+}
 .post-wrapper .post-title-link {
   text-decoration: none;
   color: #000;
 }
-.post-wrapper .post-time {
+.post-wrapper .post-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+}
+.post-wrapper .post-meta .post-tags {
   font-size: 0.8rem;
+  font-style: italic;
+  color: #aaa;
+  padding-right: 1.5rem;
+}
+.post-wrapper .post-meta .post-time {
+  font-size: 0.8rem;
+  font-style: italic;
   color: #aaa;
 }
 .post-wrapper .post-content {
   line-height: 1.6;
+}
+.post-wrapper .post-content h1,
+.post-wrapper .post-content h2 {
+  color: #036;
 }
 .post-wrapper .post-content figure {
   margin: 0 1.5em;

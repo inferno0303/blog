@@ -25,8 +25,20 @@
             <div class="menu">
                 
                     <div class="menu-item">
+                        <a href="/archives" class="menu-item-link">
+                            归档
+                        </a>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <a href="/tags" class="menu-item-link">
+                            标签
+                        </a>
+                    </div>
+                    
+                    <div class="menu-item">
                         <a target="_blank" rel="noopener" href="https://github.com/inferno0303" class="menu-item-link">
-                            关于
+                            GitHub
                         </a>
                     </div>
                     
@@ -37,10 +49,18 @@
     <div class="main">
         <article class="post-wrapper">
   <div class="post-title">
-    <h1 class="title">npm如何换源、清除缓存？</h1>
+    <h1 class="h1-title">npm如何换源、清除缓存？</h1>
   </div>
   <div class="post-meta">
-    <span class="post-time">2021-05-07</span>
+    <span class="post-tags">
+      标签：
+      
+        <span class="tag">
+          tips 
+        </span>
+       
+    </span>
+    <span class="post-time">发布日期：2021-05-07</span>
   </div>
   <div class="post-content"><p><strong>1、npm换源：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a)、临时生效：</span><br><span class="line">npm install 包的名字 --registry https://registry.npm.taobao.org</span><br><span class="line"></span><br><span class="line">b、设置npm的配置（全局配置）</span><br><span class="line">// 查看npm源的当前地址</span><br><span class="line">npm config get registry</span><br><span class="line"></span><br><span class="line">// 设置淘宝镜像地址</span><br><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
@@ -67,7 +87,7 @@
     </div>
     <div class="footer">
     <p>
-        © Copyright 2022 小菠菜
+        © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="text-decoration: none">inferno0303</a>
     </p>
     <p>
         Power By <a target="_blank" rel="noopener" href="https://hexo.io/" style="text-decoration: none">Hexo</a>

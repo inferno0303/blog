@@ -1,13 +1,13 @@
 <!-- 首页模板 -->
 <section class="homepage-posts-wrapper">
-    <% let year %> 
+    <% let year %>
     <% page.posts.each(post => { %>
-        <!-- 显示年份 -->
+        <!-- 年份 -->
         <% if (date(post.date, "YYYY") !== year) { %>
             <% year = date(post.date, "YYYY") %> 
             <div class="homepage-post-year"><%- year %>年</div>
         <% } %> 
-        <!-- 每条文章 -->
+        <!-- 文章 -->
         <article class="homepage-post">
             <time class="homepage-post-time">
                 <%- date(post.date, "YYYY-MM" ) %>
@@ -20,18 +20,18 @@
         </article>
     <% }) %>
 </section>
-<!--分页-->
+<!-- 分页 -->
 <%- include('./include/paginator.ejs') %>
-
+<!-- index页样式 -->
 <style>
     .homepage-posts-wrapper {
         padding: 1rem 0;
     }
     .homepage-post-year {
         padding: 1rem 0 1rem 0;
-        color: #4c4948;
+        color: #003366;
         font-size: 1.5rem;
-        font-weight: bold;
+        font-weight: bolder;
     }
     .homepage-post {
         padding: 0.25rem 0;
