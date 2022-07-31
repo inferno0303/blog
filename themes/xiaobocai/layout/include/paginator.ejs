@@ -3,8 +3,7 @@
 <nav class="page-nav">
     <%- paginator({
         "prev_text": "上一页",
-        "next_text": "下一页",
-        "prev_next": false
+        "next_text": "下一页"
     })%>
 </nav>
 <style>
@@ -14,6 +13,9 @@
         align-items: baseline;
         justify-content: flex-end;
         font-size: 0.85rem;
+    }
+    .page-nav a:hover {
+        color: var(--link-hover);
     }
     .page-number {
         min-width: 2rem;
@@ -33,12 +35,12 @@
     }
     .prev {
         text-decoration: none;
-        color: #000;
+        color: var(--deep-blue);
         padding-right: 0.5rem;
     }
     .next {
         text-decoration: none;
-        color: #000;
+        color: var(--deep-blue);
         padding-left: 0.5rem;
     }
 </style>

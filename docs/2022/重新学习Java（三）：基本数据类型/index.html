@@ -11,6 +11,9 @@
     
 <link rel="stylesheet" href="/css/style.css">
 
+    
+<link rel="stylesheet" href="/css/hljs-default-min.css">
+ 
 <meta name="generator" content="Hexo 6.2.0"></head>
 
 <body>
@@ -21,34 +24,32 @@
                 小菠菜NVM
             </a>
         </div>
-        <nav class="navbar">
-            <div class="menu">
-                
-                    <div class="menu-item">
-                        <a href="/" class="menu-item-link">
-                            首页
-                        </a>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <a href="/archives" class="menu-item-link">
-                            归档
-                        </a>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <a href="/tags" class="menu-item-link">
-                            标签
-                        </a>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <a target="_blank" rel="noopener" href="https://github.com/inferno0303" class="menu-item-link">
-                            关于
-                        </a>
-                    </div>
-                    
-            </div>
+        <nav class="menu">
+            
+                <li class="menu-item">
+                    <a href="/">
+                        首页
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="/archives">
+                        归档
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="/tags">
+                        标签
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/inferno0303">
+                        关于
+                    </a>
+                </li>
+            
         </nav>
     </div>
 </header>
@@ -89,15 +90,15 @@
 </ul>
 <h2 id="Java常量"><a href="#Java常量" class="headerlink" title="Java常量"></a>Java常量</h2><p>常量在程序运行时是不能被修改的，在Java中使用final关键字来修饰常量，声明方式和变量类似。例如<code>final double PI = 3.14159</code></p>
 <p>虽然常量名称也可以用小写，但是为了便于识别，通常使用大写字母表示常量。字面量可以赋给任何内置的变量。例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">byte a = 68;</span><br><span class="line">char a = &#x27;A&#x27;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">byte a = 68;<br>char a = &#x27;A&#x27;;<br></code></pre></td></tr></table></figure>
 <p>byte、int、long、short都可以用十进制、16进制以及8进制的方式来表示。<br>当使用字面量的时候，前缀0表示8进制，前缀0x表示16进制，例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int decimal = 100;</span><br><span class="line">int  octal = 0144;</span><br><span class="line">int hexa = 0x64;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">int decimal = 100;<br>int  octal = 0144;<br>int hexa = 0x64;<br></code></pre></td></tr></table></figure>
 
 <p>和其他语言一样，Java的字符串常量也是包含在2个引号之间的字符序列。下面是字符串型字面量的例子。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;Hello World&quot;</span><br><span class="line">&quot;two\nlines&quot;</span><br><span class="line">&quot;\&quot;This is in quotes\&quot;&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">&quot;Hello World&quot;<br>&quot;two\nlines&quot;<br>&quot;\&quot;This is in quotes\&quot;&quot;<br></code></pre></td></tr></table></figure>
 
 <p>字符串常量和字符变量都可以包含任何Unicode字符，例如</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char a = &#x27;\u0001&#x27;;</span><br><span class="line">String a = &quot;\u0001&quot;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">char a = &#x27;\u0001&#x27;;<br>String a = &quot;\u0001&quot;;<br></code></pre></td></tr></table></figure>
 
 <p>Java语言支持一些特殊的转义字符序列。</p>
 <h2 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h2><p>整型、实型（常量）、字符型数据可以混合运算。在运算中不同类型的数据先转化为同一类型，然后进行运算。</p>

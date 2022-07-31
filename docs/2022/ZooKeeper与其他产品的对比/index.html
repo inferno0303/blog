@@ -11,6 +11,9 @@
     
 <link rel="stylesheet" href="/css/style.css">
 
+    
+<link rel="stylesheet" href="/css/hljs-default-min.css">
+ 
 <meta name="generator" content="Hexo 6.2.0"></head>
 
 <body>
@@ -21,34 +24,32 @@
                 小菠菜NVM
             </a>
         </div>
-        <nav class="navbar">
-            <div class="menu">
-                
-                    <div class="menu-item">
-                        <a href="/" class="menu-item-link">
-                            首页
-                        </a>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <a href="/archives" class="menu-item-link">
-                            归档
-                        </a>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <a href="/tags" class="menu-item-link">
-                            标签
-                        </a>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <a target="_blank" rel="noopener" href="https://github.com/inferno0303" class="menu-item-link">
-                            关于
-                        </a>
-                    </div>
-                    
-            </div>
+        <nav class="menu">
+            
+                <li class="menu-item">
+                    <a href="/">
+                        首页
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="/archives">
+                        归档
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="/tags">
+                        标签
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/inferno0303">
+                        关于
+                    </a>
+                </li>
+            
         </nav>
     </div>
 </header>
@@ -131,21 +132,21 @@
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>参考 <a target="_blank" rel="noopener" href="https://zookeeper.apache.org/doc/r3.3.3/zookeeperStarted.html">start</a> 文档。</p>
 <ul>
 <li><p>添加 zoo.cfg 文件，内容如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tickTime=2000</span><br><span class="line">initLimit=10</span><br><span class="line">syncLimit=5</span><br><span class="line">dataDir=/Users/zhoukeke/Downloads/apache-zookeeper-3.8.0-bin/tmp/zookeeper</span><br><span class="line">clientPort=2181</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">tickTime=2000<br>initLimit=10<br>syncLimit=5<br>dataDir=/Users/zhoukeke/Downloads/apache-zookeeper-3.8.0-bin/tmp/zookeeper<br>clientPort=2181<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>启动 <code>bin/zkServer.sh start</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># bin/zkServer.sh start</span><br><span class="line">ZooKeeper JMX enabled by default</span><br><span class="line">Using config: /Users/zhoukeke/Downloads/apache-zookeeper-3.8.0-bin/bin/../conf/zoo.cfg</span><br><span class="line">Starting zookeeper ... STARTED</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext"># bin/zkServer.sh start<br>ZooKeeper JMX enabled by default<br>Using config: /Users/zhoukeke/Downloads/apache-zookeeper-3.8.0-bin/bin/../conf/zoo.cfg<br>Starting zookeeper ... STARTED<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>连接 <code>bin/zkCli.sh -server 127.0.0.1:2181</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$bin/zkCli.sh -server 127.0.0.1:2181</span><br><span class="line">Connecting to 127.0.0.1:2181</span><br><span class="line">2022-04-08 15:08:56,133 [myid:] - INFO  [main:o.a.z.Environment@98] - Client environment:zookeeper.version=3.8.0-5a02a05eddb59aee6ac762f7ea82e92a68eb9c0f, built on 2022-02-25 08:49 UTC</span><br><span class="line">2022-04-08 15:08:56,134 [myid:] - INFO  [main:o.a.z.Environment@98] - Client environment:host.name=localhost</span><br><span class="line">2022-04-08 15:08:56,134 [myid:] - INFO  [main:o.a.z.Environment@98] - Client environment:java.version=17.0.2</span><br><span class="line">2022-04-08 15:08:56,134 [myid:] - INFO  [main:o.a.z.Environment@98]</span><br><span class="line">...</span><br><span class="line">[zk: 127.0.0.1:2181(CONNECTED) 0] help</span><br><span class="line">[zk: 127.0.0.1:2181(CONNECTED) 3] create /zk_pipe_test &quot;hello zk_pipe_test&quot;</span><br><span class="line">Created /zk_pipe_test</span><br><span class="line">[zk: 127.0.0.1:2181(CONNECTED) 4] get /zk_pipe_test</span><br><span class="line">hello zk_pipe_test</span><br><span class="line">[zk: 127.0.0.1:2181(CONNECTED) 6] ls /</span><br><span class="line">[zk_pipe_test, zookeeper]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">$bin/zkCli.sh -server 127.0.0.1:2181<br>Connecting to 127.0.0.1:2181<br>2022-04-08 15:08:56,133 [myid:] - INFO  [main:o.a.z.Environment@98] - Client environment:zookeeper.version=3.8.0-5a02a05eddb59aee6ac762f7ea82e92a68eb9c0f, built on 2022-02-25 08:49 UTC<br>2022-04-08 15:08:56,134 [myid:] - INFO  [main:o.a.z.Environment@98] - Client environment:host.name=localhost<br>2022-04-08 15:08:56,134 [myid:] - INFO  [main:o.a.z.Environment@98] - Client environment:java.version=17.0.2<br>2022-04-08 15:08:56,134 [myid:] - INFO  [main:o.a.z.Environment@98]<br>...<br>[zk: 127.0.0.1:2181(CONNECTED) 0] help<br>[zk: 127.0.0.1:2181(CONNECTED) 3] create /zk_pipe_test &quot;hello zk_pipe_test&quot;<br>Created /zk_pipe_test<br>[zk: 127.0.0.1:2181(CONNECTED) 4] get /zk_pipe_test<br>hello zk_pipe_test<br>[zk: 127.0.0.1:2181(CONNECTED) 6] ls /<br>[zk_pipe_test, zookeeper]<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>关闭服务器 <code>bin/zkServer.sh stop</code></p>
 </li>
 </ul>
-<h2 id="Java-Example"><a href="#Java-Example" class="headerlink" title="Java Example"></a>Java Example</h2><h3 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.zookeeper&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;zookeeper&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;3.4.8&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Java-Example"><a href="#Java-Example" class="headerlink" title="Java Example"></a>Java Example</h2><h3 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">&lt;dependencies&gt;<br>    &lt;dependency&gt;<br>        &lt;groupId&gt;org.apache.zookeeper&lt;/groupId&gt;<br>        &lt;artifactId&gt;zookeeper&lt;/artifactId&gt;<br>        &lt;version&gt;3.4.8&lt;/version&gt;<br>    &lt;/dependency&gt;<br>&lt;/dependencies&gt;<br></code></pre></td></tr></table></figure>
 
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package com.demo.zookeeper;</span><br><span class="line"></span><br><span class="line">import java.io.IOException;</span><br><span class="line"></span><br><span class="line">import org.apache.zookeeper.KeeperException;</span><br><span class="line">import org.apache.zookeeper.WatchedEvent;</span><br><span class="line">import org.apache.zookeeper.Watcher;</span><br><span class="line">import org.apache.zookeeper.ZooKeeper;</span><br><span class="line"></span><br><span class="line">public class Main implements Watcher &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) throws IOException, KeeperException, InterruptedException &#123;</span><br><span class="line">		ZooKeeper zk = new ZooKeeper(&quot;127.0.0.1:2181&quot;, 3000, new Main());</span><br><span class="line"></span><br><span class="line">		byte[] bytes = zk.getData(&quot;/zk_pipe_test&quot;, false, null);</span><br><span class="line"></span><br><span class="line">		System.out.println(new String(bytes));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void process(WatchedEvent event) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		System.out.println(event);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="output"><a href="#output" class="headerlink" title="output"></a>output</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">log4j:WARN No appenders could be found for logger (org.apache.zookeeper.ZooKeeper).</span><br><span class="line">log4j:WARN Please initialize the log4j system properly.</span><br><span class="line">log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.</span><br><span class="line">WatchedEvent state:SyncConnected type:None path:null</span><br><span class="line">hello zk_pipe_test</span><br></pre></td></tr></table></figure>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">package com.demo.zookeeper;<br><br>import java.io.IOException;<br><br>import org.apache.zookeeper.KeeperException;<br>import org.apache.zookeeper.WatchedEvent;<br>import org.apache.zookeeper.Watcher;<br>import org.apache.zookeeper.ZooKeeper;<br><br>public class Main implements Watcher &#123;<br><br>	public static void main(String[] args) throws IOException, KeeperException, InterruptedException &#123;<br>		ZooKeeper zk = new ZooKeeper(&quot;127.0.0.1:2181&quot;, 3000, new Main());<br><br>		byte[] bytes = zk.getData(&quot;/zk_pipe_test&quot;, false, null);<br><br>		System.out.println(new String(bytes));<br>	&#125;<br><br>	public void process(WatchedEvent event) &#123;<br>		// TODO Auto-generated method stub<br>		System.out.println(event);<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="output"><a href="#output" class="headerlink" title="output"></a>output</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">log4j:WARN No appenders could be found for logger (org.apache.zookeeper.ZooKeeper).<br>log4j:WARN Please initialize the log4j system properly.<br>log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.<br>WatchedEvent state:SyncConnected type:None path:null<br>hello zk_pipe_test<br></code></pre></td></tr></table></figure>
 
 <h2 id="One-More-Thing"><a href="#One-More-Thing" class="headerlink" title="One More Thing"></a>One More Thing</h2><p>Paxos, 分布式一致性算法， <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/31780743">https://zhuanlan.zhihu.com/p/31780743</a></p>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>

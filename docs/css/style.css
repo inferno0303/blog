@@ -36,11 +36,9 @@ body {
 }
 .header .menu .menu-item {
   display: inline-block;
-  padding-right: 0.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0 0.5rem 0.5rem;
 }
-.header .menu .menu-item .menu-item-link {
+.header .menu .menu-item a {
   text-decoration: none;
   color: #fff;
 }
@@ -88,42 +86,18 @@ body {
 .post-wrapper .post-content h2 {
   color: var(--deep-blue);
 }
-.post-wrapper .post-content figure {
-  margin: 0 1.5em;
-}
 .post-wrapper .post-content a {
   text-decoration: none;
+  overflow: hidden;
 }
 .post-wrapper .post-content a:hover {
   text-decoration: underline;
   color: var(--link-hover);
 }
-.post-wrapper .highlight {
-  background-color: #f5f5f5;
-  border-radius: 0.5em;
-  padding: 0.8em 1em;
-  box-shadow: 0 0.5em 0.8em #d2d2d2;
+.post-wrapper .post-content figure {
+  margin: 0;
+  background-color: #f3f3f3;
+  box-shadow: 0 0.5rem 1rem #ddd;
+  border-radius: 0.8rem;
   overflow: auto;
-}
-.post-wrapper .highlight .gutter {
-  padding-right: 0.8em;
-  border-right: 1px dashed #c8c8c8;
-}
-.post-wrapper .highlight .code {
-  padding-left: 0.8em;
-}
-.post-wrapper code {
-  text-shadow: 0 1px 1px #fff;
-  padding: 0.25rem 0.5em;
-  background-color: rgba(228,231,142,0.25);
-}
-.post-wrapper blockquote {
-  background-color: rgba(174,220,174,0.25);
-  padding: 0.8rem;
-  margin: 1rem 0;
-  border-left: 0.35rem solid #5cb85c;
-  border-radius: 0.5rem;
-  text-shadow: 0 1px #fff;
-  color: #6c6c6c;
-  font-size: 0.9rem;
 }

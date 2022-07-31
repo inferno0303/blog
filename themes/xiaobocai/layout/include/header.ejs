@@ -5,16 +5,14 @@
                 <%= config.title %>
             </a>
         </div>
-        <nav class="navbar">
-            <div class="menu">
-                <% for (name in theme.menu) { %>
-                    <div class="menu-item">
-                        <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link">
-                            <%= name %>
-                        </a>
-                    </div>
-                    <% } %>
-            </div>
+        <nav class="menu">
+            <% for (name in theme.menu) { %>
+                <li class="menu-item">
+                    <a href="<%- url_for(theme.menu[name]) %>">
+                        <%= name %>
+                    </a>
+                </li>
+            <% } %>
         </nav>
     </div>
 </header>
