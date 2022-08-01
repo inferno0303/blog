@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: '非易失存储器'
+title: '心流-flow'
 subtitle: '路遥知马力'
 description: '我的非易失性存储器'
 keywords: '科技，生活，灵感'
@@ -22,7 +22,7 @@ pretty_urls:
 
 # Directory
 source_dir: source
-public_dir: docs # 为了匹配github page的docs目录而更改
+public_dir: docs # 为了匹配github page默认将docs目录作为静态根目录而更改的
 tag_dir: tags
 archive_dir: archives
 category_dir: categories

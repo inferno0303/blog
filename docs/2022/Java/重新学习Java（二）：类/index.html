@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        心流-flow
+    </title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/hljs-default-min.css">
+ 
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+    <header class="header">
+    <div class="header-wrapper">
+        <div class="blog-title">
+            <a href="/" class="blog-title-link">
+                心流-flow
+            </a>
+        </div>
+        <nav class="menu">
+            
+                <li class="menu-item">
+                    <a href="/">
+                        首页
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="/archives">
+                        归档
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="/tags">
+                        标签
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/inferno0303">
+                        关于
+                    </a>
+                </li>
+            
+        </nav>
+    </div>
+</header>
+    <div class="main">
+        <article class="post-wrapper">
+  <div class="post-title" id="post-title">
+    <h1 class="h1-title">
+      重新学习Java（二）：类
+    </h1>
+  </div>
+  <div class="post-meta">
+    <span class="post-tags">
+      
+        <a href="/tags/Java">#Java</a>
+        
+    </span>
+    <span class="post-word-count">1455字</span>
+    <span class="post-time">2022-05-02</span>
+  </div>
+  <div class="post-content">
+    <h1 id="Java对象和类"><a href="#Java对象和类" class="headerlink" title="Java对象和类"></a>Java对象和类</h1><p>Java作为一种面向对象语言，支持以下基本概念</p>
+<ul>
+<li>多态</li>
+<li>继承</li>
+<li>封装</li>
+<li>抽象</li>
+<li>类</li>
+<li>对象</li>
+<li>实例</li>
+<li>方法</li>
+<li>重载</li>
+</ul>
+<p><strong>对象：对象是类的一个实例。<br>类：类是一个模板。</strong></p>
+<p>简单的类：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span> &#123;<br>    String breed;<br>    <span class="hljs-type">int</span> size;<br>    String colour;<br>    <span class="hljs-type">int</span> age;<br>    <br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br>    <br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br>    <br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">sleep</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br>    <br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">name</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>一个类可以包含以下类型变量：</p>
+<ul>
+<li>局部变量：在方法、构造方法或者语句块中定义的变量被称为局部变量。</li>
+<li>成员变量：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化，成员变量可以被类中方法、构造方法和特定类的语句块访问。</li>
+<li>类变量：类变量也声明在类中，方法体之外，但必须声明为static类型。</li>
+</ul>
+<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>每个类都有构造方法，如果没有显式的为类定义构造方法，Java编译器将会为该类提供一个默认构造方法。<br>在创建一个对象的时候，至少要调用一个构造方法，构造方法的名称必须与类名相同，一个类可以有多个构造方法。</p>
+<p>下面是一个构造方法的示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Puppy</span>&#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Puppy</span><span class="hljs-params">()</span>&#123;<br>        <br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Puppy</span><span class="hljs-params">(String name)</span>&#123;<br>        <span class="hljs-comment">// 这个构造器仅有一个参数：name</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>对象是根据类创建的，在Java中，使用关键字new来创建一个新的对象。创建对象需要以下三步：</p>
+<ul>
+<li>声明：声明一个对象，包括对象名称和对象类型。</li>
+<li>实例化：使用关键字new来创建一个对象。</li>
+<li>初始化：使用new创建对象时，会调用构造方法初始化对象。</li>
+</ul>
+<p>下面是一个创建对象的例子：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Puppy</span> &#123;<br>    <span class="hljs-comment">// 这个构造器仅有一个参数：name</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Puppy</span><span class="hljs-params">(String name)</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;小狗的名字是：&quot;</span> + name);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 下面的语句将创建一个Puppy对象</span><br>        <span class="hljs-type">Puppy</span> <span class="hljs-variable">myPuppy</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Puppy</span>(<span class="hljs-string">&quot;tommy&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="源文件声明规则"><a href="#源文件声明规则" class="headerlink" title="源文件声明规则"></a>源文件声明规则</h2><ul>
+<li>一个源文件中只能有一个public类</li>
+<li>一个源文件中可以有多个非public类</li>
+<li>源文件的名称应该和public类的名称保持 一直</li>
+<li>如果一个类定义在某个包中，那么package语句应该在源文件的首行</li>
+<li>如果源文件包含import语句，那么应该放在package语句和类定义之间</li>
+</ul>
+<h2 id="Java包"><a href="#Java包" class="headerlink" title="Java包"></a>Java包</h2><p>包主要用来对类和接口进行分类，当开发Java程序时，可能编写成百上千的类，有必要对类和接口进行分类。</p>
+
+  </div>
+</article>
+<script>
+  let title = document.getElementById("post-title").getElementsByClassName("h1-title");
+  if (title.length > 0) {
+    document.title = title[0].innerText;
+  }
+</script>
+    </div>
+    <div class="footer">
+    <p>
+        © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="color: #ccc;">inferno0303</a>
+    </p>
+</div>
+</body>
+
+</html>

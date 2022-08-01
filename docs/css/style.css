@@ -18,29 +18,27 @@ body {
 }
 .header .header-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   max-width: var(--max-content-width);
   margin-left: auto;
   margin-right: auto;
-}
-.header .blog-title {
   padding-left: 2rem;
+  padding-right: 2rem;
+}
+.header .header-wrapper .blog-title {
   font-size: 1.5rem;
 }
-.header .blog-title .blog-title-link {
+.header .header-wrapper .blog-title .blog-title-link {
   text-decoration: none;
   color: #fff;
 }
-.header .menu {
-  padding-right: 2rem;
-}
-.header .menu .menu-item {
+.header .header-wrapper .menu .menu-item {
   display: inline-block;
-  padding: 0.5rem 0 0.5rem 0.5rem;
+  padding: 0.5rem 0.25rem;
 }
-.header .menu .menu-item a {
+.header .header-wrapper .menu .menu-item a {
   text-decoration: none;
   color: #fff;
 }
@@ -63,24 +61,22 @@ body {
 .post-wrapper .h1-title {
   text-align: center;
 }
-.post-wrapper .post-title-link {
-  text-decoration: none;
-  color: #000;
-}
 .post-wrapper .post-meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: center;
   font-size: 0.8rem;
-  color: #aaa;
+  color: #666;
   padding-bottom: 1rem;
   border-bottom: solid 1px #eee;
 }
-.post-wrapper .post-meta .post-tags {
-  padding-right: 1rem;
-}
 .post-wrapper .post-meta .post-tags a {
-  color: #aaa;
+  color: #666;
+}
+.post-wrapper .post-meta span {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .post-wrapper .post-content {
   line-height: 1.6;
@@ -91,7 +87,7 @@ body {
 }
 .post-wrapper .post-content a {
   text-decoration: none;
-  overflow: hidden;
+  color: inherit;
 }
 .post-wrapper .post-content a:hover {
   text-decoration: underline;
@@ -105,4 +101,19 @@ body {
   overflow: auto;
   font-size: 0.85rem;
   line-height: 1.25;
+}
+.post-wrapper .post-content blockquote {
+  background-color: #f0ffff;
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  margin: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem #ebebeb;
+  border-left: 0.3rem solid #ccc;
+  color: #666;
+  font-size: 0.9rem;
+}
+.post-wrapper .post-content img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
 }

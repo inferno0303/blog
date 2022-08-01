@@ -10,34 +10,35 @@
 
   .header-wrapper {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
     max-width: var(--max-content-width);
     margin-left: auto;
     margin-right: auto;
-    // padding-left: 2rem;
-    // padding-right: 2rem;
-  }
-  .blog-title {
     padding-left: 2rem;
-    font-size: 1.5rem;
-    // font-weight: bold;
-    .blog-title-link {
-      text-decoration: none;
-      color: #fff;
-    }
-  }
-
-  .menu {
-    padding-right: 2rem
-    .menu-item {
-      display: inline-block;
-      padding: 0.5rem 0 0.5rem 0.5rem;
-      a {
+    padding-right: 2rem;
+    
+    // 标题
+    .blog-title {
+      font-size: 1.5rem;
+      .blog-title-link {
         text-decoration: none;
         color: #fff;
       }
     }
+
+    // 导航栏
+    .menu {
+      .menu-item {
+        display: inline-block;
+        padding: 0.5rem 0.25rem;
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
   }
+
 }

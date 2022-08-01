@@ -12,32 +12,27 @@
       text-align: center;
     }
 
-    // 文章标题链接
-    .post-title-link {
-      text-decoration: none;
-      color: #000;
-    }
-
     // 文章信息
     .post-meta {
       display: flex;
+      flex-wrap: wrap;
       align-items: baseline;
       justify-content center;
       font-size: 0.8rem;
-      color: #aaa;
+      color: #666;
       padding-bottom: 1rem;
       border-bottom: solid 1px #eee;
 
-      // 文章标签
+      // 标签
       .post-tags {
-        padding-right: 1rem;
         a {
-          color: #aaa;
+          color: #666;
         }
       }
 
-      // 文章发布时间
-      .post-time {
+      span {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
       }
     }
 
@@ -52,7 +47,7 @@
 
       a {
         text-decoration: none;
-        overflow: hidden;
+        color: inherit;
       }
 
       a:hover {
@@ -60,6 +55,7 @@
         color: var(--link-hover)
       }
 
+      // 代码框 ```内容```
       figure {
         margin: 0;
         background-color: #f3f3f3;
@@ -68,6 +64,29 @@
         overflow: auto;
         font-size: 0.85rem;
         line-height: 1.25;
+      }
+
+      // 引用 >内容
+      // 引用的样式
+      blockquote {
+        // background-color: rgba(174, 220, 174, 0.25);
+        background-color: rgb(240, 255, 255)
+        padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+        margin: 0;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 1rem rgb(235, 235, 235);
+        border-left: 0.3rem solid #ccc;
+        //transition: color 0.2s ease-in-out;
+        // text-shadow: 0 1px #fff;
+        color: #666;
+        font-size: 0.9rem;
+        // font-style: italic;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
       }
 
     }
@@ -103,17 +122,6 @@
     //   background-color: rgba(228, 231, 142, 0.25)
     // }
 
-    // // 引用的样式
-    // blockquote {
-    //   background-color: rgba(174, 220, 174, 0.25);
-    //   padding: 0.8rem;
-    //   margin: 1rem 0;
-    //   border-left: 0.35rem solid #5cb85c;
-    //   border-radius: 0.5rem;
-    //   //transition: color 0.2s ease-in-out;
-    //   text-shadow: 0 1px #fff;
-    //   color: #6c6c6c;
-    //   font-size: 0.9rem;
-    // }
+    
 
   }

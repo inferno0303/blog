@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        心流-flow
+    </title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/hljs-default-min.css">
+ 
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+    <header class="header">
+    <div class="header-wrapper">
+        <div class="blog-title">
+            <a href="/" class="blog-title-link">
+                心流-flow
+            </a>
+        </div>
+        <nav class="menu">
+            
+                <li class="menu-item">
+                    <a href="/">
+                        首页
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="/archives">
+                        归档
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a href="/tags">
+                        标签
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a target="_blank" rel="noopener" href="https://github.com/inferno0303">
+                        关于
+                    </a>
+                </li>
+            
+        </nav>
+    </div>
+</header>
+    <div class="main">
+        <article class="post-wrapper">
+  <div class="post-title" id="post-title">
+    <h1 class="h1-title">
+      重新学习Java（四）：变量类型
+    </h1>
+  </div>
+  <div class="post-meta">
+    <span class="post-tags">
+      
+        <a href="/tags/Java">#Java</a>
+        
+    </span>
+    <span class="post-word-count">409字</span>
+    <span class="post-time">2022-05-04</span>
+  </div>
+  <div class="post-content">
+    <h1 id="Java变量类型"><a href="#Java变量类型" class="headerlink" title="Java变量类型"></a>Java变量类型</h1><p>在Java语言中所有变量在使用前必须声明。</p>
+<p> Java语言支持的变量类型有：</p>
+<p> 静态变量、类变量、有static：与类共存亡，在方法区中分配内存<br> 实例变量、成员变量、没有static：与实例共存亡，在堆中分配内存<br> 局部变量：类的方法（函数体）block中的变量，与方法共存亡，在栈中分配内存</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Variable</span> &#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-variable">allClicks</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 类变量</span><br>    <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Hello World&quot;</span>; <span class="hljs-comment">// 实例变量</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">method</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 局部变量</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+  </div>
+</article>
+<script>
+  let title = document.getElementById("post-title").getElementsByClassName("h1-title");
+  if (title.length > 0) {
+    document.title = title[0].innerText;
+  }
+</script>
+    </div>
+    <div class="footer">
+    <p>
+        © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="color: #ccc;">inferno0303</a>
+    </p>
+</div>
+</body>
+
+</html>

@@ -10,6 +10,7 @@
         <a href="<%- url_for("/tags/" + tag.name) %>">#<%- tag.name %></a>
         <% }) %>
     </span>
+    <span class="post-word-count"><%- page.raw.length %>字</span>
     <span class="post-time"><%- date(page.date, "YYYY-MM-DD" ) %></span>
   </div>
   <div class="post-content">
