@@ -19,20 +19,22 @@ body {
 .header .header-wrapper {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   max-width: var(--max-content-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 .header .blog-title {
+  padding-left: 2rem;
   font-size: 1.5rem;
 }
 .header .blog-title .blog-title-link {
   text-decoration: none;
   color: #fff;
+}
+.header .menu {
+  padding-right: 2rem;
 }
 .header .menu .menu-item {
   display: inline-block;
@@ -56,6 +58,7 @@ body {
 .post-wrapper {
   padding-left: 2rem;
   padding-right: 2rem;
+  word-break: break-word;
 }
 .post-wrapper .h1-title {
   text-align: center;
@@ -97,7 +100,9 @@ body {
 .post-wrapper .post-content figure {
   margin: 0;
   background-color: #f3f3f3;
-  box-shadow: 0 0.5rem 1rem #ddd;
+  box-shadow: 0 0 1rem #ddd;
   border-radius: 0.8rem;
   overflow: auto;
+  font-size: 0.85rem;
+  line-height: 1.25;
 }

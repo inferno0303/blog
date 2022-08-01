@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        小菠菜NVM
+        非易失存储器
     </title>
     <link rel="shortcut icon" href="/favicon.ico">
     
@@ -21,7 +21,7 @@
     <div class="header-wrapper">
         <div class="blog-title">
             <a href="/" class="blog-title-link">
-                小菠菜NVM
+                非易失存储器
             </a>
         </div>
         <nav class="menu">
@@ -55,7 +55,7 @@
 </header>
     <div class="main">
         <article class="post-wrapper">
-  <div class="post-title">
+  <div class="post-title" id="post-title">
     <h1 class="h1-title">
       npm如何换源、清除缓存？
     </h1>
@@ -92,6 +92,12 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">yarn安装 create-umi-app 后，将 create-umi-app 安装在Yarn目录下，并将 create-umi-app 通过脚本链接到 npm_global_modules 路径，这一步有错误。<br><br>解决方法：到project根目录执行：<br>C:\Users\YangXu\AppData\Local\Yarn\Data\global\node_modules\.bin\create-umi-app.cmd<br></code></pre></td></tr></table></figure>
   </div>
 </article>
+<script>
+  let title = document.getElementById("post-title").getElementsByClassName("h1-title");
+  if (title.length > 0) {
+    document.title = title[0].innerText;
+  }
+</script>
     </div>
     <div class="footer">
     <p>

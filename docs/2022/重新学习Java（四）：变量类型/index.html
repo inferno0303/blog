@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        小菠菜NVM
+        非易失存储器
     </title>
     <link rel="shortcut icon" href="/favicon.ico">
     
@@ -21,7 +21,7 @@
     <div class="header-wrapper">
         <div class="blog-title">
             <a href="/" class="blog-title-link">
-                小菠菜NVM
+                非易失存储器
             </a>
         </div>
         <nav class="menu">
@@ -55,7 +55,7 @@
 </header>
     <div class="main">
         <article class="post-wrapper">
-  <div class="post-title">
+  <div class="post-title" id="post-title">
     <h1 class="h1-title">
       重新学习Java（四）：变量类型
     </h1>
@@ -75,6 +75,12 @@
  <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Variable</span> &#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-variable">allClicks</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 类变量</span><br>    <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Hello World&quot;</span>; <span class="hljs-comment">// 实例变量</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">method</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 局部变量</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
   </div>
 </article>
+<script>
+  let title = document.getElementById("post-title").getElementsByClassName("h1-title");
+  if (title.length > 0) {
+    document.title = title[0].innerText;
+  }
+</script>
     </div>
     <div class="footer">
     <p>
