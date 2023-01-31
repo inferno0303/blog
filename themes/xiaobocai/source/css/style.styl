@@ -1,7 +1,121 @@
-// 该文件style.styl会被编译为style.css
-// 然后被ejs模板的入口layout.ejs引入
+// 该文件`style.styl` 会被编译为`style.css`，然后被ejs模板的入口`layout.ejs`引入
 
-@import "_partial/layout.styl";
-@import "_partial/header.styl";
-@import "_partial/footer.styl";
+// 全局变量
+:root {
+  --max-content-width: 1000px;
+  --fake-bg-top-height: 200px;
+  --main-color: #BE223A;
+  --bg-gray: #F0F0F0;
+  --main-color-2: #192231;
+  --link-hover: #c80000;
+}
+
+body {
+  // 去除浏览器给body预设的margin属性
+  margin: 0;
+}
+
+// 页眉区域
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color var(--main-color);
+
+  .header-wrapper {
+    max-width: var(--max-content-width);
+    width: 90%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // 标题
+  .website-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    .website-title-link {
+      text-decoration: none;
+      color: #fff;
+      text-shadow:  rgb(0, 0, 0, 0.1) 0 0 15px;
+    }
+  }
+
+  // 导航栏
+  .menu {
+    .menu-item {
+      display: inline-block;
+      padding: 0.5rem 0.25rem;
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+}
+
+// 假背景上半部分
+.fake-background-top {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: var(--main-color);
+  height: var(--fake-bg-top-height);
+  z-index: -1;
+}
+
+.fake-background-btm {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-gray);
+}
+
+// 嵌套内容区域
+.container {
+  position: relative;
+  top: -110px;
+  // transition: all 1s;
+  max-width: var(--max-content-width);
+  width: 90%;
+  // 嵌套内容区域，适配手机宽度
+  @media screen and (max-width: 680px) {
+    width: 100%;
+  }
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 10px 20px;
+  border-radius: 1rem;
+  @media screen and (max-width: 680px) {
+    border-radius: 0;
+  }
+}
+
+// 页脚区域
+.footer {
+  max-width: var(--max-content-width);
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  p {
+    color: #ccc;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+// post模板
 @import "_partial/post.styl";
