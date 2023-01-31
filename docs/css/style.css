@@ -1,67 +1,111 @@
 :root {
-  --max-content-width: 900px;
-  --deep-blue: #192231;
+  --max-content-width: 1000px;
+  --fake-bg-top-height: 200px;
+  --main-color: #be223a;
+  --bg-gray: #f0f0f0;
+  --main-color-2: #192231;
   --link-hover: #c80000;
 }
 body {
   margin: 0;
 }
-.main {
-  max-width: var(--max-content-width);
-  margin: 0 auto;
-}
 .header {
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
-  background-color: var(--deep-blue);
-  box-shadow: 0 10px 10px #ccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: var(--main-color);
 }
 .header .header-wrapper {
+  max-width: var(--max-content-width);
+  width: 90%;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  max-width: var(--max-content-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
-.header .header-wrapper .blog-title {
+.header .website-title {
   font-size: 1.5rem;
+  font-weight: bold;
 }
-.header .header-wrapper .blog-title .blog-title-link {
+.header .website-title .website-title-link {
   text-decoration: none;
   color: #fff;
+  text-shadow: #000 0 0 15px;
 }
-.header .header-wrapper .menu .menu-item {
+.header .menu .menu-item {
   display: inline-block;
   padding: 0.5rem 0.25rem;
 }
-.header .header-wrapper .menu .menu-item a {
+.header .menu .menu-item a {
   text-decoration: none;
   color: #fff;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+.fake-background-top {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: var(--main-color);
+  height: var(--fake-bg-top-height);
+  z-index: -1;
+}
+.fake-background-btm {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-gray);
+}
+.container {
+  position: relative;
+  top: -110px;
+  max-width: var(--max-content-width);
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  box-shadow: rgba(0,0,0,0.15) 0 10px 20px;
+  border-radius: 1rem;
+}
+@media screen and (max-width: 680px) {
+  .container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 680px) {
+  .container {
+    border-radius: 0;
+  }
 }
 .footer {
   max-width: var(--max-content-width);
-  margin: 0 auto;
-  padding: 1rem 0;
-  border-top: solid 1px #eee;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 .footer p {
   color: #ccc;
   font-size: 0.8rem;
   text-align: center;
 }
-.post-wrapper {
+.post {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
   word-break: break-word;
 }
-.post-wrapper .h1-title {
+.post .h1-title {
   text-align: center;
 }
-.post-wrapper .post-meta {
+.post .post-meta {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -71,29 +115,29 @@ body {
   padding-bottom: 1rem;
   border-bottom: solid 1px #eee;
 }
-.post-wrapper .post-meta .post-tags a {
+.post .post-meta .post-tags a {
   color: #666;
 }
-.post-wrapper .post-meta span {
+.post .post-meta span {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
-.post-wrapper .post-content {
+.post .post-content {
   line-height: 1.6;
 }
-.post-wrapper .post-content h1,
-.post-wrapper .post-content h2 {
+.post .post-content h1,
+.post .post-content h2 {
   color: var(--deep-blue);
 }
-.post-wrapper .post-content a {
+.post .post-content a {
   text-decoration: none;
   color: inherit;
 }
-.post-wrapper .post-content a:hover {
+.post .post-content a:hover {
   text-decoration: underline;
   color: var(--link-hover);
 }
-.post-wrapper .post-content figure {
+.post .post-content figure {
   margin: 0;
   background-color: #f3f3f3;
   box-shadow: 0 0 1rem #ddd;
@@ -102,7 +146,7 @@ body {
   font-size: 0.85rem;
   line-height: 1.25;
 }
-.post-wrapper .post-content blockquote {
+.post .post-content blockquote {
   background-color: #f0ffff;
   padding: 0.5rem 0.5rem 0.5rem 1.5rem;
   margin: 0;
@@ -112,7 +156,7 @@ body {
   color: #666;
   font-size: 0.9rem;
 }
-.post-wrapper .post-content img {
+.post .post-content img {
   display: block;
   margin: 0 auto;
   width: 100%;

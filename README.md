@@ -1,8 +1,12 @@
-# 小菠菜Flow
+# 记录学习和生活的博客
 
-## 一个记录学习和生活的博客
+> 作者：github @inferno0303
 
-> 作者：inferno0303@github
+写作完成后：
+```
+hexo clean && hexo generate
+```
+这将会重新生成产物到doc文件夹内
 
 ## 初识Hexo文件规则
 
