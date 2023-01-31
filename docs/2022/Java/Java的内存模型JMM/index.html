@@ -1,11 +1,13 @@
+<!-- 根模板 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
+<!-- head标签 -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        心流-flow
+        yx的备忘录
     </title>
     <link rel="shortcut icon" href="/favicon.ico">
     
@@ -14,47 +16,53 @@
     
 <link rel="stylesheet" href="/css/hljs-default-min.css">
  
-<meta name="generator" content="Hexo 6.2.0"></head>
-
+<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- body标签 -->
 <body>
+    <!-- header区域 -->
     <header class="header">
-    <div class="header-wrapper">
-        <div class="blog-title">
-            <a href="/" class="blog-title-link">
-                心流-flow
-            </a>
+        <div class="header-wrapper">
+            <div class="website-title">
+                <a href="/" class="website-title-link">
+                    yx的备忘录
+                </a>
+            </div>
+            <nav class="menu">
+                
+                    <li class="menu-item">
+                        <a href="/">
+                            首页
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            归档
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/tags">
+                            标签
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a target="_blank" rel="noopener" href="https://github.com/inferno0303">
+                            关于
+                        </a>
+                    </li>
+                
+            </nav>
         </div>
-        <nav class="menu">
-            
-                <li class="menu-item">
-                    <a href="/">
-                        首页
-                    </a>
-                </li>
-            
-                <li class="menu-item">
-                    <a href="/archives">
-                        归档
-                    </a>
-                </li>
-            
-                <li class="menu-item">
-                    <a href="/tags">
-                        标签
-                    </a>
-                </li>
-            
-                <li class="menu-item">
-                    <a target="_blank" rel="noopener" href="https://github.com/inferno0303">
-                        关于
-                    </a>
-                </li>
-            
-        </nav>
-    </div>
-</header>
-    <div class="main">
-        <article class="post-wrapper">
+    </header>
+
+    <!-- 这里实现的是假背景上下滚动，分为两个部分，下半部分包装其余的标签 -->
+    <div class="fake-background-top"></div>
+    <div class="fake-background-btm">
+        <!-- 嵌套内容区域 -->
+        <div class="container">
+            <article class="post">
   <div class="post-title" id="post-title">
     <h1 class="h1-title">
       Java的内存模型JMM
@@ -116,12 +124,13 @@
     document.title = title[0].innerText;
   }
 </script>
+        </div>
+        <div class="footer">
+            <p>
+                © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="color: #ccc;">inferno0303</a>
+            </p>
+        </div>
     </div>
-    <div class="footer">
-    <p>
-        © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="color: #ccc;">inferno0303</a>
-    </p>
-</div>
+    
 </body>
-
 </html>
