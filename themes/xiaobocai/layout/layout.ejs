@@ -11,14 +11,15 @@
     </title>
     <%- favicon_tag("favicon.ico") %>
     <%- css("css/style.css") %>
-    <%- css("css/hljs-default-min.css") %> 
+    <%- css("css/hljs-default-min.css") %>
+    <script type="module" src="/js/index.js"></script>
 </head>
 <!-- body标签 -->
 <body>
     <!-- header区域 -->
     <header class="header">
         <div class="header-wrapper">
-            <div class="website-title">
+            <div class="website-title" id="website-title">
                 <a href="<%- url_for() %>" class="website-title-link">
                     <%= config.title %>
                 </a>
@@ -35,11 +36,17 @@
         </div>
     </header>
 
-    <!-- 这里实现的是假背景上下滚动，分为两个部分，下半部分包装其余的标签 -->
-    <div class="fake-background-top"></div>
-    <div class="fake-background-btm">
+    <% if(page.path == "index.html") { %>
+        <div class="banner" id="banner-placeholder">
+            <div class="banner-wrapper">PLACEHOLDER</div>
+        </div>
+    <% } else { %>
+        <div class="banner-placeholder" id="banner-placeholder"></div>
+    <% } %>
+
+    <div class="container">
         <!-- 嵌套内容区域 -->
-        <div class="container">
+        <div class="content">
             <%- body %>
         </div>
         <div class="footer">
@@ -48,6 +55,6 @@
             </p>
         </div>
     </div>
-    
+
 </body>
 </html>

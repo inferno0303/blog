@@ -8,7 +8,7 @@
     <span class="post-tags">
       <% page.tags.each(tag=> { %>
         <a href="<%- url_for("/tags/" + tag.name) %>">#<%- tag.name %></a>
-        <% }) %>
+      <% }) %>
     </span>
     <span class="post-word-count"><%- page.raw.length %>字</span>
     <span class="post-time"><%- date(page.date, "YYYY-MM-DD" ) %></span>
@@ -18,8 +18,6 @@
   </div>
 </article>
 <script>
-  let title = document.getElementById("post-title").getElementsByClassName("h1-title");
-  if (title.length > 0) {
-    document.title = title[0].innerText;
-  }
+  // 修改网页标题
+  document.title = document.getElementById("post-title").innerText + ' - ' + document.getElementById("website-title").innerText;
 </script>

@@ -15,14 +15,15 @@
 
     
 <link rel="stylesheet" href="/css/hljs-default-min.css">
- 
+
+    <script type="module" src="/js/index.js"></script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 <!-- body标签 -->
 <body>
     <!-- header区域 -->
     <header class="header">
         <div class="header-wrapper">
-            <div class="website-title">
+            <div class="website-title" id="website-title">
                 <a href="/" class="website-title-link">
                     yx的备忘录
                 </a>
@@ -57,11 +58,13 @@
         </div>
     </header>
 
-    <!-- 这里实现的是假背景上下滚动，分为两个部分，下半部分包装其余的标签 -->
-    <div class="fake-background-top"></div>
-    <div class="fake-background-btm">
+    
+        <div class="banner-placeholder" id="banner-placeholder"></div>
+    
+
+    <div class="container">
         <!-- 嵌套内容区域 -->
-        <div class="container">
+        <div class="content">
             <article class="post">
   <div class="post-title" id="post-title">
     <h1 class="h1-title">
@@ -72,7 +75,7 @@
     <span class="post-tags">
       
         <a href="/tags/Java">#Java</a>
-        
+      
     </span>
     <span class="post-word-count">81字</span>
     <span class="post-time">2022-05-15</span>
@@ -82,10 +85,8 @@
   </div>
 </article>
 <script>
-  let title = document.getElementById("post-title").getElementsByClassName("h1-title");
-  if (title.length > 0) {
-    document.title = title[0].innerText;
-  }
+  // 修改网页标题
+  document.title = document.getElementById("post-title").innerText + ' - ' + document.getElementById("website-title").innerText;
 </script>
         </div>
         <div class="footer">
@@ -94,6 +95,6 @@
             </p>
         </div>
     </div>
-    
+
 </body>
 </html>

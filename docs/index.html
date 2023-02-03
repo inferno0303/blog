@@ -15,14 +15,15 @@
 
     
 <link rel="stylesheet" href="/css/hljs-default-min.css">
- 
+
+    <script type="module" src="/js/index.js"></script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 <!-- body标签 -->
 <body>
     <!-- header区域 -->
     <header class="header">
         <div class="header-wrapper">
-            <div class="website-title">
+            <div class="website-title" id="website-title">
                 <a href="/" class="website-title-link">
                     yx的备忘录
                 </a>
@@ -57,299 +58,397 @@
         </div>
     </header>
 
-    <!-- 这里实现的是假背景上下滚动，分为两个部分，下半部分包装其余的标签 -->
-    <div class="fake-background-top"></div>
-    <div class="fake-background-btm">
+    
+        <div class="banner" id="banner-placeholder">
+            <div class="banner-wrapper">PLACEHOLDER</div>
+        </div>
+    
+
+    <div class="container">
         <!-- 嵌套内容区域 -->
-        <div class="container">
+        <div class="content">
             <!-- 首页模板 -->
-<section class="homepage-posts-wrapper">
+<section class="index-posts">
     
     
-        <!-- 年份 -->
         
              
-            <div class="homepage-post-year">2022年</div>
+            <!-- <div class="index-post-year">2022年</div> -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-07-09
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/TestPaper-Gen/">
-                    TestPaper-Gen-在线组卷
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/TestPaper-Gen/">TestPaper-Gen-在线组卷</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-07-09 / 1044字 / 6分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   在线组卷系统    介绍  名称：在线组卷系统 - TestPapaerGen 
+ 简介：自动组卷系统，遗传算法、贪心算法，支持导入题库，手动选择、自动组卷，生成排版美观的Word文档，前后端分离WebApp，Java SpringBoot + React 
+ 技术栈：后端 Java Spri......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-07-05
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/%E8%8B%B1%E7%89%B9%E5%B0%94nuc8%E8%B1%86%E5%AD%90%E5%B3%A1%E8%B0%B7%E9%BB%91%E8%8B%B9%E6%9E%9CEFI/">
-                    英特尔NUC8豆子峡谷黑苹果EFI
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/%E8%8B%B1%E7%89%B9%E5%B0%94nuc8%E8%B1%86%E5%AD%90%E5%B3%A1%E8%B0%B7%E9%BB%91%E8%8B%B9%E6%9E%9CEFI/">英特尔NUC8豆子峡谷黑苹果EFI</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-07-05 / 282字 / 2分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   Intel NUC8i5BEH Hackintosh    英特尔NUC8i5BEH OpenCore EFI 引导  
+ OC版本：OpenCore 0.8.2 版本：0.1.1 作者：inferno0303@github 开源许可证：MIT License   
+ 
+  Intel WiF......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-06-10
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/%E7%A0%81%E5%86%9C%E7%BF%BB%E8%BA%AB-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
-                    《码农翻身》读书笔记
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/%E7%A0%81%E5%86%9C%E7%BF%BB%E8%BA%AB-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《码农翻身》读书笔记</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-06-10 / 4386字 / 22分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   Java帝国    Class Loader  Class Loader分层级 
+ 
+ Bootstrap ClassLoader：native代码实现，主要是加载核心库，jre&#x2F;lib&#x2F;*.jar，jre&#x2F;lib&#x2F;classes&#x2F; 
+ Ext......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-05-25
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3await%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/">
-                    深入理解await到底是什么
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3await%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/">深入理解await到底是什么</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-05-25 / 5449字 / 28分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   深入理解await到底是什么  
+ 前置知识：微任务、宏任务、Event Loop 推荐阅读： https://juejin.cn/post/6936630572936593422  
+ 
+   0x01 首先要了解Promise的两个重要属性  
+ 此处引用自 https://segment......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-05-19
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/Java/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                    Java虚拟机
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/Java/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/">Java虚拟机</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-05-19 / 1220字 / 7分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   JVM的架构  JVM主要由四部分组成： 
+ 
+ Class Loader（类加载器） 
+ Runtime Data Area（JVM内存空间结构模型）：Stack（栈）、Heap（堆）、Method Area（方法区）、PC Register、Native Method Stack（本地方法......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-05-18
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/Java/Java%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8BJMM/">
-                    Java的内存模型JMM
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/Java/Java%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8BJMM/">Java的内存模型JMM</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-05-18 / 885字 / 5分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   Java内存模型JMM  Java内存模型，Java Memory Model，是一种抽象的概念，它描述了一组规则或规范，通过这组规范定义了程序中各个变量的访问方式 
+ * 主内存、工作内存 ：* 
+ 
+ 主内存：JVM的堆，共享的 
+ 工作内存：栈空间，线程私有的数据 
+ 
+   JMM中的......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-05-17
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">
-                    Java多线程（二）
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">Java多线程（二）</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-05-17 / 1378字 / 7分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   Java多线程与并发    synchronized   线程安全问题的原因  
+ 
+ 存在共享数据（临界资源） 
+ 存在多条线程共同操作这些共享数据 
+ 
+  解决问题的根本方法：  
+ 同一时刻有且只有一个线程在操作共享数据，其他线程必须等待到该线程处理完数据后再进行操作。 
+  互斥锁的......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-05-16
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/">
-                    Java多线程（一）
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/">Java多线程（一）</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-05-16 / 10334字 / 52分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   Java多线程    1、进程和线程的联系    由来  串行：初期计算机只能串行执行任务，并且需要长时间等待用户输入 
+ 批处理：预先将用户的指令集中成清单，批量串行处理用户指令，仍然无法并发执行 
+ 进程：进程独占内存空间，保存各自运行状态，相互间不干扰且可以互相切换，为并发处理任务提供了......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-05-15
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/Java/Java%E7%BA%BF%E7%A8%8B%E6%B1%A0/">
-                    Java线程池
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/Java/Java%E7%BA%BF%E7%A8%8B%E6%B1%A0/">Java线程池</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-05-15 / 21字 / 1分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   Java线程池    Executors创建线程池 ......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-05-14
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/Java/Java%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">
-                    Java内存回收机制
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/Java/Java%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">Java内存回收机制</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-05-14 / 24字 / 1分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   Java内存回收机制    预备阶段  引用计数器 强弱引用 
+......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-05-06
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/Java/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9AJava%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                    重新学习Java（六）：Java字符串
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/Java/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9AJava%E5%AD%97%E7%AC%A6%E4%B8%B2/">重新学习Java（六）：Java字符串</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-05-06 / 474字 / 3分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   Java String类  创建字符串最简单的方法如下： 
+       String   str   =   &quot;Hello world&quot; ;       
+ 在代码中遇到字符串常量时，这里的值是 Hello world ，编译器会自动使用该值创建一个String对象。 与......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-05-05
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/Java/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9AJava%E4%BF%AE%E9%A5%B0%E7%AC%A6/">
-                    重新学习Java（五）：Java修饰符
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/Java/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9AJava%E4%BF%AE%E9%A5%B0%E7%AC%A6/">重新学习Java（五）：Java修饰符</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-05-05 / 733字 / 4分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   Java修饰符  Java语言提供了很多修饰符，主要分为以下两类： 
+ 
+ 访问修饰符 
+ 非访问修饰符 
+ 
+ 修饰符用来定义类、方法或变量，通常放在语句的最前端，我们通过下面的例子来说明： 
+       public   class   ClassName  &#123;      //......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-05-04
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/Java/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9A%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/">
-                    重新学习Java（四）：变量类型
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/Java/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9A%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/">重新学习Java（四）：变量类型</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-05-04 / 341字 / 2分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   Java变量类型  在Java语言中所有变量在使用前必须声明。 
+  Java语言支持的变量类型有： 
+  静态变量、类变量、有static：与类共存亡，在方法区中分配内存  实例变量、成员变量、没有static：与实例共存亡，在堆中分配内存  局部变量：类的方法（函数体）block中的变量，......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-05-03
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/Java/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
-                    重新学习Java（三）：基本数据类型
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/Java/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">重新学习Java（三）：基本数据类型</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-05-03 / 1469字 / 8分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   Java的基本数据类型  变量就是申请内存来存储值的，也就是说，当创建变量的时候，需要在内存中申请空间。 内存管理系统根据变量的类型为变量分配内存时，分配的空间只能用来存储该类型的数据。 
+ 因此通过定义不同类型的变量，可以在内存中存储整数小数或者字符。 Java的两大数据类型：内置数据类型和......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-05-02
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/Java/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E7%B1%BB/">
-                    重新学习Java（二）：类
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/Java/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E7%B1%BB/">重新学习Java（二）：类</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-05-02 / 1385字 / 7分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   Java对象和类  Java作为一种面向对象语言，支持以下基本概念 
+ 
+ 多态 
+ 继承 
+ 封装 
+ 抽象 
+ 类 
+ 对象 
+ 实例 
+ 方法 
+ 重载 
+ 
+  对象：对象是类的一个实例。 类：类是一个模板。  
+ 简单的类： 
+       public   class   Dog ......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-05-01
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/macOS%E8%A6%81%E5%AE%89%E8%A3%85%E7%9A%84%E8%BD%AF%E4%BB%B6/">
-                    macOS要安装的软件
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/macOS%E8%A6%81%E5%AE%89%E8%A3%85%E7%9A%84%E8%BD%AF%E4%BB%B6/">macOS要安装的软件</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-05-01 / 652字 / 4分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   基础类  
+ 微信 
+ QQ 
+ 网易云音乐 
+ Office三件套 
+ Tencent Lemon Lite 
+ Speedtest by Ookla 
+ WPS Office 
+ 有道云笔记 
+ &#x3D;&#x3D;Google Chrome&#x3D;&#x3D; 
+ &#x3D;&......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-05-01
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/Java/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
-                    重新学习Java（一）：基础语法
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/Java/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0Java%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">重新学习Java（一）：基础语法</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-05-01 / 1070字 / 6分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   Java基础语法  一个Java程序可以认为是一系列对象的集合，这些对象通过调用彼此的方法来协同工作，下面介绍类、对象、方法和实例变量的概念。 
+ 
+ 对象：对象是类的一个实例，有状态和行为，例如一条狗是一个对象，它的状态有：颜色、名字、品种，行为有：摇尾巴、叫、吃等。 
+ 类：类是一个模板，......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-04-30
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/ZooKeeper%E4%B8%8E%E5%85%B6%E4%BB%96%E4%BA%A7%E5%93%81%E7%9A%84%E5%AF%B9%E6%AF%94/">
-                    ZooKeeper与其他产品的对比
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/ZooKeeper%E4%B8%8E%E5%85%B6%E4%BB%96%E4%BA%A7%E5%93%81%E7%9A%84%E5%AF%B9%E6%AF%94/">ZooKeeper与其他产品的对比</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-04-30 / 3521字 / 18分钟
+            </div>
+            <div class="index-post-preview">
+                
+                 
+ ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group se......
+            </div>
         </article>
     
-        <!-- 年份 -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2022-04-26
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2022/hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98/">
-                    hexo博客自定义主题
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2022/hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98/">hexo博客自定义主题</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2022-04-26 / 26字 / 1分钟
+            </div>
+            <div class="index-post-preview">
+                
+                   EJS模板语法    stylus样式处理    hexo的辅助函数 ......
+            </div>
         </article>
     
-        <!-- 年份 -->
         
              
-            <div class="homepage-post-year">2021年</div>
+            <!-- <div class="index-post-year">2021年</div> -->
          
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                2021-05-29
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="/2021/Jetbrains%E5%85%A8%E5%AE%B6%E6%A1%B6%E6%BF%80%E6%B4%BB/">
-                    ja-netfilter激活Jetbrains全家桶
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="/2021/Jetbrains%E5%85%A8%E5%AE%B6%E6%A1%B6%E6%BF%80%E6%B4%BB/">ja-netfilter激活Jetbrains全家桶</a>
+            </h2>
+            <div class="index-post-meta">
+                 
+                2021-05-29 / 737字 / 4分钟
+            </div>
+            <div class="index-post-preview">
+                
+                 
+ 本文不涉及任何盗版资源的传播，不存储任何非法资源，请各位用户支持正版 
+ 
+   (1) 下载ja-netfilter  github仓库： https://github.com/ja-netfilter/ja-netfilter  
+  更新：github被下架了，请去gitee下载： ht......
+            </div>
         </article>
     
 </section>
@@ -399,36 +498,55 @@
 </style>
 <!-- index页样式 -->
 <style>
-    .homepage-posts-wrapper {
-        padding: 1rem 2.5rem;
+    .index-posts {
+        padding: 2rem 2rem;
     }
-    .homepage-post-year {
-        padding: 1rem 0 1rem 0;
-        color: var(--deep-blue);
-        font-size: 1.5rem;
+    .index-post::after {
+        content: "";
+        height: 1px;
+        width: 100px;
+        position: relative;
+        bottom: 0;
+        margin: 2rem auto 0 auto;
+        background: rgba(51,51,51,0.1);
     }
-    .homepage-post {
-        padding: 0.25rem 0;
+    /* .index-post-year {
+        padding-top: 1rem;
+        padding-bottom: 0.8rem;
+        font-size: 2rem;
+        font-weight: bold;
+    } */
+    .index-post {
+        padding: 1rem 0;
         /* border-bottom: solid 1px #f0f0f0; */
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: baseline;
-        font-size: 0.9rem;
-        color: var(--deep-blue);
     }
-    .homepage-post-title {
-        margin: 0;
-        padding-left: 1.5rem;
-        font-weight: normal;
-        font-size: 0.9rem;
+    .index-post-title {
+        margin: 2rem 0;
+        font-size: 1.2rem;
+        color: #444;
     }
-    .homepage-post-link {
+    .index-post-link {
         text-decoration: none;
         color: var(--deep-blue);
     }
-    .homepage-post-link:hover {
+    .index-post-link:hover {
         color: var(--link-hover);
+    }
+    .index-post-meta {
+        margin-right: 1rem;   
+        font-size: 0.8rem;
+        color: #888;;
+    }
+    .index-post-preview {
+        margin: 1rem 0;
+        font-size: 0.9rem;
+        color: #666;
+
     }
 </style>
         </div>
@@ -438,6 +556,6 @@
             </p>
         </div>
     </div>
-    
+
 </body>
 </html>

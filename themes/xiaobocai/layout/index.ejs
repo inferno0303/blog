@@ -1,22 +1,23 @@
 <!-- 首页模板 -->
-<section class="homepage-posts-wrapper">
+<section class="index-posts">
     <% let year %>
     <% page.posts.each(post => { %>
-        <!-- 年份 -->
         <% if (date(post.date, "YYYY") !== year) { %>
             <% year = date(post.date, "YYYY") %> 
-            <div class="homepage-post-year"><%- year %>年</div>
+            <!-- <div class="index-post-year"><%- year %>年</div> -->
         <% } %> 
-        <!-- 文章 -->
-        <article class="homepage-post">
-            <time class="homepage-post-time">
-                <%- date(post.date, "YYYY-MM-DD" ) %>
-            </time>
-            <h1 class="homepage-post-title">
-                <a class="homepage-post-link" href="<%- url_for(post.path) %>">
-                    <%= post.title %>
-                </a>
-            </h1>
+        <article class="index-post">
+            <h2 class="index-post-title">
+                <a class="index-post-link" href="<%- url_for(post.path) %>"><%= post.title %></a>
+            </h2>
+            <div class="index-post-meta">
+                <% const wordsCount = post.content.replace(/<[^>]*>/g, '').length %> 
+                <%- date(post.date, "YYYY-MM-DD" ) %> / <%- wordsCount %>字 / <%- Math.ceil(wordsCount / 200) %>分钟
+            </div>
+            <div class="index-post-preview">
+                <% const preview = post.content.replace(/<[^>]*>/g, ' ').slice(0, 150) %>
+                <%- preview %>......
+            </div>
         </article>
     <% }) %>
 </section>
@@ -24,35 +25,54 @@
 <%- include('./include/paginator.ejs') %>
 <!-- index页样式 -->
 <style>
-    .homepage-posts-wrapper {
-        padding: 1rem 2.5rem;
+    .index-posts {
+        padding: 2rem 2rem;
     }
-    .homepage-post-year {
-        padding: 1rem 0 1rem 0;
-        color: var(--deep-blue);
-        font-size: 1.5rem;
+    .index-post::after {
+        content: "";
+        height: 1px;
+        width: 100px;
+        position: relative;
+        bottom: 0;
+        margin: 2rem auto 0 auto;
+        background: rgba(51,51,51,0.1);
     }
-    .homepage-post {
-        padding: 0.25rem 0;
+    /* .index-post-year {
+        padding-top: 1rem;
+        padding-bottom: 0.8rem;
+        font-size: 2rem;
+        font-weight: bold;
+    } */
+    .index-post {
+        padding: 1rem 0;
         /* border-bottom: solid 1px #f0f0f0; */
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: baseline;
-        font-size: 0.9rem;
-        color: var(--deep-blue);
     }
-    .homepage-post-title {
-        margin: 0;
-        padding-left: 1.5rem;
-        font-weight: normal;
-        font-size: 0.9rem;
+    .index-post-title {
+        margin: 2rem 0;
+        font-size: 1.2rem;
+        color: #444;
     }
-    .homepage-post-link {
+    .index-post-link {
         text-decoration: none;
         color: var(--deep-blue);
     }
-    .homepage-post-link:hover {
+    .index-post-link:hover {
         color: var(--link-hover);
+    }
+    .index-post-meta {
+        margin-right: 1rem;   
+        font-size: 0.8rem;
+        color: #888;;
+    }
+    .index-post-preview {
+        margin: 1rem 0;
+        font-size: 0.9rem;
+        color: #666;
+
     }
 </style>

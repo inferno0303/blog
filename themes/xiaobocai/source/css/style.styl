@@ -63,8 +63,28 @@ body {
 
 }
 
-// 假背景上半部分
-.fake-background-top {
+// 首页的banner区域
+.banner {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: var(--main-color);
+  min-height: 300px;
+  height: 500px;
+  z-index: -1;
+  .banner-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff6d;
+  }
+}
+// 非首页的banner区域，成为占位符
+.banner-placeholder {
   position: relative;
   top: 0;
   left: 0;
@@ -73,7 +93,7 @@ body {
   z-index: -1;
 }
 
-.fake-background-btm {
+.container {
   position: relative;
   top: 0;
   left: 0;
@@ -81,7 +101,7 @@ body {
 }
 
 // 嵌套内容区域
-.container {
+.content {
   position: relative;
   top: -110px;
   // transition: all 1s;
@@ -115,6 +135,19 @@ body {
     font-size: 0.8rem;
     text-align: center;
   }
+}
+
+// 回到顶部按钮
+.back-to-top {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  right: 30px;
+  bottom: 30px;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 5px;
 }
 
 // post模板
