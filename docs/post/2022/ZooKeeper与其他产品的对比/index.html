@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的数字花园</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/hljs-default-min.css">
+
+    <!-- <script type="module" src="/js/index.js"></script> -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+
+    <header class="header">
+        <div class="header-wrapper">
+            <div class="website-title" id="website-title">
+                <a href="/" class="website-title-link">
+                    我的数字花园
+                </a>
+            </div>
+            <nav class="menu">
+                
+                    <li class="menu-item">
+                        <a href="/">
+                            首页
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            归档
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/tags">
+                            标签
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a target="_blank" rel="noopener" href="https://github.com/inferno0303">
+                            关于
+                        </a>
+                    </li>
+                
+            </nav>
+        </div>
+    </header>
+
+    
+        <div class="banner-placeholder" id="banner-placeholder"></div>
+    
+
+    <div class="container">
+        <!-- 嵌套内容区域 -->
+        <div class="content">
+            <article class="post">
+  <div class="post-title" id="post-title">
+    <h1 class="h1-title">
+      ZooKeeper与其他产品的对比
+    </h1>
+  </div>
+  <div class="post-meta">
+    <span class="post-tags">
+      
+        <a href="/tags/note">#note</a>
+      
+    </span>
+    <span class="post-word-count">4369字</span>
+    <span class="post-time">2022-04-30</span>
+  </div>
+  <div class="post-content">
+    <blockquote>
+<p>ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.</p>
+</blockquote>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ul>
+<li>数据发布&#x2F;订阅</li>
+<li>负载均衡</li>
+<li>命名服务</li>
+<li>分布式协调&#x2F;通知</li>
+<li>集群管理</li>
+<li>Master 选举</li>
+<li>分布式锁</li>
+<li>分布式队列</li>
+</ul>
+<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p>如果场景未应用配置的强一致分发，类比到阿里内部，就是 Diamond，在阿里云售卖产品为 ACM。</p>
+<table>
+<thead>
+<tr>
+<th>产品</th>
+<th>ACM</th>
+<th>Spring Cloud Config Server</th>
+<th>ZooKeeper</th>
+<th>ETCD</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>配置修改</td>
+<td>直接在 ACM 控制台上进行配置修改</td>
+<td>一般在 Git 仓库上进行配置修改</td>
+<td>通过调用 ZK API 修改</td>
+<td>通过调用 etcd API 修改</td>
+</tr>
+<tr>
+<td>配置自动推送</td>
+<td>修改过的配置自动推送到监听的客户端</td>
+<td>客户端只能在启动的时候加载</td>
+<td>修改过的配置自动推送到监听的客户端</td>
+<td>修改过的配置自动推送到监听的客户端</td>
+</tr>
+<tr>
+<td>API接口</td>
+<td>基于 RESTful API，同时支持 Java Native 接口，Spring Cloud 接口，和其他语言类接口</td>
+<td>基于 RESTful API 和 Spring Cloud 规范，同时也支持其他语言客户端</td>
+<td>支持 Java 原生接口</td>
+<td>基于 RESTful API 的接口</td>
+</tr>
+<tr>
+<td>版本管理</td>
+<td>在 ACM 上自动记录各个修改的版本信息</td>
+<td>通过 Git 间接管理版本</td>
+<td>不带任何版本控制</td>
+<td>不带任何版本控制</td>
+</tr>
+<tr>
+<td>配置推送追踪</td>
+<td>可查询所有客户端配置推送状态和轨迹</td>
+<td>无法查询配置推送历史</td>
+<td>无法查询配置推送历史</td>
+<td>无法查询配置推送历史</td>
+</tr>
+</tbody></table>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>参考 <a target="_blank" rel="noopener" href="https://zookeeper.apache.org/doc/r3.3.3/zookeeperStarted.html">start</a> 文档。</p>
+<ul>
+<li><p>添加 zoo.cfg 文件，内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">tickTime=2000<br>initLimit=10<br>syncLimit=5<br>dataDir=/Users/zhoukeke/Downloads/apache-zookeeper-3.8.0-bin/tmp/zookeeper<br>clientPort=2181<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>启动 <code>bin/zkServer.sh start</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext"># bin/zkServer.sh start<br>ZooKeeper JMX enabled by default<br>Using config: /Users/zhoukeke/Downloads/apache-zookeeper-3.8.0-bin/bin/../conf/zoo.cfg<br>Starting zookeeper ... STARTED<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>连接 <code>bin/zkCli.sh -server 127.0.0.1:2181</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">$bin/zkCli.sh -server 127.0.0.1:2181<br>Connecting to 127.0.0.1:2181<br>2022-04-08 15:08:56,133 [myid:] - INFO  [main:o.a.z.Environment@98] - Client environment:zookeeper.version=3.8.0-5a02a05eddb59aee6ac762f7ea82e92a68eb9c0f, built on 2022-02-25 08:49 UTC<br>2022-04-08 15:08:56,134 [myid:] - INFO  [main:o.a.z.Environment@98] - Client environment:host.name=localhost<br>2022-04-08 15:08:56,134 [myid:] - INFO  [main:o.a.z.Environment@98] - Client environment:java.version=17.0.2<br>2022-04-08 15:08:56,134 [myid:] - INFO  [main:o.a.z.Environment@98]<br>...<br>[zk: 127.0.0.1:2181(CONNECTED) 0] help<br>[zk: 127.0.0.1:2181(CONNECTED) 3] create /zk_pipe_test &quot;hello zk_pipe_test&quot;<br>Created /zk_pipe_test<br>[zk: 127.0.0.1:2181(CONNECTED) 4] get /zk_pipe_test<br>hello zk_pipe_test<br>[zk: 127.0.0.1:2181(CONNECTED) 6] ls /<br>[zk_pipe_test, zookeeper]<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>关闭服务器 <code>bin/zkServer.sh stop</code></p>
+</li>
+</ul>
+<h2 id="Java-Example"><a href="#Java-Example" class="headerlink" title="Java Example"></a>Java Example</h2><h3 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">&lt;dependencies&gt;<br>    &lt;dependency&gt;<br>        &lt;groupId&gt;org.apache.zookeeper&lt;/groupId&gt;<br>        &lt;artifactId&gt;zookeeper&lt;/artifactId&gt;<br>        &lt;version&gt;3.4.8&lt;/version&gt;<br>    &lt;/dependency&gt;<br>&lt;/dependencies&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">package com.demo.zookeeper;<br><br>import java.io.IOException;<br><br>import org.apache.zookeeper.KeeperException;<br>import org.apache.zookeeper.WatchedEvent;<br>import org.apache.zookeeper.Watcher;<br>import org.apache.zookeeper.ZooKeeper;<br><br>public class Main implements Watcher &#123;<br><br>	public static void main(String[] args) throws IOException, KeeperException, InterruptedException &#123;<br>		ZooKeeper zk = new ZooKeeper(&quot;127.0.0.1:2181&quot;, 3000, new Main());<br><br>		byte[] bytes = zk.getData(&quot;/zk_pipe_test&quot;, false, null);<br><br>		System.out.println(new String(bytes));<br>	&#125;<br><br>	public void process(WatchedEvent event) &#123;<br>		// TODO Auto-generated method stub<br>		System.out.println(event);<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="output"><a href="#output" class="headerlink" title="output"></a>output</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">log4j:WARN No appenders could be found for logger (org.apache.zookeeper.ZooKeeper).<br>log4j:WARN Please initialize the log4j system properly.<br>log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.<br>WatchedEvent state:SyncConnected type:None path:null<br>hello zk_pipe_test<br></code></pre></td></tr></table></figure>
+
+<h2 id="One-More-Thing"><a href="#One-More-Thing" class="headerlink" title="One More Thing"></a>One More Thing</h2><p>Paxos, 分布式一致性算法， <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/31780743">https://zhuanlan.zhihu.com/p/31780743</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li>Paxos</li>
+<li>zookeeper</li>
+<li>ACM</li>
+<li>应用场景</li>
+<li>start</li>
+<li><a target="_blank" rel="noopener" href="https://zookeeper.apache.org/doc/r3.3.3/javaExample.html#ch_Introduction">https://zookeeper.apache.org/doc/r3.3.3/javaExample.html#ch_Introduction</a></li>
+<li><a target="_blank" rel="noopener" href="https://ihong5.wordpress.com/2014/05/27/maven-how-to-connect-to-a-zookeeper-in-java/">https://ihong5.wordpress.com/2014/05/27/maven-how-to-connect-to-a-zookeeper-in-java/</a></li>
+</ul>
+
+  </div>
+</article>
+<script>
+  // 修改网页标题
+  document.title = document.getElementById("post-title").innerText + ' - ' + document.getElementById("website-title").innerText;
+</script>
+        </div>
+        <div class="footer">
+            <p>
+                © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="color: #ccc;">inferno0303</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

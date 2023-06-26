@@ -1,22 +1,16 @@
-<!-- 根模板 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
-<!-- head标签 -->
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= config.title %>
-    </title>
+    <title><%= config.title %></title>
     <%- favicon_tag("favicon.ico") %>
     <%- css("css/style.css") %>
     <%- css("css/hljs-default-min.css") %>
-    <script type="module" src="/js/index.js"></script>
+    <!-- <script type="module" src="/js/index.js"></script> -->
 </head>
-<!-- body标签 -->
 <body>
-    <!-- header区域 -->
+
     <header class="header">
         <div class="header-wrapper">
             <div class="website-title" id="website-title">

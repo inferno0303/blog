@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的数字花园</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/hljs-default-min.css">
+
+    <!-- <script type="module" src="/js/index.js"></script> -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+
+    <header class="header">
+        <div class="header-wrapper">
+            <div class="website-title" id="website-title">
+                <a href="/" class="website-title-link">
+                    我的数字花园
+                </a>
+            </div>
+            <nav class="menu">
+                
+                    <li class="menu-item">
+                        <a href="/">
+                            首页
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            归档
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/tags">
+                            标签
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a target="_blank" rel="noopener" href="https://github.com/inferno0303">
+                            关于
+                        </a>
+                    </li>
+                
+            </nav>
+        </div>
+    </header>
+
+    
+        <div class="banner-placeholder" id="banner-placeholder"></div>
+    
+
+    <div class="container">
+        <!-- 嵌套内容区域 -->
+        <div class="content">
+            <article class="post">
+  <div class="post-title" id="post-title">
+    <h1 class="h1-title">
+      TestPaper-Gen-在线组卷
+    </h1>
+  </div>
+  <div class="post-meta">
+    <span class="post-tags">
+      
+        <a href="/tags/Java">#Java</a>
+      
+        <a href="/tags/%E5%89%8D%E7%AB%AF">#前端</a>
+      
+        <a href="/tags/%E4%BD%9C%E5%93%81">#作品</a>
+      
+    </span>
+    <span class="post-word-count">2176字</span>
+    <span class="post-time">2022-07-09</span>
+  </div>
+  <div class="post-content">
+    <h1 id="在线组卷系统"><a href="#在线组卷系统" class="headerlink" title="在线组卷系统"></a>在线组卷系统</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>名称：在线组卷系统 - TestPapaerGen</p>
+<p>简介：自动组卷系统，遗传算法、贪心算法，支持导入题库，手动选择、自动组卷，生成排版美观的Word文档，前后端分离WebApp，Java SpringBoot + React</p>
+<p>技术栈：后端 Java SpringBoot + 前端 React Umi.js</p>
+<p>类型：WebApp</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>TestPapaerGen-Backend：后端</p>
+<p>TestPapaerGen-Frontend：前端</p>
+<p>数据库表结构：数据库</p>
+<p>assets：示例文件</p>
+<h3 id="如何运行"><a href="#如何运行" class="headerlink" title="如何运行"></a>如何运行</h3><p>后端：标准Java Maven SpringBoot工程，在pom.xml目录下执行mvn install拉取依赖后，mvn package打包jar包，推荐在idea环境下配置maven项目。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mvn install<br>mvn package<br>java -jar ./target/xxx.jar<br></code></pre></td></tr></table></figure>
+
+<p>前端：标准webpack工程，在package.json目录下执行npm install拉取依赖，npm start运行工程，npm build构建工程。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">npm install<br>npm start<br>npm build<br></code></pre></td></tr></table></figure>
+
+<p>数据库：记得导入数据库表结构，默认utf8mb4，数据库表结构sql文件已包含建库、建表语句。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mysql -u root -h host -p &lt; xxx.sql<br></code></pre></td></tr></table></figure>
+
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ol>
+<li>登录功能，支持注册账号，登录，基于拦截器实现的权限认证；</li>
+<li>题库管理，支持填空题、选择题、判断题、设计题、阅读题多种类型，所有题目可自由增删改查；</li>
+<li>手动组卷，支持手动从试题库选择题目，加入组卷列表中，作为题目输出；</li>
+<li>自动组卷，支持按照难易度，题目类型数，分值，章节等多个维度按需自动组卷，带随机算法，并非简单查库，可按照相同设置自动出A&#x2F;B卷。</li>
+<li>输出试卷，排版美观，输出openxml格式的文档，可office打开，可以直接打印，效果如下图；</li>
+<li>出题历史，如字面意思，可查看出卷历史，统计出卷难度，复盘试卷题型；</li>
+<li>完善的可视化统计，各种炫酷的图表，可视化汇报数据状态，基于Echarts。</li>
+</ol>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><h3 id="视频演示"><a href="#视频演示" class="headerlink" title="视频演示"></a>视频演示</h3><p>视频演示点击这里👉<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/inferno0303/assets@main/2022/zjxt-20220517.mp4">视频演示</a></p>
+<p>示例文件见 assets 文件夹</p>
+<h3 id="欢迎首页"><a href="#欢迎首页" class="headerlink" title="欢迎首页"></a>欢迎首页</h3><p><img src="https://cdn.jsdelivr.net/gh/inferno0303/assets@main/2022/zjxt.5wazm0ht27k0.webp" alt="欢迎首页"></p>
+<h3 id="题库管理"><a href="#题库管理" class="headerlink" title="题库管理"></a>题库管理</h3><p><img src="https://cdn.jsdelivr.net/gh/inferno0303/assets@main/2022/zjxt.6k3izqsxtig0.webp" alt="题库管理"></p>
+<h3 id="导出试卷文档"><a href="#导出试卷文档" class="headerlink" title="导出试卷文档"></a>导出试卷文档</h3><ul>
+<li>支持导出word格式文档</li>
+<li>支持导出参考答案</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/inferno0303/assets@main/2022/zjxt.4aw16jt2ug60.webp" alt="导出试卷文档"></p>
+<h3 id="导入题库"><a href="#导入题库" class="headerlink" title="导入题库"></a>导入题库</h3><ul>
+<li>支持导入Excel格式的题库</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/inferno0303/assets@main/2022/zjxt.3kga2ktq36u0.webp" alt="导入题库"></p>
+<h3 id="题库概览"><a href="#题库概览" class="headerlink" title="题库概览"></a>题库概览</h3><p><img src="https://cdn.jsdelivr.net/gh/inferno0303/assets@main/2022/zjxt.4d4a464c2xs0.webp" alt="题库概览"></p>
+<h3 id="自动组卷"><a href="#自动组卷" class="headerlink" title="自动组卷"></a>自动组卷</h3><p><img src="https://cdn.jsdelivr.net/gh/inferno0303/assets@main/2022/zjxt.6j183ph2n600.webp" alt="自动组卷"></p>
+<h3 id="出题历史"><a href="#出题历史" class="headerlink" title="出题历史"></a>出题历史</h3><p><img src="https://cdn.jsdelivr.net/gh/inferno0303/assets@main/2022/zjxt.1sb3o45h1u4g.webp" alt="出题历史"></p>
+<h3 id="支持重新编辑历史组卷（新增）"><a href="#支持重新编辑历史组卷（新增）" class="headerlink" title="支持重新编辑历史组卷（新增）"></a>支持重新编辑历史组卷（新增）</h3><p><img src="https://cdn.jsdelivr.net/gh/inferno0303/assets@main/2022/%E6%88%AA%E5%9B%BE.69vgw091ob00.webp" alt="支持重新编辑历史组卷"></p>
+<h3 id="注册账户、管理员账户"><a href="#注册账户、管理员账户" class="headerlink" title="注册账户、管理员账户"></a>注册账户、管理员账户</h3><p><img src="https://cdn.jsdelivr.net/gh/inferno0303/assets@main/2022/zjxt.2eqpbzzben28.webp" alt="注册账户、管理员账户"></p>
+
+  </div>
+</article>
+<script>
+  // 修改网页标题
+  document.title = document.getElementById("post-title").innerText + ' - ' + document.getElementById("website-title").innerText;
+</script>
+        </div>
+        <div class="footer">
+            <p>
+                © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="color: #ccc;">inferno0303</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

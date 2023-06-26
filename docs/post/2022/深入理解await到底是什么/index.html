@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的数字花园</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/hljs-default-min.css">
+
+    <!-- <script type="module" src="/js/index.js"></script> -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+
+    <header class="header">
+        <div class="header-wrapper">
+            <div class="website-title" id="website-title">
+                <a href="/" class="website-title-link">
+                    我的数字花园
+                </a>
+            </div>
+            <nav class="menu">
+                
+                    <li class="menu-item">
+                        <a href="/">
+                            首页
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            归档
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/tags">
+                            标签
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a target="_blank" rel="noopener" href="https://github.com/inferno0303">
+                            关于
+                        </a>
+                    </li>
+                
+            </nav>
+        </div>
+    </header>
+
+    
+        <div class="banner-placeholder" id="banner-placeholder"></div>
+    
+
+    <div class="container">
+        <!-- 嵌套内容区域 -->
+        <div class="content">
+            <article class="post">
+  <div class="post-title" id="post-title">
+    <h1 class="h1-title">
+      深入理解await到底是什么
+    </h1>
+  </div>
+  <div class="post-meta">
+    <span class="post-tags">
+      
+        <a href="/tags/note">#note</a>
+      
+    </span>
+    <span class="post-word-count">5300字</span>
+    <span class="post-time">2022-05-25</span>
+  </div>
+  <div class="post-content">
+    <h1 id="深入理解await到底是什么"><a href="#深入理解await到底是什么" class="headerlink" title="深入理解await到底是什么"></a>深入理解await到底是什么</h1><blockquote>
+<p>前置知识：微任务、宏任务、Event Loop<br>推荐阅读：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6936630572936593422">https://juejin.cn/post/6936630572936593422</a></p>
+</blockquote>
+<h2 id="0x01-首先要了解Promise的两个重要属性"><a href="#0x01-首先要了解Promise的两个重要属性" class="headerlink" title="0x01 首先要了解Promise的两个重要属性"></a>0x01 首先要了解Promise的两个重要属性</h2><blockquote>
+<p>此处引用自<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000038865350">https://segmentfault.com/a/1190000038865350</a></p>
+</blockquote>
+<h3 id="三个状态"><a href="#三个状态" class="headerlink" title="三个状态"></a>三个状态</h3><ul>
+<li>pending 准备</li>
+<li>fulfilled 成功</li>
+<li>rejected 失败</li>
+</ul>
+<h3 id="两个过程"><a href="#两个过程" class="headerlink" title="两个过程"></a>两个过程</h3><ul>
+<li>pending -&gt; fulfilled</li>
+<li>pending -&gt; rejected</li>
+</ul>
+<h3 id="一个方法"><a href="#一个方法" class="headerlink" title="一个方法"></a>一个方法</h3><ul>
+<li>then</li>
+</ul>
+<h3 id="Promise的数据结构"><a href="#Promise的数据结构" class="headerlink" title="Promise的数据结构"></a>Promise的数据结构</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">&#123;<br>  [[<span class="hljs-title class_">PromiseState</span>]]: <span class="hljs-string">&quot;fulfilled&quot;</span>,  <span class="hljs-comment">// 状态</span><br>  [[<span class="hljs-title class_">PromiseResult</span>]]: <span class="hljs-number">1</span> <span class="hljs-comment">// resolve函数传递的参数值</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="0x02-其次要知道async是什么"><a href="#0x02-其次要知道async是什么" class="headerlink" title="0x02 其次要知道async是什么"></a>0x02 其次要知道async是什么</h2><p>async包装的函数永远返回一个Promise对象</p>
+<ul>
+<li>async函数执行完语句后，就自动触发<code>resolve()</code></li>
+<li>async函数内return，会将返回值装入<code>Promise数据结构</code>的<code>PromiseResult</code>属性里</li>
+<li>如果async函数没有return，那么<code>PromiseResult</code>属性里会装入<code>undefined</code></li>
+<li>如果async函数没有发生异常，那么<code>PromiseState</code>会变成<code>fulfilled</code></li>
+<li>如果async函数体发生了异常，那么<code>PromiseState</code>会变成<code>rejected</code></li>
+</ul>
+<h2 id="0x03-最后再了解await干了什么"><a href="#0x03-最后再了解await干了什么" class="headerlink" title="0x03 最后再了解await干了什么"></a>0x03 最后再了解await干了什么</h2><p>它的作用如下：</p>
+<blockquote>
+<p>引用自文章<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000024442415">https://segmentfault.com/a/1190000024442415</a><br>await 语句期望在其右侧有一个 promise 对象。当你使用 await 语句时，javascript 会暂停 async 函数的执行，等待 promise 返回一个值，然后继续执行。</p>
+</blockquote>
+<p>await其实是一个语法糖，用来方便的实现 Promise 结构的封装，它必须在async内使用（为什么？文章后面会说明原因）</p>
+<p>大部分初学者粗浅的理解是：</p>
+<ul>
+<li>await 右边的函数一定是异步函数</li>
+<li>await 会阻塞当前的它所在的 async 函数执行过程，要等右边的异步函数执行完成再执行下面的代码</li>
+</ul>
+<p><strong>以上的理解很粗浅，而且是大约是错的</strong></p>
+<p>让我们看以下例子：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">func1</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;C&quot;</span>)<br>    <span class="hljs-keyword">await</span> <span class="hljs-title function_">func2</span>() <span class="hljs-comment">// 调用一个异步函数func2()</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;C++&quot;</span>)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">func2</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Java&quot;</span>)<br>        <span class="hljs-title function_">resolve</span>()<br>    &#125;).<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Python&quot;</span>)<br>    &#125;)<br>&#125;<br><br><span class="hljs-title function_">func1</span>()<br></code></pre></td></tr></table></figure>
+
+<p>执行结果为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">C<br>Java<br>Python<br>C++<br></code></pre></td></tr></table></figure>
+<p>这个输出结果符合预期，毕竟await真的有等func2做完所有事情后再向下执行<br>以上代码的<code>await</code>相当于做了这件事，等效于：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">func1</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;C&quot;</span>)<br>    <span class="hljs-title function_">func2</span>()<br>    <span class="hljs-comment">// console.log(&quot;C++&quot;) 这句话被移动到当前Promise返回值的.then里面去了</span><br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">func2</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Java&quot;</span>)<br>        <span class="hljs-title function_">resolve</span>()<br>    &#125;).<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Python&quot;</span>)<br>    &#125;)<br>&#125;<br><br><span class="hljs-title function_">func1</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;C++&quot;</span>) <span class="hljs-comment">// 我在这里</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">C<br>Java<br>Python<br>C++<br></code></pre></td></tr></table></figure>
+
+<p>妙啊！</p>
+<p>那么async代码相当于做了这件事，等效于：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">func1</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;C&quot;</span>)<br>        <span class="hljs-title function_">func2</span>()<br>        <span class="hljs-title function_">resolve</span>() <span class="hljs-comment">// 把后面的callback丢到任务队列里，此时队列里已经有一个微任务啦</span><br>    &#125;)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">func2</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Java&quot;</span>)<br>        <span class="hljs-title function_">resolve</span>() <span class="hljs-comment">// 把后面的callback丢到任务队列里，此时队列里没有微任务呢</span><br>    &#125;).<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Python&quot;</span>) <span class="hljs-comment">// 我是第一个callback</span><br>    &#125;)<br>&#125;<br><br><span class="hljs-title function_">func1</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;C++&quot;</span>) <span class="hljs-comment">// 我是第二个callback</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">C<br>Java<br>Python<br>C++<br></code></pre></td></tr></table></figure>
+
+<p>通过这三个例子，我们一步步把async await丢了，看到了他们语法糖前原本的样子</p>
+<h2 id="0x04-关于await的误区"><a href="#0x04-关于await的误区" class="headerlink" title="0x04 关于await的误区"></a>0x04 关于await的误区</h2><p>先看这个例子，**请注意fun2()**：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 微任务队列 - 深刻理解await到底干了什么</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">fun1</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun1 - 1&quot;</span>)<br>    <span class="hljs-keyword">await</span> <span class="hljs-title function_">fun2</span>() <span class="hljs-comment">// 此时fun2()不返回一个Promise对象</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun1 - 2&quot;</span>)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">fun2</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun2 - 1&quot;</span>)<br>&#125;<br><br><span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">resolve</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;promise - 1&quot;</span>)<br>    <span class="hljs-title function_">resolve</span>()<br>&#125;).<span class="hljs-title function_">then</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;promise then - 1&quot;</span>)<br>&#125;)<br><br><span class="hljs-title function_">fun1</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun1 then&quot;</span>)<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>执行结果为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">promise - 1<br>fun1 - 1<br>fun2 - 1<br>promise then - 1<br>fun1 - 2<br>fun1 then<br></code></pre></td></tr></table></figure>
+
+<p>以上代码去掉了async 和 await 后是这样的：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">fun1</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun1 - 1&quot;</span>)<br>        <span class="hljs-title function_">fun2</span>()<br>        <span class="hljs-title function_">resolve</span>()<br>    &#125;)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">fun2</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun2 - 1&quot;</span>)<br>&#125;<br><br><span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">resolve</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;promise - 1&quot;</span>)<br>    <span class="hljs-title function_">resolve</span>()<br>&#125;).<span class="hljs-title function_">then</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;promise then - 1&quot;</span>)<br>&#125;)<br><br><span class="hljs-title function_">fun1</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun1 - 2&quot;</span>)<br>&#125;).<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun1 then&quot;</span>)<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>剖析一下执行过程：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-number">1</span>、先执行<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;promise - 1&quot;</span>)，输出<br><span class="hljs-number">2</span>、然后执行<span class="hljs-title function_">resolve</span>()，把.<span class="hljs-property">then</span>后面的<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;promise then - 1&quot;</span>)推到任务队列里了<br><span class="hljs-number">3</span>、然进入<span class="hljs-title function_">fun1</span>()后执行<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun1 - 1&quot;</span>)<br><span class="hljs-number">4</span>、接着执行fun2函数里的<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun2 - 1&quot;</span>)<br><br>此时同步代码已经执行完了<br><br><span class="hljs-number">5</span>、然后执行<span class="hljs-title function_">resolve</span>()，把fun1的then的callback，也就是<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun1 - 2&quot;</span>)，丢到任务队列里去，推入队列后，此时队列里有<span class="hljs-number">2</span>个任务了<br><span class="hljs-number">6</span>、因为前一个<span class="hljs-title class_">Promise</span>对象的同步代码已经执行完成，触发了隐式<span class="hljs-title function_">resolve</span>()，所以将<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun1 then&quot;</span>) 推入队列，此时队列里有<span class="hljs-number">3</span>个任务了<br><br>此时任务队列已经有<span class="hljs-number">3</span>个微任务了，遵循先入先出的队列规则<br><br><span class="hljs-number">7</span>、取出<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;promise then - 1&quot;</span>)<br><span class="hljs-number">8</span>、取出<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun1 - 2&quot;</span>)<br><span class="hljs-number">9</span>、取出<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun1 then&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>要了解执行过程，结合注解版更好理解：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">fun1</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun1 - 1&quot;</span>) <span class="hljs-comment">// 我第4，被执行</span><br>        <span class="hljs-title function_">fun2</span>() <span class="hljs-comment">// 我第5，执行fun2函数</span><br>        <span class="hljs-title function_">resolve</span>() <span class="hljs-comment">// 我第7，把fun1的then的callback丢到任务队列里去，此时队列已经有一个任务啦</span><br>    &#125;)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">fun2</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun2 - 1&quot;</span>) <span class="hljs-comment">// 我第6，被执行了</span><br>&#125;<br><br><span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">resolve</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;promise - 1&quot;</span>) <span class="hljs-comment">// 我第1先执行</span><br>    <span class="hljs-title function_">resolve</span>() <span class="hljs-comment">// 我第2执行，把后面的callback丢到任务队列里</span><br>&#125;).<span class="hljs-title function_">then</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;promise then - 1&quot;</span>) <span class="hljs-comment">// 第2后，我被丢到任务队列里去了，还没执行呢</span><br>    <span class="hljs-comment">// 我第9，当前已经没有要同步执行的代码了，我被从任务队列里取出来执行啦，取出后还剩2个任务</span><br>&#125;)<br><br><span class="hljs-title function_">fun1</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> &#123; <span class="hljs-comment">// 第3，执行fun1函数</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun1 - 2&quot;</span>) <span class="hljs-comment">// 我第10，从任务队列里取出并执行，取出后任务队列还有1个任务</span><br>&#125;).<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fun1 then&quot;</span>) <br>    <span class="hljs-comment">// 我第8，因为前一个Promise对象同步代码已经执行完成，触发了隐式resolve()，我被丢到任务队列里了，此时任务队列已经有2个任务啦</span><br>    <span class="hljs-comment">// 第11，我被从任务队列里取出来执行了，取出后任务队列为空</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<h2 id="0x05-总结"><a href="#0x05-总结" class="headerlink" title="0x05 总结"></a>0x05 总结</h2><p>以上的例子说明了：</p>
+<ul>
+<li><p><strong>await其实就是把它下面的所有代码块，移动到当前所在async函数的.then回调中了！这也回答了前文中「为什么await一定要在async函数中」的问题了</strong></p>
+</li>
+<li><p>还要特别记住的是，<strong>async函数执行完所有的同步语句后，会触发隐式resolve，而resolve就是把.then的callback丢到异步队列的操作</strong></p>
+</li>
+<li><p>其次要知道的是，<strong>Promise.then()也会返回Promise对象，这就是.then().then()链式调用的基础。</strong></p>
+</li>
+</ul>
+<p>学而不思则罔，思而不学则殆。</p>
+
+  </div>
+</article>
+<script>
+  // 修改网页标题
+  document.title = document.getElementById("post-title").innerText + ' - ' + document.getElementById("website-title").innerText;
+</script>
+        </div>
+        <div class="footer">
+            <p>
+                © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="color: #ccc;">inferno0303</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
