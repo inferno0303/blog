@@ -11,26 +11,26 @@
 > 版本：V1.0  
 > 作者：github@inferno0303
 
-# 最常用的Hexo命令
+# 1 如何使用
 
-> 详细Hexo命令，例如如何本地运行、构建产物请参考 Hexo 官方文档[https://hexo.io/zh-cn/docs/commands](https://hexo.io/zh-cn/docs/commands)
+> 详细Hexo命令，例如如何本地运行、构建产物请参考[Hexo 官方文档](https://hexo.io/zh-cn/docs/commands)
 
 以下记录最常用操作命令
 
-## 使用npm安装依赖
+## 1.1 使用npm安装依赖
 
 ```
 npm config set registry https://registry.npm.taobao.org
 npm install
 ```
 
-## 运行本地Web服务器
+## 1.2 运行本地Web服务器
 
 ```
 node .\node_modules\hexo\bin\hexo server
 ```
 
-## 清理本地缓存
+## 1.3 清理本地缓存
 
 清除缓存文件 (db.json) 和已生成的静态文件 (public)，在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。
 
@@ -38,13 +38,13 @@ node .\node_modules\hexo\bin\hexo server
  node .\node_modules\hexo\bin\hexo clean
 ```
 
-## 生成静态文件
+## 1.4 生成静态文件
 
 ```
  node .\node_modules\hexo\bin\hexo generate
 ```
 
-# Hexo 文件目录结构
+# 2 文件目录结构
 
 > 参考 Hexo 官方文档：(https://hexo.io/zh-cn/docs/setup)[https://hexo.io/zh-cn/docs/setup]
 
@@ -67,21 +67,21 @@ $ npm install
 └── themes
 ```
 
-## _config.yml
+## 2.1 _config.yml
 
 网站的配置信息，可以在此配置大部分的参数。
 
-## package.json（描述 Node.js 项目的配置文件）
+## 2.2 package.json
 
-Hexo 应用程序的信息。EJS, Stylus 和 Markdown 渲染引擎 已默认安装，您可以自由移除。
+描述 Node.js 项目的配置文件，Hexo 应用程序的信息。EJS, Stylus 和 Markdown 渲染引擎 已默认安装，您可以自由移除。
 
-## scaffolds/ （模板文件夹）
+## 2.3 scaffolds/ （模板文件夹）
 
 模版文件夹。当您新建文章时，Hexo 会根据 scaffold 来创建文件。
 
 Hexo 的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改 scaffold/post.md 中的 Front-matter 内容，那么每次新建一篇文章时都会包含这个修改。
 
-## source/（资源文件夹）
+## 2.4 source/（资源文件夹）
 
 资源文件夹是存放用户资源的地方。例如：文章、图片。
 
@@ -89,14 +89,14 @@ Hexo 的模板是指在新建的文章文件中默认填充的内容。例如，
 
 除 _posts 文件夹（存储markdown文件，是博客文章的内容）之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。
 
-## themes/（主题文件夹）
+## 2.5 themes/（主题文件夹）
 
 主题文件夹。Hexo 会根据主题来生成静态页面。
 
 自定义主题遇到很多坑，Hexo 的官方文档写得很差，下一节会对自定义 Hexo 主题做详细说明。
 
 
-# Hexo 主题文件目录结构
+# 3 主题文件的目录结构
 
 > 参考 Hexo 官方文档：(https://hexo.io/zh-cn/docs/themes)[https://hexo.io/zh-cn/docs/themes]
 
@@ -121,39 +121,42 @@ Hexo 的模板是指在新建的文章文件中默认填充的内容。例如，
 
 此外，主题目录中还包含主题的配置文件，名为：`config.yml`
 
-## _config.yml
+## 3.1 _config.yml
 
 主题的配置文件。和 Hexo 配置文件不同，主题配置文件修改时会自动更新，无需重启 Hexo Server。
 
-## layout
+## 3.2 layout/
 布局文件夹。用于存放主题的模板文件，决定了网站内容的呈现方式，Hexo 内建 Nunjucks 模板引擎，您可以另外安装插件来获得 EJS、Haml、Jade 或 Pug 支持，Hexo 根据模板文件的扩展名来决定所使用的模板引擎，例如：
 
 - layout.ejs   - 使用 EJS
 - layout.swig  - 使用 Swig
 
-## scripts
+## 3.3 scripts/
 脚本文件夹。在启动时，Hexo 会载入此文件夹内的 JavaScript 文件，请参见 插件 以获得更多信息。
 
-## source
+## 3.4 source/
 资源文件夹，除了模板以外的 Asset，例如 CSS、JavaScript 文件等，都应该放在这个文件夹中。文件或文件夹开头名称为 _（下划线）或隐藏的文件会被忽略。
 
 如果文件可以被渲染的话，会经过解析然后储存到 public 文件夹，否则会直接拷贝到 public 文件夹。
 
-# 如何自定义 Hexo 主题
+# 4 如何自定义主题
 
 自定义 Hexo 主题要创建以下的文件：
 
-- `/layout/layout.ejs`：根布局文件，相当于 `index.html`。
-- `/layout/*.ejs`：各模板文件，用于在`*.md`文章头指定 layout 。
+- `/layout/*.ejs`：各模板文件，用于在 `*.md` 文章头指定 layout 。
 - `/source/*`：资源文件夹，JS、CSS等静态文件会被复制到public文件夹，浏览器可直接访问。
 - `/script/*.js`：脚本文件，在启动时 Hexo 会载入此文件夹内的 JS 代码，通常用于插件开发。
 - `_config.yml`：主题的配置文件，可以编写一写全局变量，用于在主题模板内使用变量。
 
-## 1 创建 `/layout/layout.ejs`
+说明：
 
-**创建 `/layout/layout.ejs` 根布局模板文件，它应包含 `<head>` 标签，并作为所有页面的顶层父容器。**
+- **`/layout/*.ejs`目录下的文件是 EJS 模板文件。在 `*.md` 文件头部的 `layout` 属性指定 ejs 模板名，渲染器会根据对应的 EJS 模板文件生成相应的 HTML 内容。它们可以被看作是各个页面的 HTML 模板容器。**
 
-**layout.ejs 支持标准的 HTML 语法，并且可以包含其他文件，包括 `*.css`、`*.js` 文件以及其他 `*.ejs` 模板文件。这些文件会自动转换为 HTML 标签，这是由 Hexo 内置的 Nunjucks 模板引擎在模块中硬编码的规则。**
+
+## 4.1 创建 /layout/layout.ejs
+
+`/layout/layout.ejs`是根 EJS 模板文件，其中包含标准的 HTML `<head>` 等头部标签。在最终的渲染过程中，其他页面将被嵌套到该根模板中，相当于父容器。
+
 
 下面是一个最简单的 layout.ejs 文件的示例内容：
 
@@ -172,13 +175,9 @@ Hexo 的模板是指在新建的文章文件中默认填充的内容。例如，
 </html>
 ```
 
-## 2 创建其他 `*.ejs`
+## 4.2 创建 /layout/index.ejs
 
-**`/layout/*.ejs`目录下的文件是模板文件。用于在 `*.md` 文章的头部通过 `layout` 属性指定模板名，Hexo 会根据这些模板文件生成相应的 HTML 内容。它们可以被看作是各个页面的 HTML 模板容器，在最终的渲染过程中会被嵌套到父容器中（即前文提到的根布局文件）**
-
-### 2.1 创建 `index.ejs`
-
-**`/layout/index.ejs` 模板文件是必需的，每个主题至少都应包含一个 `index` 模板，因为它充当了网页根页面 `/` 的容器。当找不到其他模板文件时，如 post 文章或 archive 归档页面，系统会自动回退到该模板文件，确保网站的正常显示。**
+`/layout/index.ejs` 模板文件是必需的，每个主题至少都应包含一个 `index` 模板，因为它充当了网页根页面 `/` 的容器。当找不到其他模板文件时，如 post 文章或 archive 归档页面，系统会自动回退到该模板文件，确保网站的正常显示。
 
 下面是一个最简单的 index.ejs 文件的示例内容：
 
@@ -190,7 +189,7 @@ Hexo 的模板是指在新建的文章文件中默认填充的内容。例如，
 
 值得注意的是，**Hexo 会自动生成 post、archives、tags 等页面**，因此虽然 post、archive、tags 的模板不是必需的，但最好还是单独创建这些模板，这样做可以保证这些页面正常显示。
 
-### 2.2 创建 `post.ejs` 模板
+## 4.3 创建 /layout/post.ejs
 
 **Hexo 约定 post 页面使用名为 `post.ejs` 的模板，因此要创建 `post.ejs` 模板。**
 
@@ -202,7 +201,7 @@ Hexo 的模板是指在新建的文章文件中默认填充的内容。例如，
 </article>
 ```
 
-### 2.3 创建 `archive.ejs` 模板
+## 4.4 创建 /layout/archive.ejs
 
 **Hexo 约定 archives 页面使用名为 `archive.ejs` 的模板，因此要创建 `archive.ejs` 模板。**
 
@@ -214,7 +213,7 @@ Hexo 的模板是指在新建的文章文件中默认填充的内容。例如，
 </section>
 ```
 
-## 3 创建其他 `ejs` 模板
+## 4.5 创建其他 ejs 模板
 
 **可以创建自定义模板，以显示自定义页面，而不局限于post、archives这些默认页面，下面以创建 about 页面为例子。**
 
@@ -241,14 +240,16 @@ layout: about
 
 **从上述描述可以看出，使用 `*.md` 文件可以创建新的页面路由。通过在 `*.md` 文件的头部指定 `layout` 属性，我们可以将其与任意的 `*.ejs` 模板关联起来。这种方法使得我们能够轻松创建具有不同风格的网页。**
 
-## 4 创建 `/source/*` 资源文件
+## 4.6 创建 css js 资源文件
 
-在这个文件夹中，我们可以创建 CSS 和 JS 文件，用于在不同的页面中引入并发挥作用。这些静态文件，包括 JS、CSS 等，会被复制到 public 文件夹中，从而可以直接在浏览器中访问。
+在 `/source/` 文件夹中，我们可以创建 CSS 和 JS 文件，用于在不同的页面中引入并发挥作用。这些静态文件，包括 JS、CSS 等，会被复制到 public 文件夹中，从而可以直接在浏览器中访问。
 
-# 我自定义的地方
+# 5 我自定义的地方
 
-## 构建静态Web产物的目录
+## 5.1 构建静态Web产物的目录
 
 `public_dir: docs`
 
 默认值是 public，但这里是为了匹配 github page 服务，所以默认将 docs 目录作为静态根目录
+
+*未完*
