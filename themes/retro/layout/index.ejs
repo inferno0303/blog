@@ -1,0 +1,134 @@
+<div class="container">
+    <aside class="sidebar_left">
+        <div style="position: sticky; top: 22.5px;">
+            <div class="card" style="text-align: center;">
+                <img src="zt01.jpeg" alt="logo" class="avatar_img">
+                <p class="font_large font_bold">小菠菜</p>
+                <p class="font_small" style="font-family: serif;">心怀梦想，脚踏实地</p>
+                <div class="overview">
+                    <div>
+                        <p class="font_large">100</p>
+                        <p class="font_small">文章</p>
+                    </div>
+                    <div>
+                        <p class="font_large">13</p>
+                        <p class="font_small">标签</p>
+                    </div>
+                    <div>
+                        <p class="font_large">6</p>
+                        <p class="font_small">分类</p>
+                    </div>
+                    <div>
+                        <p class="font_large">34.5</p>
+                        <p class="font_small">万字</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <p class="card_title">分类</p>
+                <div class="card_list">
+                    <div class="card_list_item">
+                        <span>专业课汇总</span>
+                        <span class="tag_gray">34</span>
+                    </div>
+                    <div class="card_list_item">
+                        <span>C/C++学习笔记</span>
+                        <span class="tag_gray">18</span>
+                    </div>
+                    <div class="card_list_item">
+                        <span>Java学习笔记</span>
+                        <span class="tag_gray">15</span>
+                    </div>
+                    <div class="card_list_item">
+                        <span>Python奇技淫巧</span>
+                        <span class="tag_gray">26</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <p class="card_title">标签</p>
+                <div class="card_tiled">
+                    <span class="font_small font_color_gray">#读书笔记</span>
+                    <span class="font_small font_color_gray">#折腾与探索</span>
+                    <span class="font_small font_color_gray">#前端</span>
+                    <span class="font_small font_color_gray">#作品</span>
+                    <span class="font_small font_color_gray">#转载</span>
+                    <span class="font_small font_color_gray">#技巧</span>
+                    <span class="font_small font_color_gray">#C/Cpp</span>
+
+                    <div style="display: flex; justify-content: flex-end; font-size: .85rem; padding: .5rem .75rem;">
+                        <span style="cursor: pointer; color: #1890ff;">所有标签></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div class="content_center">
+        <% page.posts.each((post, index)=> { %>
+            <div class="card">
+                <h1 class="font_color_gray">
+                    <%= post.title %>
+                </h1>
+                <% const wordsCount=post.content.replace(/<[^>]*>/g, '').length %>
+                    <p class="card_title">发布于：<%= date(post.date, "YYYY-MM-DD" ) %> / <%= wordsCount %>字</p>
+                    <p class="post_paragraph">
+                        <% const preview=post.content.replace(/<[^>]*>/g, ' ').slice(0, 150) %>
+                            <%- preview %>......
+                    </p>
+                    <div style="display: flex; justify-content: flex-end; font-size: .85rem; padding: .5rem .75rem;">
+                        <span style="cursor: pointer; color: #1890ff;">继续阅读</span>
+                    </div>
+            </div>
+        <% }) %>
+    </div>
+    <aside class="sidebar_right">
+        <div style="position: sticky; top: 22.5px;">
+            <div class="card">
+                <p class="card_title">最近发布</p>
+                <div class="card_list">
+                    <div class="card_list_item">
+                        <span>数字经济发展跑出加速度</span>
+                    </div>
+                    <div class="card_list_item">
+                        <span>现场：李强会见美国财长耶伦</span>
+                    </div>
+                    <div class="card_list_item">
+                        <span>外媒：扎波罗热地区发生爆炸</span>
+                    </div>
+                    <div class="card_list_item">
+                        <span>谱写“强富美高”新篇章</span>
+                    </div>
+                    <div class="card_list_item">
+                        <span>多项重点工程取得突破</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <p class="card_title">归档</p>
+                <div class="card_list">
+                    <div class="card_list_item">
+                        <span>2023年</span>
+                        <span class="tag_gray">11</span>
+                    </div>
+                    <div class="card_list_item">
+                        <span>2022年</span>
+                        <span class="tag_gray">13</span>
+                    </div>
+                    <div class="card_list_item">
+                        <span>2021年</span>
+                        <span class="tag_gray">15</span>
+                    </div>
+                    <div class="card_list_item">
+                        <span>2020年</span>
+                        <span class="tag_gray">18</span>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; font-size: .85rem; padding: .5rem .75rem;">
+                        <span style="cursor: pointer; color: #1890ff;">所有文章></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+</div>

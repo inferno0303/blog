@@ -1,0 +1,89 @@
+/* 卡片 */
+.card {
+    display: block;
+    padding: 22.5px;
+    margin-block-end: 22.5px;
+    border-radius: .5rem;
+    background-color: #fff;
+    overflow: auto;
+    box-shadow: 0 4px 10px rgba(0, 2, 4, .06), 0 0 1px rgba(0, 2, 4, .11);
+}
+
+/* 个人信息卡片 */
+.card .avatar_img {
+    width: 120px;
+    border-radius: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card .overview {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: stretch;
+    column-gap: 5px;
+}
+
+.card .overview div {
+    flex-grow: 1;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.card .overview div p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* 卡片标题 */
+.card .card_title {
+    display: block;
+    margin-top: 0;
+    font-size: .8rem;
+    color: #64778b;
+}
+
+.card .card_list {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.card .card_list .card_list_item {
+    display: flex;
+    justify-content: space-between;
+    font-size: .85rem;
+    padding: .5rem .75rem;
+    cursor: pointer;
+}
+
+.card .card_list .card_list_item:hover {
+    background-color: #eceef2;
+    border-radius: .5rem;
+}
+
+.card .card_tiled {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+/* 文章 */
+.post_h1 {}
+
+.post_h2 {}
+
+.post_h3 {}
+
+.post_h4 {}
+
+.post_paragraph {
+    /* 文章内容 西文字符用 Times 系列衬线体，中文用非衬线体 */
+    font-family: 'Times New Roman', Times, sans-serif;
+}
+
+.post_meta {
+    font-size: .8rem;
+    color: #64778b;
+}

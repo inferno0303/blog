@@ -1,100 +1,34 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的数字花园</title>
-    <link rel="shortcut icon" href="/favicon.ico">
-    
-<link rel="stylesheet" href="/css/style.css">
-
-    
-<link rel="stylesheet" href="/css/hljs-default-min.css">
-
-    <!-- <script type="module" src="/js/index.js"></script> -->
+    <title>小菠菜的数字花园</title>
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/index.css">
 <meta name="generator" content="Hexo 6.3.0"></head>
+
 <body>
-
     <header class="header">
-        <div class="header-wrapper">
-            <div class="website-title" id="website-title">
-                <a href="/" class="website-title-link">
-                    我的数字花园
-                </a>
-            </div>
-            <nav class="menu">
-                
-                    <li class="menu-item">
-                        <a href="/">
-                            首页
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="/archives">
-                            归档
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="/tags">
-                            标签
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a target="_blank" rel="noopener" href="https://github.com/inferno0303">
-                            关于
-                        </a>
-                    </li>
-                
-            </nav>
+        <div class="website_title">
+            <svg width="27" height="27" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 935 935">
+                <path
+                    d="M437 2a466 466 0 1061 930A466 466 0 00437 2zm234 169a401 401 0 01-1 119l8 16c17 41 18 47 18 85 0 26-1 43-4 53-1 6-6 11-13 15-8 5-7 6 6 6 25 0 46 4 62 12 13 7 21 13 33 26 11 11 14 17 14 23-1 5-8 24-13 31a51 51 0 01-19 19l27 28c30 30 38 39 53 60 8 12 17 28 17 33a400 400 0 01-75 96 1051 1051 0 01-112-176l-4 4a161 161 0 01-66 64c-9 4-11 6-11 8l-1 4c-2 1-5 15-4 16l18 8 24 2 19 1 9 4c15 8 21 16 33 47 6 14 25 73 25 76s-31 21-54 32a451 451 0 01-412-14c-2-1-2-2 2-13a384 384 0 0142-82c20-28 25-31 41-34l11-3 15-6c20-6 31-13 33-20 1-5-1-19-4-29-2-8-2-10-1-13 1-4 1-4 4-4l4-1-7-12c-7-13-8-17-6-23 1-3 1-3 7-4 11-2 12-4 10-14-2-6-13-16-23-21-7-4-9-4-9-1l-19 38-14 13-11 10-3-3c-3-2-6-3-9-1-1 1-2 3-2 15-2 23-4 34-12 46-11 19-38 40-114 92l-16 11-8-7c-8-7-30-30-30-32a1167 1167 0 0163-100c-2 0-28 28-50 54l-25 29 41-60c15-21 22-28 37-38l14-9-4-7c-9-12-5-17 33-49 9-7 16-14 16-15l2-6c3-5 3-10 1-12l-10-1c-5-1-7-2-7-3l-4-15c-4-19-5-33-2-54 3-17 5-24 8-26 4-2 20 5 22 9l2 1-4-18c-8-29-9-38-6-69v-20a180 180 0 00-18 51l3-37c5-22 15-51 19-55 1-1 1-2-4-12-7-13-11-25-14-41a709 709 0 01-7-90v-10h8c24 2 49 14 79 38l11 8c1 1 4 0 13-7 27-19 58-35 82-40 6-2 7-2 30 1 28 4 30 4 30 1 0-1-2-3-6-5l-6-3h9a222 222 0 0189 33l11-7c22-14 53-27 76-34l7-2 1 6 2 14z">
+                </path>
+            </svg>
+            <a href="/">小菠菜的数字花园</a>
         </div>
+        <nav id="nav">
+            <a href="/">首页</a>
+            <a href="/archives">归档</a>
+            <a href="/tags">标签</a>
+            <a target="_blank" rel="noopener" href="https://github.com/inferno0303">关于</a>
+        </nav>
     </header>
-
-    
-        <div class="banner-placeholder" id="banner-placeholder"></div>
-    
-
-    <div class="container">
-        <!-- 嵌套内容区域 -->
-        <div class="content">
-            <article class="post">
-  <div class="post-title" id="post-title">
-    <h1 class="h1-title">
-      微服务网关设想
-    </h1>
-  </div>
-  <div class="post-meta">
-    <span class="post-tags">
-      
-        <a href="/tags/note">#note</a>
-      
-    </span>
-    <span class="post-word-count">1550字</span>
-    <span class="post-time">2020-10-15</span>
-  </div>
-  <div class="post-content">
-    <h2 id="一、什么是服务网关"><a href="#一、什么是服务网关" class="headerlink" title="一、什么是服务网关"></a>一、什么是服务网关</h2><p><strong>服务网关 &#x3D; 路由转发 + 过滤器</strong><br>1、路由转发：接收一切外界请求，转发到后端的微服务上去；<br>2、过滤器：在服务网关中可以完成一系列的横切功能，例如权限校验、限流以及监控等，这些都可以通过过滤器完成（其实路由转发也是通过过滤器实现的）。</p>
-<h2 id="二、为什么需要服务网关"><a href="#二、为什么需要服务网关" class="headerlink" title="二、为什么需要服务网关"></a>二、为什么需要服务网关</h2><p>上述所说的横切功能（以权限校验为例）可以写在三个位置：<br>每个服务自己实现一遍<br>写到一个公共的服务中，然后其他所有服务都依赖这个服务<br>写到服务网关的前置过滤器中，所有请求过来进行权限校验<br>第一种，缺点太明显，基本不用；第二种，相较于第一点好很多，代码开发不会冗余，但是有两个缺点：<br>由于每个服务引入了这个公共服务，那么相当于在每个服务中都引入了相同的权限校验的代码，使得每个服务的jar包大小无故增加了一些，尤其是对于使用docker镜像进行部署的场景，jar越小越好；<br>由于每个服务都引入了这个公共服务，那么我们后续升级这个服务可能就比较困难，而且公共服务的功能越多，升级就越难，而且假设我们改变了公共服务中的权限校验的方式，想让所有的服务都去使用新的权限校验方式，我们就需要将之前所有的服务都重新引包，编译部署。<br>而服务网关恰好可以解决这样的问题：<br>将权限校验的逻辑写在网关的过滤器中，后端服务不需要关注权限校验的代码，所以服务的jar包中也不会引入权限校验的逻辑，不会增加jar包大小；<br>如果想修改权限校验的逻辑，只需要修改网关中的权限校验过滤器即可，而不需要升级所有已存在的微服务。<br>所以，需要服务网关！！！</p>
-<h2 id="1、总体流程"><a href="#1、总体流程" class="headerlink" title="1、总体流程"></a>1、总体流程</h2><p>服务网关、open-service和service启动时注册到注册中心上去；<br>用户请求时直接请求网关，网关做智能路由转发（包括服务发现，负载均衡）到open-service，这其中包含权限校验、监控、限流等操作<br>open-service聚合内部service响应，返回给网关，网关再返回给用户</p>
-<h2 id="2、引入网关的注意点"><a href="#2、引入网关的注意点" class="headerlink" title="2、引入网关的注意点"></a>2、引入网关的注意点</h2><p>增加了网关，多了一层转发（原本用户请求直接访问open-service即可），性能会下降一些（但是下降不大，通常，网关机器性能会很好，而且网关与open-service的访问通常是内网访问，速度很快）；<br>网关的单点问题：在整个网络调用过程中，一定会有一个单点，可能是网关、nginx、dns服务器等。防止网关单点，可以在网关层前边再挂一台nginx，nginx的性能极高，基本不会挂，这样之后，网关服务就可以不断的添加机器。但是这样一个请求就转发了两次，所以最好的方式是网关单点服务部署在一台牛逼的机器上（通过压测来估算机器的配置），而且nginx与zuul的性能比较，根据国外的一个哥们儿做的实验来看，其实相差不大，zuul是netflix开源的一个用来做网关的开源框架；<br>网关要尽量轻。</p>
-<h2 id="3、服务网关基本功能"><a href="#3、服务网关基本功能" class="headerlink" title="3、服务网关基本功能"></a>3、服务网关基本功能</h2><p>智能路由：接收外部一切请求，并转发到后端的对外服务open-service上去；<br>注意：我们只转发外部请求，服务之间的请求不走网关，这就表示全链路追踪、内部服务API监控、内部服务之间调用的容错、智能路由不能在网关完成；当然，也可以将所有的服务调用都走网关，那么几乎所有的功能都可以集成到网关中，但是这样的话，网关的压力会很大，不堪重负。<br>权限校验：只校验用户向open-service服务的请求，不校验服务内部的请求。服务内部的请求有必要校验吗？<br>API监控：只监控经过网关的请求，以及网关本身的一些性能指标（例如，gc等）；<br>限流：与监控配合，进行限流操作</p>
-<p><strong>额外：jwt和cookie池的选型</strong></p>
-
-  </div>
-</article>
-<script>
-  // 修改网页标题
-  document.title = document.getElementById("post-title").innerText + ' - ' + document.getElementById("website-title").innerText;
-</script>
-        </div>
-        <div class="footer">
-            <p>
-                © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="color: #ccc;">inferno0303</a>
-            </p>
-        </div>
-    </div>
+    <h1>post layout</h1>
 
 </body>
+
 </html>

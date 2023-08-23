@@ -13,7 +13,7 @@
 
 # 1 如何使用
 
-> 详细Hexo命令，例如如何本地运行、构建产物请参考[Hexo 官方文档](https://hexo.io/zh-cn/docs/commands)
+> 详细Hexo命令，例如如何本地运行、构建产物请参考 [Hexo 官方文档](https://hexo.io/zh-cn/docs/commands)
 
 以下记录最常用操作命令
 
@@ -46,7 +46,7 @@ node .\node_modules\hexo\bin\hexo server
 
 # 2 文件目录结构
 
-> 参考 Hexo 官方文档：(https://hexo.io/zh-cn/docs/setup)[https://hexo.io/zh-cn/docs/setup]
+> 参考 Hexo 官方文档：[Hexo 官方文档](https://hexo.io/zh-cn/docs/setup)
 
 ```
 $ hexo init <folder>
@@ -98,7 +98,7 @@ Hexo 的模板是指在新建的文章文件中默认填充的内容。例如，
 
 # 3 主题文件的目录结构
 
-> 参考 Hexo 官方文档：(https://hexo.io/zh-cn/docs/themes)[https://hexo.io/zh-cn/docs/themes]
+> 参考 Hexo 官方文档：[Hexo 官方文档](https://hexo.io/zh-cn/docs/themes)
 
 创建 Hexo 主题非常容易，您只要在 themes 文件夹内，新增一个任意名称的文件夹，并修改 _config.yml 内的 theme 设定，即可切换主题。一个主题可能会有以下的结构：
 

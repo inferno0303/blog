@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2f5f8;
+}
+
+/* header样式 */
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 30px;
+
+    background-color: #fff;
+    padding: 12px 55px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 2, 4, .08), 0 0 1px rgba(0, 2, 4, .1);
+}
+
+/* 移动设备宽度不足的情况下，header拆分成两行，标题和导航各一行 */
+@media screen and (max-width: 700px) {
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.header .website_title {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+.header .website_title a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #37475b;
+    font-weight: bold;
+}
+
+.header nav {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.header nav a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #37475b;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.header nav a:hover {
+    background-color: #e3eaf4;
+}
+
+/* 内容布局 */
+.container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 21fr 55fr 21fr;
+    column-gap: 22.5px;
+    padding: 22.5px;
+    /* max-width: 1148px; */
+    margin: 0 auto;
+}
+
+.sidebar_left {
+    grid-column-start: 1;
+}
+
+.sidebar_right {
+    grid-column-start: 3;
+}

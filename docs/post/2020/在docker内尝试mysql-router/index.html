@@ -1,123 +1,34 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的数字花园</title>
-    <link rel="shortcut icon" href="/favicon.ico">
-    
-<link rel="stylesheet" href="/css/style.css">
-
-    
-<link rel="stylesheet" href="/css/hljs-default-min.css">
-
-    <!-- <script type="module" src="/js/index.js"></script> -->
+    <title>小菠菜的数字花园</title>
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/index.css">
 <meta name="generator" content="Hexo 6.3.0"></head>
+
 <body>
-
     <header class="header">
-        <div class="header-wrapper">
-            <div class="website-title" id="website-title">
-                <a href="/" class="website-title-link">
-                    我的数字花园
-                </a>
-            </div>
-            <nav class="menu">
-                
-                    <li class="menu-item">
-                        <a href="/">
-                            首页
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="/archives">
-                            归档
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="/tags">
-                            标签
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a target="_blank" rel="noopener" href="https://github.com/inferno0303">
-                            关于
-                        </a>
-                    </li>
-                
-            </nav>
+        <div class="website_title">
+            <svg width="27" height="27" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 935 935">
+                <path
+                    d="M437 2a466 466 0 1061 930A466 466 0 00437 2zm234 169a401 401 0 01-1 119l8 16c17 41 18 47 18 85 0 26-1 43-4 53-1 6-6 11-13 15-8 5-7 6 6 6 25 0 46 4 62 12 13 7 21 13 33 26 11 11 14 17 14 23-1 5-8 24-13 31a51 51 0 01-19 19l27 28c30 30 38 39 53 60 8 12 17 28 17 33a400 400 0 01-75 96 1051 1051 0 01-112-176l-4 4a161 161 0 01-66 64c-9 4-11 6-11 8l-1 4c-2 1-5 15-4 16l18 8 24 2 19 1 9 4c15 8 21 16 33 47 6 14 25 73 25 76s-31 21-54 32a451 451 0 01-412-14c-2-1-2-2 2-13a384 384 0 0142-82c20-28 25-31 41-34l11-3 15-6c20-6 31-13 33-20 1-5-1-19-4-29-2-8-2-10-1-13 1-4 1-4 4-4l4-1-7-12c-7-13-8-17-6-23 1-3 1-3 7-4 11-2 12-4 10-14-2-6-13-16-23-21-7-4-9-4-9-1l-19 38-14 13-11 10-3-3c-3-2-6-3-9-1-1 1-2 3-2 15-2 23-4 34-12 46-11 19-38 40-114 92l-16 11-8-7c-8-7-30-30-30-32a1167 1167 0 0163-100c-2 0-28 28-50 54l-25 29 41-60c15-21 22-28 37-38l14-9-4-7c-9-12-5-17 33-49 9-7 16-14 16-15l2-6c3-5 3-10 1-12l-10-1c-5-1-7-2-7-3l-4-15c-4-19-5-33-2-54 3-17 5-24 8-26 4-2 20 5 22 9l2 1-4-18c-8-29-9-38-6-69v-20a180 180 0 00-18 51l3-37c5-22 15-51 19-55 1-1 1-2-4-12-7-13-11-25-14-41a709 709 0 01-7-90v-10h8c24 2 49 14 79 38l11 8c1 1 4 0 13-7 27-19 58-35 82-40 6-2 7-2 30 1 28 4 30 4 30 1 0-1-2-3-6-5l-6-3h9a222 222 0 0189 33l11-7c22-14 53-27 76-34l7-2 1 6 2 14z">
+                </path>
+            </svg>
+            <a href="/">小菠菜的数字花园</a>
         </div>
+        <nav id="nav">
+            <a href="/">首页</a>
+            <a href="/archives">归档</a>
+            <a href="/tags">标签</a>
+            <a target="_blank" rel="noopener" href="https://github.com/inferno0303">关于</a>
+        </nav>
     </header>
-
-    
-        <div class="banner-placeholder" id="banner-placeholder"></div>
-    
-
-    <div class="container">
-        <!-- 嵌套内容区域 -->
-        <div class="content">
-            <article class="post">
-  <div class="post-title" id="post-title">
-    <h1 class="h1-title">
-      在docker内尝试mysql-router
-    </h1>
-  </div>
-  <div class="post-meta">
-    <span class="post-tags">
-      
-        <a href="/tags/note">#note</a>
-      
-    </span>
-    <span class="post-word-count">1677字</span>
-    <span class="post-time">2020-09-06</span>
-  </div>
-  <div class="post-content">
-    <p>关键字：mysql、主从、mysql高可用、mysqlrouter</p>
-<p>创建docker网络</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">docker network create my-net -d bridge<br></code></pre></td></tr></table></figure>
-
-
-<p>运行mysql_1</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">docker run -d --name mysql_1 -p 3307:3306 --network my-net -e MYSQL_ROOT_PASSWORD=12345678 -v $(pwd)/docker_volumns/mysql_1:/var/lib/mysql -v $(pwd)/my_master.cnf:/etc/mysql/my.cnf mysql:5.7.32<br></code></pre></td></tr></table></figure>
-
-<p>运行mysql_2</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">docker run -d --name mysql_2 -p 3307:3306 --network my-net -e MYSQL_ROOT_PASSWORD=12345678 -v $(pwd)/docker_volumns/mysql_2:/var/lib/mysql -v $(pwd)/my_slave.cnf:/etc/mysql/my.cnf mysql:5.7.32<br></code></pre></td></tr></table></figure>
-
-
-<p>配置mysql master（mysql_1）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">docker exec -it mysql_1 bash<br>mysql -u root -p$MYSQL_ROOT_PASSWORD<br>CREATE user &#x27;repl&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;123&#x27;;<br>GRANT REPLICATION SLAVE ON *.* TO &#x27;repl&#x27;@&#x27;%&#x27;;<br>flush privileges;<br>show master status;<br></code></pre></td></tr></table></figure>
-
-<p>配置mysql slave（mysql_2）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">docker exec -it mysql_2 bash<br>mysql -u root -p$MYSQL_ROOT_PASSWORD<br>change master to master_host=&#x27;mysql_1&#x27;, master_user=&#x27;repl&#x27;, master_password=&#x27;123&#x27;, master_log_file=&#x27;***&#x27;, master_log_pos=***;<br>start slave;<br>show slave status;<br></code></pre></td></tr></table></figure>
-
-
-<p>运行mysql-router</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">docker run -dit --name mysqlrouter -p 33060:3306 --network my-net debian:latest<br></code></pre></td></tr></table></figure>
-
-<p>编辑好mysqlrouter.conf文件的内容，上游mysql-server为mysql_1和mysql_2<br>复制文件到mysql-router容器内</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">docker cp mysql-router-community_8.0.22-1debian10_amd64.deb mysqlrouter:/root<br>docker cp libssl1.1_1.1.1d-0+deb10u3_amd64.deb mysqlrouter:/root<br>docker cp mysqlrouter.conf mysqlrouter:/root<br>docker exec -it mysqlrouter bash<br></code></pre></td></tr></table></figure>
-
-<p>在mysqlrouter容器内执行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">dpkg -i libssl1.1_1.1.1d-0+deb10u3_amd64.deb mysql-router-community_8.0.22-1debian10_amd64.deb<br>mysqlrouter -c mysqlrouter.conf<br></code></pre></td></tr></table></figure>
-
-<p>快捷方法：使用脚本配合镜像</p>
-
-  </div>
-</article>
-<script>
-  // 修改网页标题
-  document.title = document.getElementById("post-title").innerText + ' - ' + document.getElementById("website-title").innerText;
-</script>
-        </div>
-        <div class="footer">
-            <p>
-                © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="color: #ccc;">inferno0303</a>
-            </p>
-        </div>
-    </div>
+    <h1>post layout</h1>
 
 </body>
+
 </html>

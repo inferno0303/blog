@@ -1,0 +1,36 @@
+/* 快捷样式 */
+/* tag标签 */
+.tag_gray {
+    background-color: #eceef2;
+    border-radius: .5rem;
+    padding: 0 .5rem;
+}
+
+/* 字体设置 */
+.font_bold {
+    font-weight: bold;
+}
+
+.font_small {
+    font-size: .8rem;
+}
+
+.font_large {
+    font-size: 1.2rem;
+}
+
+.font_color_gray {
+    color: #37475b;
+}
+
+.font_serif {
+    font-family: serif;
+}
+
+.font_sans_serif {
+    font-family: sans-serif;
+}
+
+.bg_lightblue {
+    background-color: #e3eaf4;
+}

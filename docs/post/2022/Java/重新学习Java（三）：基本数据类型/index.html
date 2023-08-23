@@ -1,129 +1,34 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的数字花园</title>
-    <link rel="shortcut icon" href="/favicon.ico">
-    
-<link rel="stylesheet" href="/css/style.css">
-
-    
-<link rel="stylesheet" href="/css/hljs-default-min.css">
-
-    <!-- <script type="module" src="/js/index.js"></script> -->
+    <title>小菠菜的数字花园</title>
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/index.css">
 <meta name="generator" content="Hexo 6.3.0"></head>
+
 <body>
-
     <header class="header">
-        <div class="header-wrapper">
-            <div class="website-title" id="website-title">
-                <a href="/" class="website-title-link">
-                    我的数字花园
-                </a>
-            </div>
-            <nav class="menu">
-                
-                    <li class="menu-item">
-                        <a href="/">
-                            首页
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="/archives">
-                            归档
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="/tags">
-                            标签
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a target="_blank" rel="noopener" href="https://github.com/inferno0303">
-                            关于
-                        </a>
-                    </li>
-                
-            </nav>
+        <div class="website_title">
+            <svg width="27" height="27" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 935 935">
+                <path
+                    d="M437 2a466 466 0 1061 930A466 466 0 00437 2zm234 169a401 401 0 01-1 119l8 16c17 41 18 47 18 85 0 26-1 43-4 53-1 6-6 11-13 15-8 5-7 6 6 6 25 0 46 4 62 12 13 7 21 13 33 26 11 11 14 17 14 23-1 5-8 24-13 31a51 51 0 01-19 19l27 28c30 30 38 39 53 60 8 12 17 28 17 33a400 400 0 01-75 96 1051 1051 0 01-112-176l-4 4a161 161 0 01-66 64c-9 4-11 6-11 8l-1 4c-2 1-5 15-4 16l18 8 24 2 19 1 9 4c15 8 21 16 33 47 6 14 25 73 25 76s-31 21-54 32a451 451 0 01-412-14c-2-1-2-2 2-13a384 384 0 0142-82c20-28 25-31 41-34l11-3 15-6c20-6 31-13 33-20 1-5-1-19-4-29-2-8-2-10-1-13 1-4 1-4 4-4l4-1-7-12c-7-13-8-17-6-23 1-3 1-3 7-4 11-2 12-4 10-14-2-6-13-16-23-21-7-4-9-4-9-1l-19 38-14 13-11 10-3-3c-3-2-6-3-9-1-1 1-2 3-2 15-2 23-4 34-12 46-11 19-38 40-114 92l-16 11-8-7c-8-7-30-30-30-32a1167 1167 0 0163-100c-2 0-28 28-50 54l-25 29 41-60c15-21 22-28 37-38l14-9-4-7c-9-12-5-17 33-49 9-7 16-14 16-15l2-6c3-5 3-10 1-12l-10-1c-5-1-7-2-7-3l-4-15c-4-19-5-33-2-54 3-17 5-24 8-26 4-2 20 5 22 9l2 1-4-18c-8-29-9-38-6-69v-20a180 180 0 00-18 51l3-37c5-22 15-51 19-55 1-1 1-2-4-12-7-13-11-25-14-41a709 709 0 01-7-90v-10h8c24 2 49 14 79 38l11 8c1 1 4 0 13-7 27-19 58-35 82-40 6-2 7-2 30 1 28 4 30 4 30 1 0-1-2-3-6-5l-6-3h9a222 222 0 0189 33l11-7c22-14 53-27 76-34l7-2 1 6 2 14z">
+                </path>
+            </svg>
+            <a href="/">小菠菜的数字花园</a>
         </div>
+        <nav id="nav">
+            <a href="/">首页</a>
+            <a href="/archives">归档</a>
+            <a href="/tags">标签</a>
+            <a target="_blank" rel="noopener" href="https://github.com/inferno0303">关于</a>
+        </nav>
     </header>
-
-    
-        <div class="banner-placeholder" id="banner-placeholder"></div>
-    
-
-    <div class="container">
-        <!-- 嵌套内容区域 -->
-        <div class="content">
-            <article class="post">
-  <div class="post-title" id="post-title">
-    <h1 class="h1-title">
-      重新学习Java（三）：基本数据类型
-    </h1>
-  </div>
-  <div class="post-meta">
-    <span class="post-tags">
-      
-        <a href="/tags/Java">#Java</a>
-      
-    </span>
-    <span class="post-word-count">1509字</span>
-    <span class="post-time">2022-05-03</span>
-  </div>
-  <div class="post-content">
-    <h1 id="Java的基本数据类型"><a href="#Java的基本数据类型" class="headerlink" title="Java的基本数据类型"></a>Java的基本数据类型</h1><p>变量就是申请内存来存储值的，也就是说，当创建变量的时候，需要在内存中申请空间。<br>内存管理系统根据变量的类型为变量分配内存时，分配的空间只能用来存储该类型的数据。</p>
-<p>因此通过定义不同类型的变量，可以在内存中存储整数小数或者字符。<br>Java的两大数据类型：内置数据类型和引用数据类型。</p>
-<h2 id="内置数据类型"><a href="#内置数据类型" class="headerlink" title="内置数据类型"></a>内置数据类型</h2><p>Java语言提供了8种基本类型，其中：6种数字类型，1种字符类型，1种布尔型。</p>
-<ul>
-<li>byte，8位、有符号的，以二进制补码表示的整数</li>
-<li>short，16位、有符号的，以二进制补码表示的整数</li>
-<li>int，32位、有符号的，以二进制补码表示的整数</li>
-<li>long，64位、有符号的，以二进制补码表示的整数, long a &#x3D; 100000L</li>
-<li>float，单精度、32位、符合IEEE 754标准的浮点数，不能用来表示精确的值，能节省空间，float f &#x3D; 234.5f</li>
-<li>double，双精度、64位、符合IEEE 754标准的浮点数，不能用来表示精确的值，double d &#x3D; 7.0D</li>
-<li>boolean。1位，true&#x2F;false，boolean flag &#x3D; true</li>
-<li>char，单一的16位Unicode字符，最小值\u0000，最大值\uffff，char可以存储任何字符，char letter &#x3D; ‘A’</li>
-</ul>
-<h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><p>在Java中引用类型的变量非常类似于C&#x2F;C++的指针。引用类型指向一个对象，指向对象的变量是引用变量。这些变量在声明时被指定为一个特定的类型。变量一旦声明后类型就不能被改变了。</p>
-<ul>
-<li>对象和数组都是引用数据类型</li>
-<li>所有引用类型的默认值都是null</li>
-<li>一个引用变量可以用来引用任何与之兼容的类型，Site site &#x3D; new Site(“Runoob”)</li>
-</ul>
-<h2 id="Java常量"><a href="#Java常量" class="headerlink" title="Java常量"></a>Java常量</h2><p>常量在程序运行时是不能被修改的，在Java中使用final关键字来修饰常量，声明方式和变量类似。例如<code>final double PI = 3.14159</code></p>
-<p>虽然常量名称也可以用小写，但是为了便于识别，通常使用大写字母表示常量。字面量可以赋给任何内置的变量。例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">byte a = 68;<br>char a = &#x27;A&#x27;;<br></code></pre></td></tr></table></figure>
-<p>byte、int、long、short都可以用十进制、16进制以及8进制的方式来表示。<br>当使用字面量的时候，前缀0表示8进制，前缀0x表示16进制，例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">int decimal = 100;<br>int  octal = 0144;<br>int hexa = 0x64;<br></code></pre></td></tr></table></figure>
-
-<p>和其他语言一样，Java的字符串常量也是包含在2个引号之间的字符序列。下面是字符串型字面量的例子。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">&quot;Hello World&quot;<br>&quot;two\nlines&quot;<br>&quot;\&quot;This is in quotes\&quot;&quot;<br></code></pre></td></tr></table></figure>
-
-<p>字符串常量和字符变量都可以包含任何Unicode字符，例如</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">char a = &#x27;\u0001&#x27;;<br>String a = &quot;\u0001&quot;;<br></code></pre></td></tr></table></figure>
-
-<p>Java语言支持一些特殊的转义字符序列。</p>
-<h2 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h2><p>整型、实型（常量）、字符型数据可以混合运算。在运算中不同类型的数据先转化为同一类型，然后进行运算。</p>
-<p>byte、short、char -&gt; int -&gt; long -&gt; flaot -&gt; double</p>
-<p>高精度到低精度的自动类型转换，会丢失精度。</p>
-
-  </div>
-</article>
-<script>
-  // 修改网页标题
-  document.title = document.getElementById("post-title").innerText + ' - ' + document.getElementById("website-title").innerText;
-</script>
-        </div>
-        <div class="footer">
-            <p>
-                © Copyright 2022 <a target="_blank" rel="noopener" href="https://github.com/inferno0303/" style="color: #ccc;">inferno0303</a>
-            </p>
-        </div>
-    </div>
+    <h1>post layout</h1>
 
 </body>
+
 </html>
